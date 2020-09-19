@@ -1,0 +1,4 @@
+include ':HERE-sdk'
+include ':HERE-sdk'
+include ':app'
+rootProject.name = "Car Park Naviagation"

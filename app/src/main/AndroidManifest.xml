@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.arkapp.carparknaviagation">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="k5BUbwJfqOgUGaseLpSj" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="_4OYiWM5vBwElFebli8Uuw" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="edKABNE2KXHRapqn53HSc0cVxPp2LWlCJ4TocSbHHIp5l5xDPocQUltbXC6blUy7f8ikQQ4APMIeG0C1owp17ITiibNy/abnQXgcvp5nNxwKl/fpa5/80tl96y/E0c9xmGDt8Yg6cCt/3/fIM4Y8vllzn30A75cIkrSRw3QA+eSyrT9kIBsH1uBdDNLPHqR+yVLe8IU9WCylofpFsxNTEyg5BHOmj48sP9cUFXbtwxmUgrIn+ZdfBEpzE91EThnA8JRgAWtXU8STj5TwjfarOiEOa34FXq4YTD8UqgsnCrlQlmA814eDbEBLjmfkHaZauOL+Ly6qdxRGd18CN1vyqxEOZCVaGG+rl4RJtba/qcVN6udEDD/nIeR7FpVCVuMpfu24iVmEzlv2sb2F4I16WDJ092pu7mxzUt49F8+0svIa2Awrt85oDqa3dQxTPZ6Y5yfCEQhuU90l2wVYUgGYyEAvVzlcXQDLG8o1cxCS9eCFY2Chgxvoa7wi13RSzCA/nimso9Z9m3nVh4jfMbitBdAvrpPRnwj8iXsTyxvYO/We7zZnJnbAR39J/v/b03S09aCjS4c/LI/CgC3rQGd/7/Nnjm5aODFWjdxKrh2W6SKToFNAwD2DlWP4Wp5A3AeCpza2jAarIDBR767FSqpGXDVtmnyDYaJ5PuHQnz9xUNM=" />
+    </application>
+
+</manifest>
