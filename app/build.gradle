@@ -66,5 +66,9 @@ dependencies {
     //Google maps
     implementation 'com.google.android.libraries.places:places:2.4.0'
 
+    //Permission
+    implementation 'com.karumi:dexter:6.2.1'
+
+
 
 }

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface.OnClickListener;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -26,10 +27,14 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * This is a utility class consisting of Kotlin Extension function
+ * This is a utility class consisting of Commonly used methods in entire project.
  */
 public class ViewUtils {
     private static long LAST_CLICK_TIME;
+
+    public static void printLog(String msg) {
+        Log.e("Logzzz", msg);
+    }
 
     public static void toast(@NotNull Context context, @NotNull String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();

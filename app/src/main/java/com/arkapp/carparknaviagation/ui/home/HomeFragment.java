@@ -1,5 +1,7 @@
 package com.arkapp.carparknaviagation.ui.home;
 
+import android.Manifest;
+import android.content.IntentSender;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,7 +14,11 @@ import androidx.fragment.app.Fragment;
 
 import com.arkapp.carparknaviagation.R;
 import com.arkapp.carparknaviagation.databinding.FragmentHomeBinding;
+import com.arkapp.carparknaviagation.ui.main.MainActivity;
+import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.LocationSettingsResponse;
+import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
@@ -24,12 +30,24 @@ import com.here.android.mpa.common.OnEngineInitListener;
 import com.here.android.mpa.mapping.Map;
 import com.here.android.mpa.mapping.MapMarker;
 import com.here.android.mpa.mapping.MapView;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
+import java.util.List;
 
+import static com.arkapp.carparknaviagation.ui.main.MainActivity.gpsListener;
 import static com.arkapp.carparknaviagation.utility.Constants.GOOGLE_KEY;
+import static com.arkapp.carparknaviagation.utility.MapUtils.REQUEST_CHECK_SETTINGS;
+import static com.arkapp.carparknaviagation.utility.MapUtils.getGPSSettingTask;
+import static com.arkapp.carparknaviagation.utility.MapUtils.getLocationAddress;
+import static com.arkapp.carparknaviagation.utility.MapUtils.setCustomCurrentMaker;
+import static com.arkapp.carparknaviagation.utility.MapUtils.startLocationUpdates;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.hide;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.show;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.showSnack;
@@ -42,6 +60,9 @@ public class HomeFragment extends Fragment {
     private Place selectedAddress;
     private FragmentHomeBinding binding;
     private AutocompleteSupportFragment autocompleteFragment;
+    private MapMarker currentLocationMarker;
+    private String selectedAddressName;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,6 +79,9 @@ public class HomeFragment extends Fragment {
 
         show(binding.progressBar);
 
+        //Overriding the gpsListener to get the updates
+        gpsListener = this::checkGpsSetting;
+
         initHereMaps();
         initAutoComplete();
         initClickListeners();
@@ -69,8 +93,11 @@ public class HomeFragment extends Fragment {
             root.post(() -> root.findViewById(R.id.places_autocomplete_search_input).performClick());
         });
 
+        binding.cvMyLocation.setOnClickListener(view12 -> {
+            showSnack(binding.parent, "Fetching Current Location...");
+            askRuntimePermission();
+        });
         binding.cvSetting.setOnClickListener(view12 -> showSnack(binding.parent, "In development..."));
-        binding.cvMyLocation.setOnClickListener(view12 -> showSnack(binding.parent, "In development..."));
         binding.cvHistory.setOnClickListener(view12 -> showSnack(binding.parent, "In development..."));
     }
 
@@ -83,14 +110,22 @@ public class HomeFragment extends Fragment {
                     if (error == OnEngineInitListener.Error.NONE) {
                         if (map == null) {
                             map = new Map();
+                            currentLocationMarker = new MapMarker();
+
                             map.setMapScheme(Map.Scheme.NORMAL_TRAFFIC_DAY);
                             map.setExtrudedBuildingsVisible(false);
                             map.setLandmarksVisible(false);
                         }
                         mapView.setMap(map);
 
-
-                        setMarkerOnMap(1.366026, 103.847595);
+                        selectedAddressName = getLocationAddress(
+                                requireContext(),
+                                MainActivity.currentLocation.getLatitude(),
+                                MainActivity.currentLocation.getLongitude());
+                        binding.tvSearchBar.setText(selectedAddressName);
+                        setMarkerOnMap(
+                                MainActivity.currentLocation.getLatitude(),
+                                MainActivity.currentLocation.getLongitude());
 
                     } else {
                         Log.e("ERROR", error.getStackTrace());
@@ -100,12 +135,15 @@ public class HomeFragment extends Fragment {
 
     private void setMarkerOnMap(double lat, double log) {
         GeoCoordinate location = new GeoCoordinate(lat, log);
-
         map.setCenter(location, Map.Animation.NONE);
-        MapMarker defaultMarker = new MapMarker();
-        defaultMarker.setCoordinate(location);
 
-        map.addMapObject(defaultMarker);
+        //removing the old marker
+        map.removeMapObject(currentLocationMarker);
+
+        setCustomCurrentMaker(requireContext(), currentLocationMarker);
+        currentLocationMarker.setCoordinate(location);
+
+        map.addMapObject(currentLocationMarker);
 
         // Set the zoom level to the average between min and max
         map.setZoomLevel(16);
@@ -124,7 +162,7 @@ public class HomeFragment extends Fragment {
         autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ADDRESS,
                                                           Place.Field.ID,
                                                           Place.Field.LAT_LNG));
-        //autocompleteFragment.setCountry("sgp");
+        autocompleteFragment.setCountry("sgp");
         autocompleteFragment.setHint("");
         autocompleteFragment.getView().findViewById(R.id.places_autocomplete_search_button);
 
@@ -143,6 +181,64 @@ public class HomeFragment extends Fragment {
             public void onError(@NotNull Status status) {
                 Log.e("error", "onError: " + status.getStatusMessage());
                 toast(requireContext(), "Oops! something went wrong...");
+            }
+        });
+    }
+
+    private void askRuntimePermission() {
+        Dexter.withContext(requireContext())
+                .withPermissions(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)
+                .withListener(
+                        new MultiplePermissionsListener() {
+                            @Override
+                            public void onPermissionsChecked(
+                                    MultiplePermissionsReport multiplePermissionsReport) {
+                                if (multiplePermissionsReport.areAllPermissionsGranted())
+                                    checkGpsSetting();
+                                else
+                                    askRuntimePermission();
+                            }
+
+                            @Override
+                            public void onPermissionRationaleShouldBeShown(
+                                    List<PermissionRequest> list,
+                                    PermissionToken permissionToken) {
+                                permissionToken.continuePermissionRequest();
+
+                            }
+                        })
+                .check();
+    }
+
+    public void checkGpsSetting() {
+        Task<LocationSettingsResponse> task = getGPSSettingTask(requireContext());
+        task.addOnSuccessListener(requireActivity(), locationSettingsResponse -> {
+            // All location settings are satisfied. The client can initialize
+            // location requests here.
+            startLocationUpdates(requireContext());
+
+            setMarkerOnMap(
+                    MainActivity.currentLocation.getLatitude(),
+                    MainActivity.currentLocation.getLongitude());
+            selectedAddressName = getLocationAddress(
+                    requireContext(),
+                    MainActivity.currentLocation.getLatitude(),
+                    MainActivity.currentLocation.getLongitude());
+            binding.tvSearchBar.setText(selectedAddressName);
+        });
+
+        task.addOnFailureListener(requireActivity(), e -> {
+            if (e instanceof ResolvableApiException) {
+                // Location settings are not satisfied, but this can be fixed
+                // by showing the user a dialog.
+                try {
+                    // Show the dialog by calling startResolutionForResult(),
+                    // and check the result in onActivityResult().
+                    ResolvableApiException resolvable = (ResolvableApiException) e;
+                    resolvable.startResolutionForResult(requireActivity(), REQUEST_CHECK_SETTINGS);
+                } catch (IntentSender.SendIntentException sendEx) {
+                    // Ignore the error.
+                }
             }
         });
     }

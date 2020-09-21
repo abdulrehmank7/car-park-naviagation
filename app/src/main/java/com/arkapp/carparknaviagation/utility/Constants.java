@@ -6,6 +6,6 @@ package com.arkapp.carparknaviagation.utility;
  */
 public class Constants {
 
-    public static String GOOGLE_KEY = "AIzaSyDal1iDcW9DZGLEMRBjnY72JGqOZSFMFus";
+    public static String GOOGLE_KEY = "AIzaSyDwCCLaZyQuRFlbDR98m2imUkT3PrkIvp4";
     public static long SPLASH_TIME = 1500;
 }
