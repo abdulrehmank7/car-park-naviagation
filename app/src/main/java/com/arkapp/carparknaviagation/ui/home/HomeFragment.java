@@ -14,22 +14,21 @@ import androidx.fragment.app.Fragment;
 
 import com.arkapp.carparknaviagation.R;
 import com.arkapp.carparknaviagation.databinding.FragmentHomeBinding;
-import com.arkapp.carparknaviagation.ui.main.MainActivity;
+import com.arkapp.carparknaviagation.utility.maps.route.GetRouteTask;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationSettingsResponse;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
-import com.here.android.mpa.common.ApplicationContext;
-import com.here.android.mpa.common.GeoCoordinate;
-import com.here.android.mpa.common.MapEngine;
-import com.here.android.mpa.common.OnEngineInitListener;
-import com.here.android.mpa.mapping.Map;
-import com.here.android.mpa.mapping.MapMarker;
-import com.here.android.mpa.mapping.MapView;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -41,27 +40,33 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.arkapp.carparknaviagation.ui.main.MainActivity.currentLocation;
 import static com.arkapp.carparknaviagation.ui.main.MainActivity.gpsListener;
 import static com.arkapp.carparknaviagation.utility.Constants.GOOGLE_KEY;
-import static com.arkapp.carparknaviagation.utility.MapUtils.REQUEST_CHECK_SETTINGS;
-import static com.arkapp.carparknaviagation.utility.MapUtils.getGPSSettingTask;
-import static com.arkapp.carparknaviagation.utility.MapUtils.getLocationAddress;
-import static com.arkapp.carparknaviagation.utility.MapUtils.setCustomCurrentMaker;
-import static com.arkapp.carparknaviagation.utility.MapUtils.startLocationUpdates;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.hide;
+import static com.arkapp.carparknaviagation.utility.ViewUtils.printLog;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.show;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.showSnack;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.toast;
+import static com.arkapp.carparknaviagation.utility.maps.LocationUtils.getGPSSettingTask;
+import static com.arkapp.carparknaviagation.utility.maps.LocationUtils.startLocationUpdates;
+import static com.arkapp.carparknaviagation.utility.maps.MapUtils.REQUEST_CHECK_SETTINGS;
+import static com.arkapp.carparknaviagation.utility.maps.MapUtils.addCustomCurrentMaker;
+import static com.arkapp.carparknaviagation.utility.maps.MapUtils.fitRouteInScreen;
+import static com.arkapp.carparknaviagation.utility.maps.MapUtils.getLocationAddress;
+import static com.arkapp.carparknaviagation.utility.maps.MapUtils.getMapsApiDirectionsFromUrl;
 
 public class HomeFragment extends Fragment {
 
-    private Map map = null;
-    private MapView mapView = null;
-    private Place selectedAddress;
+    public static Polyline polylineFinal = null;
     private FragmentHomeBinding binding;
+    private GoogleMap map = null;
+    private Place selectedAddress;
     private AutocompleteSupportFragment autocompleteFragment;
-    private MapMarker currentLocationMarker;
+    private SupportMapFragment mapView = null;
+    private Marker currentLocationMarker;
     private String selectedAddressName;
+    private Marker dropLocationMarker;
 
 
     @Override
@@ -75,14 +80,13 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mapView = view.findViewById(R.id.mapView);
 
         show(binding.progressBar);
 
         //Overriding the gpsListener to get the updates
         gpsListener = this::checkGpsSetting;
 
-        initHereMaps();
+        initMaps();
         initAutoComplete();
         initClickListeners();
     }
@@ -101,52 +105,42 @@ public class HomeFragment extends Fragment {
         binding.cvHistory.setOnClickListener(view12 -> showSnack(binding.parent, "In development..."));
     }
 
-    private void initHereMaps() {
-        ApplicationContext applicationContext = new ApplicationContext(requireActivity().getApplicationContext());
-        MapEngine.getInstance().init(
-                applicationContext,
-                error -> {
-                    hide(binding.progressBar);
-                    if (error == OnEngineInitListener.Error.NONE) {
-                        if (map == null) {
-                            map = new Map();
-                            currentLocationMarker = new MapMarker();
+    private void initMaps() {
 
-                            map.setMapScheme(Map.Scheme.NORMAL_TRAFFIC_DAY);
-                            map.setExtrudedBuildingsVisible(false);
-                            map.setLandmarksVisible(false);
-                        }
-                        mapView.setMap(map);
+        mapView = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
 
-                        selectedAddressName = getLocationAddress(
-                                requireContext(),
-                                MainActivity.currentLocation.getLatitude(),
-                                MainActivity.currentLocation.getLongitude());
-                        binding.tvSearchBar.setText(selectedAddressName);
-                        setMarkerOnMap(
-                                MainActivity.currentLocation.getLatitude(),
-                                MainActivity.currentLocation.getLongitude());
+        mapView.getMapAsync(googleMap -> {
+            hide(binding.progressBar);
 
-                    } else {
-                        Log.e("ERROR", error.getStackTrace());
-                    }
-                });
+            map = googleMap;
+            selectedAddressName = getLocationAddress(
+                    requireContext(),
+                    currentLocation.getLatitude(),
+                    currentLocation.getLongitude());
+            binding.tvSearchBar.setText(selectedAddressName);
+
+            setCurrentLocationMarkerOnMap(currentLocation.getLatitude(), currentLocation.getLongitude());
+        });
     }
 
-    private void setMarkerOnMap(double lat, double log) {
-        GeoCoordinate location = new GeoCoordinate(lat, log);
-        map.setCenter(location, Map.Animation.NONE);
-
+    private void setCurrentLocationMarkerOnMap(double lat, double log) {
         //removing the old marker
-        map.removeMapObject(currentLocationMarker);
+        if (currentLocationMarker != null)
+            currentLocationMarker.remove();
 
-        setCustomCurrentMaker(requireContext(), currentLocationMarker);
-        currentLocationMarker.setCoordinate(location);
+        currentLocationMarker = map.addMarker(addCustomCurrentMaker(requireContext(), lat, log, R.drawable.ic_marker1));
 
-        map.addMapObject(currentLocationMarker);
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, log), 17));
+    }
 
-        // Set the zoom level to the average between min and max
-        map.setZoomLevel(16);
+    private void setDropLocationMarkerOnMap(double lat, double log) {
+        //removing the old marker
+        if (dropLocationMarker != null)
+            dropLocationMarker.remove();
+
+        dropLocationMarker = map.addMarker(addCustomCurrentMaker(requireContext(), lat, log, R.drawable.ic_marker2));
+
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, log), 17));
     }
 
     private void initAutoComplete() {
@@ -172,8 +166,10 @@ public class HomeFragment extends Fragment {
             public void onPlaceSelected(@NotNull Place place) {
                 // Get info about the selected place.
                 selectedAddress = place;
-                setMarkerOnMap(place.getLatLng().latitude, place.getLatLng().longitude);
+                setDropLocationMarkerOnMap(place.getLatLng().latitude, place.getLatLng().longitude);
                 binding.tvSearchBar.setText(selectedAddress.getAddress());
+
+                drawMapRoute();
             }
 
 
@@ -183,6 +179,31 @@ public class HomeFragment extends Fragment {
                 toast(requireContext(), "Oops! something went wrong...");
             }
         });
+    }
+
+    private void drawMapRoute() {
+        fitRouteInScreen(map,
+                         new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
+                         selectedAddress.getLatLng(), requireContext());
+
+        String url = getMapsApiDirectionsFromUrl(
+                currentLocation.getLatitude() + "",
+                currentLocation.getLongitude() + "",
+                selectedAddress.getLatLng().latitude + "",
+                selectedAddress.getLatLng().longitude + "",
+                ""/*avoid=tolls*/);
+
+        printLog("polyline map url = " + url);
+
+        if (!url.equals("")) {
+            if (polylineFinal != null) {
+                polylineFinal.remove();
+            }
+            int colourForPathPlot = getResources().getColor(R.color.colorPrimaryCustomDark);
+
+            GetRouteTask downloadTask = new GetRouteTask(map, colourForPathPlot);
+            downloadTask.execute(url);
+        }
     }
 
     private void askRuntimePermission() {
@@ -217,13 +238,13 @@ public class HomeFragment extends Fragment {
             // location requests here.
             startLocationUpdates(requireContext());
 
-            setMarkerOnMap(
-                    MainActivity.currentLocation.getLatitude(),
-                    MainActivity.currentLocation.getLongitude());
+            setCurrentLocationMarkerOnMap(
+                    currentLocation.getLatitude(),
+                    currentLocation.getLongitude());
             selectedAddressName = getLocationAddress(
                     requireContext(),
-                    MainActivity.currentLocation.getLatitude(),
-                    MainActivity.currentLocation.getLongitude());
+                    currentLocation.getLatitude(),
+                    currentLocation.getLongitude());
             binding.tvSearchBar.setText(selectedAddressName);
         });
 

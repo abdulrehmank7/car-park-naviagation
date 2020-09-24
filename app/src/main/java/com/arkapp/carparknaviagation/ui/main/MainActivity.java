@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.arkapp.carparknaviagation.R;
 import com.arkapp.carparknaviagation.utility.listeners.GPSListener;
 
-import static com.arkapp.carparknaviagation.utility.MapUtils.REQUEST_CHECK_SETTINGS;
+import static com.arkapp.carparknaviagation.utility.maps.MapUtils.REQUEST_CHECK_SETTINGS;
 
 public class MainActivity extends AppCompatActivity {
 

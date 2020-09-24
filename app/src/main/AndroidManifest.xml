@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -33,6 +34,16 @@
         <meta-data
             android:name="com.here.android.maps.license.key"
             android:value="edKABNE2KXHRapqn53HSc0cVxPp2LWlCJ4TocSbHHIp5l5xDPocQUltbXC6blUy7f8ikQQ4APMIeG0C1owp17ITiibNy/abnQXgcvp5nNxwKl/fpa5/80tl96y/E0c9xmGDt8Yg6cCt/3/fIM4Y8vllzn30A75cIkrSRw3QA+eSyrT9kIBsH1uBdDNLPHqR+yVLe8IU9WCylofpFsxNTEyg5BHOmj48sP9cUFXbtwxmUgrIn+ZdfBEpzE91EThnA8JRgAWtXU8STj5TwjfarOiEOa34FXq4YTD8UqgsnCrlQlmA814eDbEBLjmfkHaZauOL+Ly6qdxRGd18CN1vyqxEOZCVaGG+rl4RJtba/qcVN6udEDD/nIeR7FpVCVuMpfu24iVmEzlv2sb2F4I16WDJ092pu7mxzUt49F8+0svIa2Awrt85oDqa3dQxTPZ6Y5yfCEQhuU90l2wVYUgGYyEAvVzlcXQDLG8o1cxCS9eCFY2Chgxvoa7wi13RSzCA/nimso9Z9m3nVh4jfMbitBdAvrpPRnwj8iXsTyxvYO/We7zZnJnbAR39J/v/b03S09aCjS4c/LI/CgC3rQGd/7/Nnjm5aODFWjdxKrh2W6SKToFNAwD2DlWP4Wp5A3AeCpza2jAarIDBR767FSqpGXDVtmnyDYaJ5PuHQnz9xUNM=" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDwCCLaZyQuRFlbDR98m2imUkT3PrkIvp4" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service android:name=".utility.maps.navigation.ForegroundService" />
+
+
     </application>
 
 </manifest>
