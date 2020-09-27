@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.arkapp.carparknaviagation.viewModels.HomePageViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/parent"
         android:layout_width="match_parent"
@@ -30,49 +37,66 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvSearchBar"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:clickable="true"
             android:focusable="true"
             app:cardBackgroundColor="@color/white"
-            app:cardElevation="8dp"
+            app:cardElevation="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:rippleColor="@color/colorPrimary">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:padding="8dp"
-                android:src="@drawable/ic_search"
-                app:tint="@color/colorPrimaryCustomDark" />
-
-            <TextView
-                android:id="@+id/tvSearchBar"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="42dp"
-                android:layout_marginEnd="8dp"
-                android:ellipsize="end"
-                android:gravity="center_vertical"
-                android:singleLine="true"
-                android:text="@string/search_destination"
-                android:textStyle="bold" />
-        </com.google.android.material.card.MaterialCardView>
+                android:layout_height="wrap_content">
 
-        <fragment
-            android:id="@+id/autocompleteFragment"
-            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/cvSearchBar"
-            app:layout_constraintEnd_toEndOf="@+id/cvSearchBar"
-            app:layout_constraintStart_toStartOf="@+id/cvSearchBar"
-            app:layout_constraintTop_toTopOf="@+id/cvSearchBar" />
+                <ImageView
+                    android:id="@+id/ivSearchIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintBottom_toBottomOf="@+id/etSearchBar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/etSearchBar"
+                    app:tint="@color/colorPrimaryCustomDark" />
+
+                <EditText
+                    android:id="@+id/etSearchBar"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="@string/search_destination"
+                    android:imeOptions="actionSearch"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivSearchIcon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSearchResult"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etSearchBar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvSetting"

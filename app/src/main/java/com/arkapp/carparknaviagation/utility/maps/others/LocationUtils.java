@@ -1,4 +1,4 @@
-package com.arkapp.carparknaviagation.utility.maps;
+package com.arkapp.carparknaviagation.utility.maps.others;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

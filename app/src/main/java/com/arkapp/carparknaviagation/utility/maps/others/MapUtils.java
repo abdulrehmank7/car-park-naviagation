@@ -1,12 +1,10 @@
-package com.arkapp.carparknaviagation.utility.maps;
+package com.arkapp.carparknaviagation.utility.maps.others;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.VectorDrawable;
-import android.location.Address;
-import android.location.Geocoder;
 import android.text.TextUtils;
 
 import androidx.core.content.ContextCompat;
@@ -20,9 +18,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import java.util.List;
-import java.util.Locale;
 
 import static com.arkapp.carparknaviagation.utility.Constants.GOOGLE_KEY;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.printLog;
@@ -38,10 +33,10 @@ public class MapUtils {
     private static boolean isLastLoop;
     private static float zoomLevel;
 
-    public static MarkerOptions addCustomCurrentMaker(Context context,
-                                                      double lat,
-                                                      double log,
-                                                      int drawable) {
+    public static MarkerOptions getCustomMaker(Context context,
+                                               double lat,
+                                               double log,
+                                               int drawable) {
 
         //used to set the custom marker image on current location marker
         MarkerOptions marker = new MarkerOptions();
@@ -85,27 +80,6 @@ public class MapUtils {
         Canvas canvas = new Canvas(bitmap);
         vectorDrawable.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
-    }
-
-    public static String getLocationAddress(Context context, double lat, double log) {
-        try {
-            Geocoder geocoder;
-            List<Address> addresses;
-            geocoder = new Geocoder(context, Locale.getDefault());
-
-            addresses = geocoder.getFromLocation(lat, log, 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
-
-            String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
-            String city = addresses.get(0).getLocality();
-            String state = addresses.get(0).getAdminArea();
-            String country = addresses.get(0).getCountryName();
-            String postalCode = addresses.get(0).getPostalCode();
-            String knownName = addresses.get(0).getFeatureName();
-            return address;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "";
     }
 
     /**

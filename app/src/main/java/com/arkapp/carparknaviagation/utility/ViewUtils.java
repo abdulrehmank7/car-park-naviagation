@@ -1,6 +1,5 @@
 package com.arkapp.carparknaviagation.utility;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface.OnClickListener;
 import android.graphics.drawable.Drawable;
@@ -137,15 +136,12 @@ public class ViewUtils {
         recyclerView.setAdapter(adapter);
     }
 
-    public static void hideKeyboard(@NotNull Activity activity) {
+    public static void hideKeyboard(@NotNull Context context, View focusedView) {
 
-        InputMethodManager inputManager = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager inputManager = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
 
-        // check if no view has focus:
-        View currentFocusedView = activity.getCurrentFocus();
-        if (currentFocusedView != null) {
-            inputManager.hideSoftInputFromWindow(currentFocusedView.getWindowToken(),
-                                                 InputMethodManager.HIDE_NOT_ALWAYS);
+        if (focusedView != null) {
+            inputManager.hideSoftInputFromWindow(focusedView.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
     }
 }

@@ -27,9 +27,9 @@ import java.util.List;
 import static androidx.navigation.fragment.NavHostFragment.findNavController;
 import static com.arkapp.carparknaviagation.ui.main.MainActivity.gpsListener;
 import static com.arkapp.carparknaviagation.utility.Constants.SPLASH_TIME;
-import static com.arkapp.carparknaviagation.utility.maps.LocationUtils.getGPSSettingTask;
-import static com.arkapp.carparknaviagation.utility.maps.LocationUtils.startLocationUpdates;
-import static com.arkapp.carparknaviagation.utility.maps.MapUtils.REQUEST_CHECK_SETTINGS;
+import static com.arkapp.carparknaviagation.utility.maps.others.LocationUtils.getGPSSettingTask;
+import static com.arkapp.carparknaviagation.utility.maps.others.LocationUtils.startLocationUpdates;
+import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.REQUEST_CHECK_SETTINGS;
 
 public class SplashFragment extends Fragment {
 

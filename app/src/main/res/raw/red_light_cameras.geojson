@@ -1,0 +1,6012 @@
+{
+  "type": "FeatureCollection",
+  "name": "SPF_DTRLS",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Airport Road",
+        "description": "Airport Road by Ubi Road 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34782.2494",
+        "Y_ADDR": "35321.7365",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.894261",
+        "LATITUDE": "1.335711",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Macpherson Road",
+        "INC_CRC": "2BE9FE0C75C85D6C",
+        "Field_1": "Airport Road",
+        "ID": "90"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.894261000121404,
+          1.335710999981316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Boon Lay Dr",
+        "description": "Boon Lay Dr by Corporation Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "14916.7922",
+        "Y_ADDR": "36425.1733",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.715758",
+        "LATITUDE": "1.345688",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Boon Lay Way",
+        "INC_CRC": "1A587F2840424FA9",
+        "Field_1": "Boon Lay Dr",
+        "ID": "91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.715758000404705,
+          1.345688000265617
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rivervale Drive",
+        "description": "Rivervale Drive by Sengkang East Way",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36118.5477",
+        "Y_ADDR": "41189.8772",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.90627",
+        "LATITUDE": "1.38878",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sengkang East Avenue",
+        "INC_CRC": "C99B25210B58205E",
+        "Field_1": "Rivervale Drive",
+        "ID": "92"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.906270000343198,
+          1.388779999750993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 5",
+        "description": "Tampines Avenue 5 by Tampines Street 71",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "39425.9348",
+        "Y_ADDR": "37559.2668",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.935988",
+        "LATITUDE": "1.355945",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Simei Avenue",
+        "INC_CRC": "176B4C120DB5F27C",
+        "Field_1": "Tampines Avenue 5",
+        "ID": "93"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9359880003218,
+          1.355944999713474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tiong Bahru",
+        "description": "Tiong Bahru by Lower Delta Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27077.2166",
+        "Y_ADDR": "29878.7171",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.825027",
+        "LATITUDE": "1.286487",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Outram Road",
+        "INC_CRC": "C10E79A47DFC453A",
+        "Field_1": "Tiong Bahru",
+        "ID": "94"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8250269998547,
+          1.286487000030194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 5",
+        "description": "Tampines Avenue 5 by Tampines Street 71",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "39486.8093",
+        "Y_ADDR": "37569.2213",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.936535",
+        "LATITUDE": "1.356035",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Avenue 10",
+        "INC_CRC": "45ED66843F335E38",
+        "Field_1": "Tampines Avenue 5",
+        "ID": "95"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.936535000328504,
+          1.356035000212588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hougang Avenue 3",
+        "description": "Hougang Avenue 3 by Defu Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34363.1061",
+        "Y_ADDR": "36482.7632",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.890495",
+        "LATITUDE": "1.346211",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Eunos Link",
+        "INC_CRC": "A32239F3F04CD755",
+        "Field_1": "Hougang Avenue 3",
+        "ID": "100"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.890494999944906,
+          1.346211000034411
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Clementi Avenue 6",
+        "description": "Clementi Avenue 6 by Clementi Loop",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "20304.237",
+        "Y_ADDR": "34197.9875",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.764168",
+        "LATITUDE": "1.325548",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "PIE",
+        "INC_CRC": "DB316D8057F2A05D",
+        "Field_1": "Clementi Avenue 6",
+        "ID": "37"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.764168000305702,
+          1.325548000095981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 1",
+        "description": "Ang Mo Kio Avenue 1ÿby Marymount Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29107.2527",
+        "Y_ADDR": "38471.8227",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.843268",
+        "LATITUDE": "1.3642",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upper Thomson",
+        "INC_CRC": "A6332C17DDB87A1D",
+        "Field_1": "Ang Mo Kio Avenue 1",
+        "ID": "47"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.843268000218302,
+          1.364199999579786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Choa Chu Kang Road",
+        "description": "Choa Chu Kang Road by Choa Chu Kang Way",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "19189.5171",
+        "Y_ADDR": "39824.8509",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.75415",
+        "LATITUDE": "1.376435",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bukit Batok Road",
+        "INC_CRC": "9EFA6BEF98AB1EB4",
+        "Field_1": "Choa Chu Kang Road",
+        "ID": "52"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.754149999581102,
+          1.37643500029191
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Brickland Road",
+        "description": "Brickland Road by Choa Chu Kang Avenue 3",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "17099.9784",
+        "Y_ADDR": "39810.6643",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.735374",
+        "LATITUDE": "1.376306",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bukit Batok Road",
+        "INC_CRC": "97DE645626926EFE",
+        "Field_1": "Brickland Road",
+        "ID": "116"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.735373999583402,
+          1.376306000237414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Fernvale Road",
+        "description": "Fernvale Road by Sengkang West Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32714.9396",
+        "Y_ADDR": "41438.5878",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.875686",
+        "LATITUDE": "1.39103",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Fernvale Road (end)",
+        "INC_CRC": "DEDC3DE28C39F4B4",
+        "Field_1": "Fernvale Road",
+        "ID": "126"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.875685999889001,
+          1.391030000064394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yio Chu Kang Road",
+        "description": "Yio Chu Kang Road by Yio Chu Kang Link",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32563.2065",
+        "Y_ADDR": "37809.9579",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.874322",
+        "LATITUDE": "1.358214",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Serangoon Garden Way",
+        "INC_CRC": "4FFD3A3116AC2EE9",
+        "Field_1": "Yio Chu Kang Road",
+        "ID": "131"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.874321999934196,
+          1.35821400023861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 4",
+        "description": "Tampines Avenue 4 by Tampines Avenue 3",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "39679.9288",
+        "Y_ADDR": "36791.3339",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.93827",
+        "LATITUDE": "1.349",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bedok Reservoir Road",
+        "INC_CRC": "807FE0696D62E7ED",
+        "Field_1": "Tampines Avenue 4",
+        "ID": "141"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.938269999994304,
+          1.349000000164866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mandai Road",
+        "description": "Mandai Road by Mandai Lake Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21888.332",
+        "Y_ADDR": "43637.9532",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.7784",
+        "LATITUDE": "1.41092",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jln ulu Sembawang",
+        "INC_CRC": "A2927AC2EF9F5F75",
+        "Field_1": "Mandai Road",
+        "ID": "151"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.778400000184703,
+          1.410919999893148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Commonwealth Avenue",
+        "description": "Commonwealth Avenue by Holland Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "23530.2766",
+        "Y_ADDR": "32110.1517",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.793156",
+        "LATITUDE": "1.306667",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Queensway",
+        "INC_CRC": "D3A8235E0F348B17",
+        "Field_1": "Commonwealth Avenue",
+        "ID": "6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.793156000151995,
+          1.306666999993172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yio Chu Kang Road",
+        "description": "Yio Chu Kang Road by Munshi Abdullah Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27782.146",
+        "Y_ADDR": "40230.9569",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.831361",
+        "LATITUDE": "1.380109",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Lentor Avenue",
+        "INC_CRC": "DA90C083EE87FA33",
+        "Field_1": "Yio Chu Kang Road",
+        "ID": "11"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.831360999793205,
+          1.38010899964836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Loyang Avenue",
+        "description": "Loyang Avenue by Pasir Ris Drive 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "42591.8313",
+        "Y_ADDR": "38408.8584",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.964436",
+        "LATITUDE": "1.363627",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "TPE",
+        "INC_CRC": "C3D17644CEE1F8C5",
+        "Field_1": "Loyang Avenue",
+        "ID": "21"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.964435999697798,
+          1.36362700015022
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Punggol Drive",
+        "description": "Punggol Drive by Punggol Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36254.2577",
+        "Y_ADDR": "43100.618",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.90749",
+        "LATITUDE": "1.40606",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Punggol East",
+        "INC_CRC": "04BBE892DDBD7EE8",
+        "Field_1": "Punggol Drive",
+        "ID": "190"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.907489999851904,
+          1.406060000379429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang East Avenue",
+        "description": "Sengkang East Avenue by Sengkang Central",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34761.5191",
+        "Y_ADDR": "40952.6555",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.894076",
+        "LATITUDE": "1.386635",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sengkang East Road",
+        "INC_CRC": "2EB43A7EAA3E1DA8",
+        "Field_1": "Sengkang East Avenue",
+        "ID": "195"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.894075999824096,
+          1.386634999938154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New Upper Changi Road",
+        "description": "New Upper Changi Road by Chai Chee Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "37991.7805",
+        "Y_ADDR": "33893.0952",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.9231",
+        "LATITUDE": "1.32279",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bedok Road",
+        "INC_CRC": "1660B7776903C737",
+        "Field_1": "New Upper Changi Road",
+        "ID": "200"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.923099999648201,
+          1.32279000013222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Street 41",
+        "description": "Tampines Street 41 by Tampines Avenue 7",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "40578.7697",
+        "Y_ADDR": "37667.4606",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.946347",
+        "LATITUDE": "1.356923",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Avenue 4",
+        "INC_CRC": "C0C698C5EC13D613",
+        "Field_1": "Tampines Street 41",
+        "ID": "205"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.946346999745501,
+          1.356922999668965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yio Chu Kang Road",
+        "description": "Yio Chu Kang Road by Thomson Hills Drive",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27817.6468",
+        "Y_ADDR": "40223.3271",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.83168",
+        "LATITUDE": "1.38004",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upper Thomson Road",
+        "INC_CRC": "9AAD93CF2080A674",
+        "Field_1": "Yio Chu Kang Road",
+        "ID": "210"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.831679999973801,
+          1.380039999616959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Pasir Ris Drive 12",
+        "description": "Pasir Ris Drive 12 by (Exit) TPE",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "39004.8388",
+        "Y_ADDR": "39766.7701",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.932205",
+        "LATITUDE": "1.375909",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Avenue 10",
+        "INC_CRC": "721B62FDFD07109B",
+        "Field_1": "Pasir Ris Drive 12",
+        "ID": "96"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.932204999979803,
+          1.37590900040585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bukit Batok Road",
+        "description": "Bukit Batok Road by Bt Batok West Avenue 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "17867.9193",
+        "Y_ADDR": "38339.875",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.742275",
+        "LATITUDE": "1.363005",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "PIE",
+        "INC_CRC": "B34BA20205A0CDDB",
+        "Field_1": "Bukit Batok Road",
+        "ID": "97"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.742275000078394,
+          1.363005000016477
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lor Chuan",
+        "description": "Lor Chuan by Serangoon Avenue 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "31804.8914",
+        "Y_ADDR": "37495.9133",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.867508",
+        "LATITUDE": "1.355374",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Boundary Road",
+        "INC_CRC": "5D461C8CA50BEBE3",
+        "Field_1": "Lor Chuan",
+        "ID": "98"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.867508000389194,
+          1.355373999853351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 1",
+        "description": "Ang Mo Kio Avenue 1 by Lor Chuan",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "31413.6026",
+        "Y_ADDR": "37347.6271",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.863992",
+        "LATITUDE": "1.354033",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Boundary Road",
+        "INC_CRC": "5AFF466CDCEE4213",
+        "Field_1": "Ang Mo Kio Avenue 1",
+        "ID": "99"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.863991999871203,
+          1.35403299979879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upper Thomson Road",
+        "description": "Upper Thomson Road by Ang Mo Kio Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27453.1777",
+        "Y_ADDR": "38918.6543",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.828405",
+        "LATITUDE": "1.368241",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Thomson Road",
+        "INC_CRC": "B1FDFAC25BAF5B9B",
+        "Field_1": "Upper Thomson Road",
+        "ID": "101"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.828404999834007,
+          1.368240999755815
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Admiralty Road",
+        "description": "Admiralty Road by Marsiling Lane",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21732.6239",
+        "Y_ADDR": "47412.5459",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.777",
+        "LATITUDE": "1.445056",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Woodlands Centre Road",
+        "INC_CRC": "9B4CAADD163A70C4",
+        "Field_1": "Admiralty Road",
+        "ID": "102"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.776999999663104,
+          1.445056000085458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong West Avenue 4",
+        "description": "Jurong West Avenue 4 by Jurong West St 64",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "13472.7034",
+        "Y_ADDR": "36436.8572",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.702782",
+        "LATITUDE": "1.345793",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Pioneer Road North",
+        "INC_CRC": "549E966C030DDE94",
+        "Field_1": "Jurong West Avenue 4",
+        "ID": "103"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.702782000200102,
+          1.345793000015894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Canberra Link",
+        "description": "Canberra Link by Yishun Industrial Park A",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27713.0443",
+        "Y_ADDR": "47065.7051",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.83074",
+        "LATITUDE": "1.44192",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Yishun Avenue 2",
+        "INC_CRC": "9A248FE45B36029A",
+        "Field_1": "Canberra Link",
+        "ID": "104"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.830740000392595,
+          1.441920000026659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jln Eunos",
+        "description": "Jln Eunos by PIE",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36037.2938",
+        "Y_ADDR": "34211.4872",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.905538",
+        "LATITUDE": "1.32567",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Hougang Avenue 3",
+        "INC_CRC": "11E50714779CD9B8",
+        "Field_1": "Jln Eunos",
+        "ID": "105"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.905537999969297,
+          1.325670000112541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Toh Tuck Avenue",
+        "description": "Toh Tuck Avenue by Toh Tuck Link",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "19669.6782",
+        "Y_ADDR": "34748.5587",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.758466",
+        "LATITUDE": "1.330527",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "PIE",
+        "INC_CRC": "D9B6DCEEA13E8B7C",
+        "Field_1": "Toh Tuck Avenue",
+        "ID": "106"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.758465999793302,
+          1.3305269999798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Buangkok Green",
+        "description": "Buangkok Green by Hougang Street 51",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34053.97",
+        "Y_ADDR": "40307.7651",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.887718",
+        "LATITUDE": "1.380803",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 5",
+        "INC_CRC": "B1BDA907CEE6348E",
+        "Field_1": "Buangkok Green",
+        "ID": "107"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.887718000053994,
+          1.380803000364891
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hougang Avenue 3",
+        "description": "Hougang Avenue 3 by Lor Ah Soo",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34352.9638",
+        "Y_ADDR": "37121.1121",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.890404",
+        "LATITUDE": "1.351984",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Hougang Avenue 2",
+        "INC_CRC": "17A59DE26CCC6516",
+        "Field_1": "Hougang Avenue 3",
+        "ID": "108"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.890403999690193,
+          1.351983999773952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hougang Avenue 3",
+        "description": "Hougang Avenue 3 by Lor Ah Soo",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34411.0554",
+        "Y_ADDR": "37164.3484",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.890926",
+        "LATITUDE": "1.352375",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Euonos Link",
+        "INC_CRC": "A759436633F18A69",
+        "Field_1": "Hougang Avenue 3",
+        "ID": "109"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.890925999605102,
+          1.35237499998117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Choa Chu Kang Way",
+        "description": "Choa Chu Kang Way by Choa Chu Kang North 6",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "17914.246",
+        "Y_ADDR": "42069.0172",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.74269",
+        "LATITUDE": "1.39673",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sungei Kadut Drive",
+        "INC_CRC": "CF406951C648EF52",
+        "Field_1": "Choa Chu Kang Way",
+        "ID": "238"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.742689999799893,
+          1.396729999847966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tuas West Road",
+        "description": "Tuas West Road by Tuas Avenue 7",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "6817.2783",
+        "Y_ADDR": "35222.8442",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.64298",
+        "LATITUDE": "1.33481",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tuas South Avenue 3",
+        "INC_CRC": "9A3708AD1AFAB6E1",
+        "Field_1": "Tuas West Road",
+        "ID": "215"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.642980000020401,
+          1.334809999562294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lim Chu Kang Road",
+        "description": "Lim Chu Kang Road by Old Choa Chu Kang Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "12636.6542",
+        "Y_ADDR": "39562.2014",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.695268",
+        "LATITUDE": "1.374057",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jalan Bahar",
+        "INC_CRC": "8A5BCAC9518CAE2A",
+        "Field_1": "Lim Chu Kang Road",
+        "ID": "220"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.695267999710694,
+          1.374057000269163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sembawang Avenue",
+        "description": "Sembawang Avenue by Sembawang Drive",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26649.4992",
+        "Y_ADDR": "47203.2639",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.821183",
+        "LATITUDE": "1.443164",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Gambas Avenue",
+        "INC_CRC": "6B1440E5677DB078",
+        "Field_1": "Sembawang Avenue",
+        "ID": "225"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.821182999692297,
+          1.443163999837019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upp Changi Road",
+        "description": "Upper Changi Road by Simei Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "41282.455",
+        "Y_ADDR": "35255.1875",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.952669",
+        "LATITUDE": "1.335107",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jalan Tanjong",
+        "INC_CRC": "70EEC6703CE490E6",
+        "Field_1": "Upp Changi Road",
+        "ID": "230"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.952669000032998,
+          1.335107000098396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang East Road",
+        "description": "Sengkang East Road by Sengkang Square",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34642.4282",
+        "Y_ADDR": "41491.1526",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.893006",
+        "LATITUDE": "1.391505",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Compassvale Drive",
+        "INC_CRC": "9A305883288B99E4",
+        "Field_1": "Sengkang East Road",
+        "ID": "235"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.893006000450697,
+          1.391505000240424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bedok North Avenue 1",
+        "description": "Bedok North Avenue 1 by Bedok North Street 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "38437.3691",
+        "Y_ADDR": "34346.1374",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.927104",
+        "LATITUDE": "1.326887",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "New Upper Changi Road",
+        "INC_CRC": "DD0F14FE28D34070",
+        "Field_1": "Bedok North Avenue 1",
+        "ID": "64"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.927103999773394,
+          1.326886999896896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Guillemard Road Road",
+        "description": "Guillemard Road Road by Geylang Lorong 22",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "33502.2529",
+        "Y_ADDR": "32544.7294",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.882759",
+        "LATITUDE": "1.310597",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "City",
+        "INC_CRC": "02E055A97B5A8D45",
+        "Field_1": "Guillemard Road Road",
+        "ID": "69"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.882758999923794,
+          1.310597000037172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tiong Bahru Road",
+        "description": "Tiong Bahru Road by Lower Delta Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27145.4384",
+        "Y_ADDR": "29839.1312",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.82564",
+        "LATITUDE": "1.286129",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Leng Kee Road",
+        "INC_CRC": "C2CBAC0EA39AC5A3",
+        "Field_1": "Tiong Bahru Road",
+        "ID": "79"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.825640000362398,
+          1.286129000077922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lor Chuan",
+        "description": "Lor Chuan by Ang Mo Kio Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "31478.7067",
+        "Y_ADDR": "37340.4406",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.864577",
+        "LATITUDE": "1.353968",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "CTE",
+        "INC_CRC": "C2482F0DB44CD9B8",
+        "Field_1": "Lor Chuan",
+        "ID": "84"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.864577000392998,
+          1.35396800014471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 1",
+        "description": "Ang Mo Kio Avenue 1 by Ang Mo Kio Avenue 6",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29026.2347",
+        "Y_ADDR": "38499.4662",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.84254",
+        "LATITUDE": "1.36445",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 8",
+        "INC_CRC": "CF05C67BCAF0DD06",
+        "Field_1": "Ang Mo Kio Avenue 1",
+        "ID": "89"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.842540000036806,
+          1.364450000443575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 8",
+        "description": "Tampines Avenue 8 by Tampines Avenue 3",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "38787.3782",
+        "Y_ADDR": "37111.9645",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.93025",
+        "LATITUDE": "1.3519",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Avenue 1",
+        "INC_CRC": "42D16C64422BAC43",
+        "Field_1": "Tampines Avenue 8",
+        "ID": "124"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.930250000049895,
+          1.351899999837031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong Town Hall Road",
+        "description": "Jurong Town Hall Road by Pandan Gardens",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "18198.8348",
+        "Y_ADDR": "33691.842",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.74525",
+        "LATITUDE": "1.32097",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "AYE",
+        "INC_CRC": "1221F5F890796633",
+        "Field_1": "Jurong Town Hall Road",
+        "ID": "160"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.745250000390996,
+          1.320970000210959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 8",
+        "description": "Ang Mo Kio Avenue 8 by Ang Mo Kio Street 31",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29995.2192",
+        "Y_ADDR": "38690.5451",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.851247",
+        "LATITUDE": "1.366178",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 3",
+        "INC_CRC": "26FEA14EA381AC80",
+        "Field_1": "Ang Mo Kio Avenue 8",
+        "ID": "165"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.851246999827595,
+          1.366178000370697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Toa Payoh Lorong 6",
+        "description": "Toa Payoh Lorong 6 by Kim Keat Link",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30355.0466",
+        "Y_ADDR": "34886.5504",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.85448",
+        "LATITUDE": "1.331776",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Toa Payoh East",
+        "INC_CRC": "2670FCFA1B62417C",
+        "Field_1": "Toa Payoh Lorong 6",
+        "ID": "175"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.854480000124695,
+          1.331775999870438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Brickland Road",
+        "description": "Brickland Road by Choa Chu Kang Avenue 6",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "17741.6482",
+        "Y_ADDR": "39414.0059",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.74114",
+        "LATITUDE": "1.372719",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bukit Batok West Avenue 5",
+        "INC_CRC": "0FADCFE022FD974B",
+        "Field_1": "Brickland Road",
+        "ID": "180"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.741140000224306,
+          1.372719000335349
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tuas South Avenue 3",
+        "description": "Tuas South Avenue 3 by Tuas South Street 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "5056.4347",
+        "Y_ADDR": "32414.3662",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.62716",
+        "LATITUDE": "1.30941",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tuas South Avenue 1",
+        "INC_CRC": "27718C5525658834",
+        "Field_1": "Tuas South Avenue 3",
+        "ID": "185"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.627159999621796,
+          1.30941000035609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Toh Tuck Avenue",
+        "description": "Toh Tuck Avenue by Toh Tuck Link",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "19750.5866",
+        "Y_ADDR": "34773.325",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.759193",
+        "LATITUDE": "1.330751",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Boon Lay Way",
+        "INC_CRC": "0384E4D370813B25",
+        "Field_1": "Toh Tuck Avenue",
+        "ID": "110"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.759192999714998,
+          1.330751000433336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Pasir Ris Drive 1",
+        "description": "Pasir Ris Drive 1 by Pasir Ris Dr 4",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "42039.4808",
+        "Y_ADDR": "38904.3161",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.959473",
+        "LATITUDE": "1.368108",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Loyang Avenue",
+        "INC_CRC": "8F7B83DF3F70448B",
+        "Field_1": "Pasir Ris Drive 1",
+        "ID": "111"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.959472999866094,
+          1.368107999625849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Canberra Road",
+        "description": "Canberra Road by Sembawang Vista",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26814.8701",
+        "Y_ADDR": "47699.3025",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.822669",
+        "LATITUDE": "1.44765",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sembawang Road",
+        "INC_CRC": "0E8DB01890F024B4",
+        "Field_1": "Canberra Road",
+        "ID": "112"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.822668999915606,
+          1.447650000288749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bukit Panjang Road",
+        "description": "Bukit Panjang Rd by Pending Rd",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21188.5795",
+        "Y_ADDR": "39902.5262",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.772113",
+        "LATITUDE": "1.377138",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Choa Chu Kang Rd",
+        "INC_CRC": "324AC6E8DC2D3198",
+        "Field_1": "Bukit Panjang Road",
+        "ID": "113"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.772112999574603,
+          1.377137999612432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Alexandra Road",
+        "description": "Alexandra Road by Commonwealth Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "25214.5345",
+        "Y_ADDR": "30460.6848",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.80829",
+        "LATITUDE": "1.29175",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tiong Bahru Road",
+        "INC_CRC": "AC46846EEF669305",
+        "Field_1": "Alexandra Road",
+        "ID": "36"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.808289999696996,
+          1.291750000045935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "West Coast H'way",
+        "description": "West Coast H'way by Wholesale Centre",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21669.3378",
+        "Y_ADDR": "30084.8979",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.776435",
+        "LATITUDE": "1.288351",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Pasir Panjang Road",
+        "INC_CRC": "2A0D62F1DB34ADD3",
+        "Field_1": "West Coast H'way",
+        "ID": "38"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.776434999598806,
+          1.288351000168855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "West Coast H'way",
+        "description": "West Coast H'way by Wholesale Centre",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21687.6997",
+        "Y_ADDR": "30029.0571",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.7766",
+        "LATITUDE": "1.287846",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Pandan Garden",
+        "INC_CRC": "554BCC064BD692C6",
+        "Field_1": "West Coast H'way",
+        "ID": "39"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.776599999869703,
+          1.287846000436493
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upp Thomson Road",
+        "description": "Upp Thomson Road by Jln Todak",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28139.6028",
+        "Y_ADDR": "37264.4532",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.834573",
+        "LATITUDE": "1.353281",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Braddell Road",
+        "INC_CRC": "A5A399CAC2ABC494",
+        "Field_1": "Upp Thomson Road",
+        "ID": "40"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.834572999740402,
+          1.35328100031589
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upper Thomson Road",
+        "description": "Upper Thomson Road by Jln Pelatina",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28269.5882",
+        "Y_ADDR": "37040.4286",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.835741",
+        "LATITUDE": "1.351255",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sembwang Road",
+        "INC_CRC": "520E6C6CC4D7930B",
+        "Field_1": "Upper Thomson Road",
+        "ID": "41"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.835741000058704,
+          1.351254999756518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Whitley Road",
+        "description": "Whitley Road by Mount Pleasant Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27294.5799",
+        "Y_ADDR": "34078.6811",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.82698",
+        "LATITUDE": "1.32447",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Stevens Road",
+        "INC_CRC": "DB235074256FDA9C",
+        "Field_1": "Whitley Road",
+        "ID": "42"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.826980000364898,
+          1.324469999914675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Eunos Link",
+        "description": "Eunos Link by Airport Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "35048.116",
+        "Y_ADDR": "35480.8606",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.89665",
+        "LATITUDE": "1.33715",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Hougang Avenue 3",
+        "INC_CRC": "09409E67BF027859",
+        "Field_1": "Eunos Link",
+        "ID": "43"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.896649999762602,
+          1.337150000258293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Eunos Link",
+        "description": "Eunos Link by Bedok Reservoir Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "35921.8734",
+        "Y_ADDR": "34654.1154",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.904501",
+        "LATITUDE": "1.329673",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "PIE",
+        "INC_CRC": "FBD74FBB9529FF3A",
+        "Field_1": "Eunos Link",
+        "ID": "44"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.904501000425299,
+          1.329672999976032
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jalan Eunos",
+        "description": "Jalan Eunos by Bedok Reservior Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "35959.6021",
+        "Y_ADDR": "34601.8146",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.90484",
+        "LATITUDE": "1.3292",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Hougang Avenue 3",
+        "INC_CRC": "26512E72668859D2",
+        "Field_1": "Jalan Eunos",
+        "ID": "45"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.904839999908504,
+          1.32919999966962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Marymount Road",
+        "description": "Marymount Road by Ang Mo Kio Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29042.9282",
+        "Y_ADDR": "38447.8278",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.84269",
+        "LATITUDE": "1.363983",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 6",
+        "INC_CRC": "B31B1ABC23B3EB79",
+        "Field_1": "Marymount Road",
+        "ID": "46"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.842689999841696,
+          1.363982999693122
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 1",
+        "description": "Ang Mo Kio Avenue 1 by CTE",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30677.2045",
+        "Y_ADDR": "37480.1981",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.857375",
+        "LATITUDE": "1.355232",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 10",
+        "INC_CRC": "F8FC2D2AB29D0493",
+        "Field_1": "Ang Mo Kio Avenue 1",
+        "ID": "48"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.857374999559198,
+          1.355231999744245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 1",
+        "description": "Ang Mo Kio Avenue 1 by CTE",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30538.8722",
+        "Y_ADDR": "37551.1859",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.856132",
+        "LATITUDE": "1.355874",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Lor Chuan",
+        "INC_CRC": "440630F9545368FB",
+        "Field_1": "Ang Mo Kio Avenue 1",
+        "ID": "49"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.856132000100999,
+          1.355874000175365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 3",
+        "description": "Ang Mo Kio Avenue 3 by Ang Mo Kio Industrial Park 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "31440.8453",
+        "Y_ADDR": "39150.3303",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.864237",
+        "LATITUDE": "1.370336",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "CTE",
+        "INC_CRC": "D32DC84B7FA95379",
+        "Field_1": "Ang Mo Kio Avenue 3",
+        "ID": "50"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.864236999869803,
+          1.370336000173765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Woodlands Avenue 12",
+        "description": "Woodlands Avenue 12 by Woodlands Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "24177.8453",
+        "Y_ADDR": "45414.7387",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.798973",
+        "LATITUDE": "1.426989",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "SLE",
+        "INC_CRC": "8F0E8D111E9FCBFA",
+        "Field_1": "Woodlands Avenue 12",
+        "ID": "51"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.798973000353001,
+          1.426989000143619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bukit Batok East Avenue 3",
+        "description": "Bukit Batok East Avenue 3 by Toh Tuck Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "19867.7971",
+        "Y_ADDR": "35527.885",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.760246",
+        "LATITUDE": "1.337575",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Toh Tuck Avenue",
+        "INC_CRC": "1540DA9E7C82B135",
+        "Field_1": "Bukit Batok East Avenue 3",
+        "ID": "53"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.760246000359004,
+          1.337574999650737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Beach Road",
+        "description": "Beach Road by Ophir Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30926.5559",
+        "Y_ADDR": "31358.0011",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.859615",
+        "LATITUDE": "1.299865",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bras Basah Road",
+        "INC_CRC": "B69607AD865C7B10",
+        "Field_1": "Beach Road",
+        "ID": "54"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8596149999087,
+          1.299864999659463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yio Chu Kang Road",
+        "description": "Yio Chu Kang Road by Jalan Kelulut",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32856.9585",
+        "Y_ADDR": "40524.4672",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.876962",
+        "LATITUDE": "1.382763",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jalan Kayu",
+        "INC_CRC": "E06CD69C07F1B2ED",
+        "Field_1": "Yio Chu Kang Road",
+        "ID": "55"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.876962000086195,
+          1.382763000023572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 6",
+        "description": "Ang Mo Kio Avenue 6 by Ang Mo Kio Avenue 5",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29254.1463",
+        "Y_ADDR": "39895.5861",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.844588",
+        "LATITUDE": "1.377076",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Lentor Avenue",
+        "INC_CRC": "3583C2AA9B587FAE",
+        "Field_1": "Ang Mo Kio Avenue 6",
+        "ID": "56"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.844587999586594,
+          1.377076000213641
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mandai Road",
+        "description": "Mandai Road by BKE",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21059.6937",
+        "Y_ADDR": "43545.8651",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.770954",
+        "LATITUDE": "1.410087",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sembawang Road",
+        "INC_CRC": "FB510B0FB838EF6A",
+        "Field_1": "Mandai Road",
+        "ID": "57"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7709540002773,
+          1.410086999886932
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Paya Lebar Road",
+        "description": "Paya Lebar Road by Ubi Avenue 3",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34285.1342",
+        "Y_ADDR": "34669.2219",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.889794",
+        "LATITUDE": "1.32981",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upper Paya Lebar Road",
+        "INC_CRC": "5514CD78610E2385",
+        "Field_1": "Paya Lebar Road",
+        "ID": "58"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8897939997387,
+          1.32981000030654
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sembawang Road",
+        "description": "Sembawang Road by Yishun Avenue 5",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27258.2207",
+        "Y_ADDR": "45738.5853",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.826653",
+        "LATITUDE": "1.429918",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Canberra Road",
+        "INC_CRC": "1E48A914625C679E",
+        "Field_1": "Sembawang Road",
+        "ID": "59"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.826652999821107,
+          1.429918000113298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Pioneer Road North",
+        "description": "Pioneer Road North by Jurong West Avenue 5",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "12390.949",
+        "Y_ADDR": "36050.125",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.693062",
+        "LATITUDE": "1.342295",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "AYE",
+        "INC_CRC": "104E59DEC23A64C2",
+        "Field_1": "Pioneer Road North",
+        "ID": "114"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.693061999569196,
+          1.342294999794492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Brickland Road",
+        "description": "Brickland Road x Choa Chu Kang Grove",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "18311.7696",
+        "Y_ADDR": "39233.0837",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.746263",
+        "LATITUDE": "1.371083",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bukit Batok Road",
+        "INC_CRC": "8B10009F55F2D49B",
+        "Field_1": "Brickland Road",
+        "ID": "115"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.746263000235501,
+          1.37108299972829
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bishan Street 11",
+        "description": "Bishan Street 11 by Bishan St 12",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29862.2439",
+        "Y_ADDR": "36658.8409",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.850052",
+        "LATITUDE": "1.347804",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bishan Street 21",
+        "INC_CRC": "383702F66E30B3D3",
+        "Field_1": "Bishan Street 11",
+        "ID": "117"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.850051999797401,
+          1.347803999746967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Pioneer Road North",
+        "description": "Pioneer Road North by Jurong West Avenue 5",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "12425.1117",
+        "Y_ADDR": "35991.7394",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.693369",
+        "LATITUDE": "1.341767",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "PIE",
+        "INC_CRC": "7D462CF6ABA4728A",
+        "Field_1": "Pioneer Road North",
+        "ID": "118"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6933690001906,
+          1.341767000442629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bukit Panjang Road",
+        "description": "Bukit Panjang Road by Gangsa Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "20617.6823",
+        "Y_ADDR": "40196.1181",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.766983",
+        "LATITUDE": "1.379793",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "BKE",
+        "INC_CRC": "B7D4994B299DBBE3",
+        "Field_1": "Bukit Panjang Road",
+        "ID": "119"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.766982999762007,
+          1.379792999783548
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Dunearn Road",
+        "description": "Dunearn Road by Kheam Hock Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26471.2558",
+        "Y_ADDR": "33905.1926",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.819582",
+        "LATITUDE": "1.322901",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bukit Timah Road",
+        "INC_CRC": "D9670874E8D7D6DC",
+        "Field_1": "Dunearn Road",
+        "ID": "125"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.819581999590795,
+          1.322901000227764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Punggol East",
+        "description": "Punggol East by Punggol Central",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "37263.6665",
+        "Y_ADDR": "41918.6045",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.91656",
+        "LATITUDE": "1.39537",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Punggol Drive",
+        "INC_CRC": "EF4455CF328E4C20",
+        "Field_1": "Punggol East",
+        "ID": "127"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.916560000435197,
+          1.395369999821613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang East Drive",
+        "description": "Sengkang East Drive by Sengkang East Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "35790.8306",
+        "Y_ADDR": "40396.0493",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.903325",
+        "LATITUDE": "1.381601",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Punggol East",
+        "INC_CRC": "C84EABB88A2CCC87",
+        "Field_1": "Sengkang East Drive",
+        "ID": "128"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.903324999977599,
+          1.381600999636625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Compassvale Drive",
+        "description": "Compassvale Drive by Sengkang Central",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34807.6968",
+        "Y_ADDR": "41203.9935",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.894491",
+        "LATITUDE": "1.388908",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Rivervale Lane",
+        "INC_CRC": "FE8F5D28000B2515",
+        "Field_1": "Compassvale Drive",
+        "ID": "129"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.894491000006596,
+          1.38890799955689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang East Way",
+        "description": "Sengkang East Way by Sengkang Square",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34839.8468",
+        "Y_ADDR": "41663.1019",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.89478",
+        "LATITUDE": "1.39306",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Compassvale Road",
+        "INC_CRC": "82B9FAF9208B6F53",
+        "Field_1": "Sengkang East Way",
+        "ID": "130"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.894779999912103,
+          1.393060000376323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yishun Avenue 3",
+        "description": "Yishun Avenue 3 by Yishun Ring Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27790.9417",
+        "Y_ADDR": "44974.9536",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.83144",
+        "LATITUDE": "1.423012",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Yishun Avenue 2",
+        "INC_CRC": "8115A1A36D376562",
+        "Field_1": "Yishun Avenue 3",
+        "ID": "132"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.831440000331298,
+          1.423012000075523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Woodlands Avenue 5",
+        "description": "Woodlands Avenue 5 by Marsiling Rise",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "22394.7488",
+        "Y_ADDR": "46632.3129",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.78295",
+        "LATITUDE": "1.438",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Woodlands Avenue 3",
+        "INC_CRC": "E0F3015451CD6863",
+        "Field_1": "Woodlands Avenue 5",
+        "ID": "133"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.782950000022197,
+          1.438000000106484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yio Chu Kang Road",
+        "description": "Yio Chu Kang Road by Ang Mo Kio Avenue 5",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28124.7999",
+        "Y_ADDR": "40330.5848",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.83444",
+        "LATITUDE": "1.38101",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upp Thomson Road",
+        "INC_CRC": "F49D0BDB9F95FC4B",
+        "Field_1": "Yio Chu Kang Road",
+        "ID": "134"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.834439999770396,
+          1.381010000182787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Thomson Road",
+        "description": "Thomson Road by Marymount Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28457.1118",
+        "Y_ADDR": "35739.5153",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.837426",
+        "LATITUDE": "1.33949",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "City",
+        "INC_CRC": "05B4E7FF583F5EBA",
+        "Field_1": "Thomson Road",
+        "ID": "135"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837425999954505,
+          1.339489999836618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Still Road",
+        "description": "Still Road by East Coast Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36381.4603",
+        "Y_ADDR": "32298.5507",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.90863",
+        "LATITUDE": "1.30837",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Still Road South",
+        "INC_CRC": "467790A40C4899C7",
+        "Field_1": "Still Road",
+        "ID": "136"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9086299997617,
+          1.308370000414682
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Telok Kurau Road",
+        "description": "Telok Kurau Road by East Coast Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36796.2391",
+        "Y_ADDR": "32354.4038",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.912357",
+        "LATITUDE": "1.308875",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Changi Road",
+        "INC_CRC": "AE1647C3C42B3485",
+        "Field_1": "Telok Kurau Road",
+        "ID": "137"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.912356999602096,
+          1.308875000328396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Marine Parade Road",
+        "description": "Marine Parade Road by Marine Parade Central",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36184.4907",
+        "Y_ADDR": "31783.2656",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.90686",
+        "LATITUDE": "1.30371",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Amber Road",
+        "INC_CRC": "3A9D407228080DEB",
+        "Field_1": "Marine Parade Road",
+        "ID": "138"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.906860000369505,
+          1.303710000247634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Still Road South",
+        "description": "Still Road South by Marine Parade Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36533.9373",
+        "Y_ADDR": "32015.4835",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.91",
+        "LATITUDE": "1.30581",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "ECP",
+        "INC_CRC": "495EB9B7CA0BC687",
+        "Field_1": "Still Road South",
+        "ID": "139"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.909999999919805,
+          1.305810000082604
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New Upp Changi Road",
+        "description": "New Upp Changi Road by Siglap Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "37651.2383",
+        "Y_ADDR": "33731.6436",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.92004",
+        "LATITUDE": "1.32133",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Changi Road",
+        "INC_CRC": "B0D60A27BB8FC2DA",
+        "Field_1": "New Upp Changi Road",
+        "ID": "140"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.920040000015106,
+          1.321330000118762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Geylang East Central",
+        "description": "Geylang East Central  by Geylang East Avenue 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34195.6835",
+        "Y_ADDR": "33499.3373",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.88899",
+        "LATITUDE": "1.31923",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Geylang East Avenue 1",
+        "INC_CRC": "503DE2B1662BEC42",
+        "Field_1": "Geylang East Central",
+        "ID": "142"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.888989999750194,
+          1.319230000322794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Victoria Street",
+        "description": "Victoria Street by Bras Basah Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30079.0779",
+        "Y_ADDR": "30916.247",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.852",
+        "LATITUDE": "1.29587",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Middle Road",
+        "INC_CRC": "4A25B20982D35D6B",
+        "Field_1": "Victoria Street",
+        "ID": "143"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.852000000307299,
+          1.295870000312396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 7",
+        "description": "Tampines Avenue 7 by Tampines Avenue 4",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "40592.4596",
+        "Y_ADDR": "37636.1686",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.94647",
+        "LATITUDE": "1.35664",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Central 3",
+        "INC_CRC": "2FA68C3FCF0AA9B3",
+        "Field_1": "Tampines Avenue 7",
+        "ID": "144"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.946469999985297,
+          1.35663999983042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Marymount Road",
+        "description": "Marymount Road by Sin Ming Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28918.9545",
+        "Y_ADDR": "38052.4114",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.841576",
+        "LATITUDE": "1.360407",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 1",
+        "INC_CRC": "2E0A26A7613836D9",
+        "Field_1": "Marymount Road",
+        "ID": "145"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.841576000371205,
+          1.36040699979807
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yio Chu Kang Road",
+        "description": "Yio Chu Kang Road by Yio Chu Kang Link",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32548.5158",
+        "Y_ADDR": "37846.0051",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.87419",
+        "LATITUDE": "1.35854",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Boundary Road",
+        "INC_CRC": "0EDAE0DA6DF1B532",
+        "Field_1": "Yio Chu Kang Road",
+        "ID": "146"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.874189999800294,
+          1.358540000438881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Adam Road",
+        "description": "Adam Road by Dunearn Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "25808.8585",
+        "Y_ADDR": "34030.0361",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.81363",
+        "LATITUDE": "1.32403",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Farrer Road",
+        "INC_CRC": "1450BBCB5B66123E",
+        "Field_1": "Adam Road",
+        "ID": "147"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.813629999830297,
+          1.324030000243752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tuas South Avenue 3",
+        "description": "Tuas South Avenue 3 by Tuas South Avenue 6",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "4800.0777",
+        "Y_ADDR": "31773.1596",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.624857",
+        "LATITUDE": "1.303611",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tuas South Avenue 8",
+        "INC_CRC": "FA032BC48A4E7067",
+        "Field_1": "Tuas South Avenue 3",
+        "ID": "148"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.624857000303606,
+          1.303610999889754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mandai Road",
+        "description": "Mandai Road by (into) BKE",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21181.551",
+        "Y_ADDR": "43511.8048",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.772049",
+        "LATITUDE": "1.409779",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Woodlands Road",
+        "INC_CRC": "EC01A6F62B527AFA",
+        "Field_1": "Mandai Road",
+        "ID": "149"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.772048999815496,
+          1.409779000246014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Serangoon Avenue 2",
+        "description": "Serangoon Avenue 2 by Lorong Chuan",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "31831.3784",
+        "Y_ADDR": "37468.4911",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.867746",
+        "LATITUDE": "1.355126",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Serangoon Gardens",
+        "INC_CRC": "DD44D54820E3C44D",
+        "Field_1": "Serangoon Avenue 2",
+        "ID": "150"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.867745999759094,
+          1.355125999893403
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong West Avenue 1",
+        "description": "Jurong West Avenue 1 by Jurong West Street 42",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "15060.6031",
+        "Y_ADDR": "36956.1481",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.71705",
+        "LATITUDE": "1.35049",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jurong West Street 51",
+        "INC_CRC": "D2C8EA4A0393C610",
+        "Field_1": "Jurong West Avenue 1",
+        "ID": "152"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.717050000090794,
+          1.350489999975404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong West Avenue 1",
+        "description": "Jurong West Avenue 1 by Jurong West Street 52",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "15091.2072",
+        "Y_ADDR": "36949.0699",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.717325",
+        "LATITUDE": "1.350426",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Corporation Road",
+        "INC_CRC": "71C065EB539A6B81",
+        "Field_1": "Jurong West Avenue 1",
+        "ID": "153"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7173249997401,
+          1.35042599970292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "West Coast Road",
+        "description": "West Coast Road by Clementi Avenue 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "20200.9016",
+        "Y_ADDR": "32119.4025",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.76324",
+        "LATITUDE": "1.30675",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "West Coast Link",
+        "INC_CRC": "355212799237DC46",
+        "Field_1": "West Coast Road",
+        "ID": "154"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7632400004088,
+          1.306750000183751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "West Coast Road",
+        "description": "West Coast Road by Clementi West Street 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "20235.4001",
+        "Y_ADDR": "32063.0084",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.76355",
+        "LATITUDE": "1.30624",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jln Mas Kuning",
+        "INC_CRC": "DC1707713EF1712B",
+        "Field_1": "West Coast Road",
+        "ID": "155"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.763549999625099,
+          1.30623999998035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Victoria Street",
+        "description": "Victoria Street by Rochor Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30499.1975",
+        "Y_ADDR": "31445.6829",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.855775",
+        "LATITUDE": "1.300658",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Lavender Street",
+        "INC_CRC": "EC6F5088FCE448B3",
+        "Field_1": "Victoria Street",
+        "ID": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.855774999871997,
+          1.300658000212735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Victoria Street",
+        "description": "Victoria Street by Arab Street",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30714.7659",
+        "Y_ADDR": "31682.8679",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.857712",
+        "LATITUDE": "1.302803",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Lavender Street",
+        "INC_CRC": "6E9D8E89BD12D380",
+        "Field_1": "Victoria Street",
+        "ID": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.857711999920099,
+          1.302802999564569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Victoria Street",
+        "description": "Victoria Street by Ophir Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30646.1003",
+        "Y_ADDR": "31583.5711",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.857095",
+        "LATITUDE": "1.301905",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bras Basah Road",
+        "INC_CRC": "E4763B6FC9832BFD",
+        "Field_1": "Victoria Street",
+        "ID": "3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.857094999558896,
+          1.301905000281057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lavender Street",
+        "description": "Lavender Street by Jln Besar",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "31001.5494",
+        "Y_ADDR": "32913.3479",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.860289",
+        "LATITUDE": "1.313931",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Balestier Road",
+        "INC_CRC": "0690FA99B641FEA4",
+        "Field_1": "Lavender Street",
+        "ID": "4"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.860289000114605,
+          1.313931000095135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ophir Road",
+        "description": "Ophir Road by Beach Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30897.9541",
+        "Y_ADDR": "31357.0056",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.859358",
+        "LATITUDE": "1.299856",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "ECP",
+        "INC_CRC": "5E573497C28E86E8",
+        "Field_1": "Ophir Road",
+        "ID": "5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.859357999809504,
+          1.299856000291548
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong West Avenue 2",
+        "description": "Jurong West Avenue 2 by Corporation Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "14552.2421",
+        "Y_ADDR": "37099.4783",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.712482",
+        "LATITUDE": "1.351786",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upper Jurong Road",
+        "INC_CRC": "0A7110F6FB9F6C76",
+        "Field_1": "Jurong West Avenue 2",
+        "ID": "7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.712482000070693,
+          1.351786000189608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Boon Lay Way",
+        "description": "Boon Lay Way by Jurong East Central",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "17666.2669",
+        "Y_ADDR": "35479.417",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.740464",
+        "LATITUDE": "1.337136",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jurong Town Hall Road",
+        "INC_CRC": "619D6BC925A0BB50",
+        "Field_1": "Boon Lay Way",
+        "ID": "8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.740464000429398,
+          1.337135999750734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Holland Road",
+        "description": "Holland Road by Sixth Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "22884.2559",
+        "Y_ADDR": "33318.857",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.787351",
+        "LATITUDE": "1.317598",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Holland Avenue",
+        "INC_CRC": "E8226851A53BEF04",
+        "Field_1": "Holland Road",
+        "ID": "9"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.787351000161706,
+          1.317597999616098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upper Aljiunied Road",
+        "description": "Upper Aljiunied Road by Cedar Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32974.1303",
+        "Y_ADDR": "35253.4728",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.878014",
+        "LATITUDE": "1.335094",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upper Serangoon Road",
+        "INC_CRC": "0F2D748EA1164D12",
+        "Field_1": "Upper Aljiunied Road",
+        "ID": "10"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.878013999666805,
+          1.335093999665654
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong West Avenue 2",
+        "description": "Jurong West Avenue 2 by Jln Boon Lay",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "13763.5102",
+        "Y_ADDR": "36589.2144",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.705395",
+        "LATITUDE": "1.347171",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upper Jurong Road",
+        "INC_CRC": "20AAD9D594D2A92E",
+        "Field_1": "Jurong West Avenue 2",
+        "ID": "12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.705394999580093,
+          1.347171000263701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Corporation Road",
+        "description": "Corporation Road by Jurong West Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "14776.8064",
+        "Y_ADDR": "36756.3527",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.7145",
+        "LATITUDE": "1.348683",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jurong West Avenue 2",
+        "INC_CRC": "B4277226A8BA9022",
+        "Field_1": "Corporation Road",
+        "ID": "13"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.714499999559393,
+          1.348683000323228
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bukit Batok East Avenue 3",
+        "description": "Bukit Batok East Avenue 3 by Bukit Batok St 21",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "19420.0023",
+        "Y_ADDR": "36607.9953",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.756222",
+        "LATITUDE": "1.347343",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bukit Batok Central",
+        "INC_CRC": "94503BC1E1B053BD",
+        "Field_1": "Bukit Batok East Avenue 3",
+        "ID": "14"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.756221999633198,
+          1.347342999967698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bukit Panjang Ring Road",
+        "description": "Bukit Panjang Ring Road by Bangkit Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21233.8805",
+        "Y_ADDR": "40170.3377",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.77252",
+        "LATITUDE": "1.37956",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bukit Panjang  Road",
+        "INC_CRC": "3B112C0D054B6CC6",
+        "Field_1": "Bukit Panjang Ring Road",
+        "ID": "15"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.772519999599695,
+          1.379560000114223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upper Changi Road East",
+        "description": "Upper Changi Road East by Xilin Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "41560.8046",
+        "Y_ADDR": "34972.9027",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.95517",
+        "LATITUDE": "1.332554",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bedok Road",
+        "INC_CRC": "73C875CCF61E1231",
+        "Field_1": "Upper Changi Road East",
+        "ID": "16"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.955170000365797,
+          1.332553999692169
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 1",
+        "description": "Tampines Avenue 1 by Tampines Avenue 5",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "40173.8426",
+        "Y_ADDR": "36500.543",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.942708",
+        "LATITUDE": "1.34637",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Avenue 2",
+        "INC_CRC": "456F015F8DC826FF",
+        "Field_1": "Tampines Avenue 1",
+        "ID": "17"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.942707999855202,
+          1.3463699996899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 5",
+        "description": "Tampines Avenue 5 by Tampines Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "40203.0022",
+        "Y_ADDR": "36463.17",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.94297",
+        "LATITUDE": "1.346032",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Avenue 4",
+        "INC_CRC": "6DDD5A8356F2D5C9",
+        "Field_1": "Tampines Avenue 5",
+        "ID": "18"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.942970000374899,
+          1.346032000339077
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Changi Road",
+        "description": "Changi Road by Jalan Eunos",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36018.6223",
+        "Y_ADDR": "33342.4781",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.90537",
+        "LATITUDE": "1.317811",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Geylang Road",
+        "INC_CRC": "56775F76B2B8AD2A",
+        "Field_1": "Changi Road",
+        "ID": "19"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.905370000103503,
+          1.317811000219835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jln Eunos",
+        "description": "Jln Eunos by Changi Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36005.0442",
+        "Y_ADDR": "33369.3475",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.905248",
+        "LATITUDE": "1.318054",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Still Road",
+        "INC_CRC": "BCDD11BBFEA92C02",
+        "Field_1": "Jln Eunos",
+        "ID": "20"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9052480000705,
+          1.318054000031863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Marymount Road",
+        "description": "Marymount Road by Shunfu Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28714.6319",
+        "Y_ADDR": "37015.6607",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.83974",
+        "LATITUDE": "1.351031",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 6",
+        "INC_CRC": "52A08D6A9FAC4033",
+        "Field_1": "Marymount Road",
+        "ID": "22"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.839739999662001,
+          1.351031000380232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upp Bukit Timah Road",
+        "description": "Upp Bukit Timah Road by Old Jurong Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21005.6516",
+        "Y_ADDR": "36740.308",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.77047",
+        "LATITUDE": "1.34854",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Woodlands Road",
+        "INC_CRC": "78BC24729073C3C1",
+        "Field_1": "Upp Bukit Timah Road",
+        "ID": "23"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.770470000241403,
+          1.348540000139043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lower Delta Road",
+        "description": "Lower Delta Road by Jalan Bt Merah",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26928.6403",
+        "Y_ADDR": "29333.8048",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.823692",
+        "LATITUDE": "1.281559",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Delta Road",
+        "INC_CRC": "1103FF73CE4B1553",
+        "Field_1": "Lower Delta Road",
+        "ID": "24"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.823691999560694,
+          1.281558999706209
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bedok South Avenue 1",
+        "description": "Bedok South Avenue 1 by Bedok South Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "39074.9823",
+        "Y_ADDR": "33531.9984",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.932833",
+        "LATITUDE": "1.319524",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upper East Coast Road",
+        "INC_CRC": "88A4C3BED17C7EDF",
+        "Field_1": "Bedok South Avenue 1",
+        "ID": "25"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.932833000148804,
+          1.319523999769164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Marymount Road",
+        "description": "Marymount Road by Thomson Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28490.4987",
+        "Y_ADDR": "35724.8089",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.837726",
+        "LATITUDE": "1.339357",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "City",
+        "INC_CRC": "905EB1A6E6931397",
+        "Field_1": "Marymount Road",
+        "ID": "26"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837725999875104,
+          1.339356999851326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Pasir Ris Drive 1",
+        "description": "Pasir Ris Drive 1 by Pasir Ris St 12",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "42073.9813",
+        "Y_ADDR": "38880.6549",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.959783",
+        "LATITUDE": "1.367894",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Pasir Ris Drive 6",
+        "INC_CRC": "5B8C8BED1B0A2D27",
+        "Field_1": "Pasir Ris Drive 1",
+        "ID": "27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.959782999851001,
+          1.367894000283891
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Newton Road",
+        "description": "Newton Road by Thomson Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29105.8261",
+        "Y_ADDR": "33496.1741",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.843255",
+        "LATITUDE": "1.319202",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Moulmein Road",
+        "INC_CRC": "0E9D004C172E35A8",
+        "Field_1": "Newton Road",
+        "ID": "28"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.843254999960905,
+          1.319201999940272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Woodlands Avenue 3",
+        "description": "Woodlands Avenue 3 by Woodlands Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21305.5884",
+        "Y_ADDR": "45994.8742",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.773163",
+        "LATITUDE": "1.432235",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Woodlands Road",
+        "INC_CRC": "C44A8B0ECE66D0F2",
+        "Field_1": "Woodlands Avenue 3",
+        "ID": "29"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.773163000146596,
+          1.432235000101855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lornie Road",
+        "description": "Lornie Road by Sime Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26375.6662",
+        "Y_ADDR": "35348.527",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.818723",
+        "LATITUDE": "1.335954",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Adam Road",
+        "INC_CRC": "CCBF31D2A7A1E016",
+        "Field_1": "Lornie Road",
+        "ID": "30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.818723000397199,
+          1.335954000071896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Adam Road",
+        "description": "Adam Road by Sime Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26340.9436",
+        "Y_ADDR": "35310.7105",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.818411",
+        "LATITUDE": "1.335612",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Lornie Road",
+        "INC_CRC": "8B84CF854AD89B71",
+        "Field_1": "Adam Road",
+        "ID": "31"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.818410999805593,
+          1.335612000084079
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang East Dr",
+        "description": "Sengkang East Dr by Sengkang East Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "35806.9658",
+        "Y_ADDR": "40449.0152",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.90347",
+        "LATITUDE": "1.38208",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upper Serangoon Road",
+        "INC_CRC": "05548FFAE3A4095D",
+        "Field_1": "Sengkang East Dr",
+        "ID": "32"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.903469999855304,
+          1.382079999608577
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Road",
+        "description": "Tampines Road by Hougang Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34163.5275",
+        "Y_ADDR": "38118.0515",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.888702",
+        "LATITUDE": "1.361",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upp Serangoon Road",
+        "INC_CRC": "792F7E7F69476B80",
+        "Field_1": "Tampines Road",
+        "ID": "33"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.888702000411001,
+          1.361000000099475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Buangkok Green",
+        "description": "Buangkok Green by Hougang St 51",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "33975.847",
+        "Y_ADDR": "40279.1243",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.887016",
+        "LATITUDE": "1.380544",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sengkang East Road",
+        "INC_CRC": "CCB7D1AE57885BFE",
+        "Field_1": "Buangkok Green",
+        "ID": "34"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.887016000329197,
+          1.380544000296332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bukit Panjang Road",
+        "description": "Bukit Panjang Road by Gangsa Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "20691.5767",
+        "Y_ADDR": "40177.0972",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.767647",
+        "LATITUDE": "1.379621",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Choa Chu Kang Road",
+        "INC_CRC": "4098032549D29A7F",
+        "Field_1": "Bukit Panjang Road",
+        "ID": "35"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.767646999966601,
+          1.379621000226481
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang East Road",
+        "description": "Sengkang East Road by Compassvale Bow",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34309.0327",
+        "Y_ADDR": "40652.4331",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.89001",
+        "LATITUDE": "1.38392",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sengkang East Avenue",
+        "INC_CRC": "D1CB93395DC2D14F",
+        "Field_1": "Sengkang East Road",
+        "ID": "191"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.890010000275495,
+          1.383919999834249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang East Road",
+        "description": "Sengkang East Road by TPE",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34940.3206",
+        "Y_ADDR": "42351.3233",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.895683",
+        "LATITUDE": "1.399284",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Punggol Way",
+        "INC_CRC": "E1435E0212233A92",
+        "Field_1": "Sengkang East Road",
+        "ID": "192"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.895682999910704,
+          1.39928399997362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang East Way",
+        "description": "Sengkang East Way by Sengkang East Drive",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36238.1887",
+        "Y_ADDR": "40952.2552",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.907345",
+        "LATITUDE": "1.386631",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sengkang East Avenue",
+        "INC_CRC": "77D32DAAAFDC508C",
+        "Field_1": "Sengkang East Way",
+        "ID": "193"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.907344999728494,
+          1.386630999745047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang East Avenue",
+        "description": "Sengkang East Avenue by Rivervale Drive",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "35645.712",
+        "Y_ADDR": "40394.0548",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.902021",
+        "LATITUDE": "1.381583",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Rivervale Link",
+        "INC_CRC": "8689B87C9FAF66B9",
+        "Field_1": "Sengkang East Avenue",
+        "ID": "194"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.902021000401703,
+          1.381583000400892
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bedok North Road",
+        "description": "Bedok North Road by Bedok North Avenue 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "38787.4711",
+        "Y_ADDR": "34762.2447",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.93025",
+        "LATITUDE": "1.33065",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bedok North Avenue 3",
+        "INC_CRC": "BC1449A06CD6BFAB",
+        "Field_1": "Bedok North Road",
+        "ID": "196"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.930249999732595,
+          1.330649999564388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bedok North Road",
+        "description": "Bedok North Road by Bedok North Avenue 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "38853.2438",
+        "Y_ADDR": "34754.286",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.930841",
+        "LATITUDE": "1.330578",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bedok North Avenue 1",
+        "INC_CRC": "FB16ED020ECF77CA",
+        "Field_1": "Bedok North Road",
+        "ID": "197"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.930840999678097,
+          1.330577999664858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sims Avenue",
+        "description": "Sims Avenue by Geylang Lorong 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32310.997",
+        "Y_ADDR": "32636.2644",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.872055",
+        "LATITUDE": "1.311425",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sims Way",
+        "INC_CRC": "ABBC8E85F04FFB29",
+        "Field_1": "Sims Avenue",
+        "ID": "198"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.872054999650302,
+          1.311424999641969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "New Upper Changi Road",
+        "description": "New Upper Changi Road by Bedok South Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "38488.1315",
+        "Y_ADDR": "33977.1505",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.92756",
+        "LATITUDE": "1.32355",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Changi Road",
+        "INC_CRC": "C06CCA1BD44AC0F7",
+        "Field_1": "New Upper Changi Road",
+        "ID": "199"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.927560000040501,
+          1.32355000002456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Havelock Road",
+        "description": "Havelock Road by Outram Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28205.2682",
+        "Y_ADDR": "30193.6328",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.835163",
+        "LATITUDE": "1.289335",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ganges Avenue",
+        "INC_CRC": "38D434FC21894500",
+        "Field_1": "Havelock Road",
+        "ID": "201"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.835162999652496,
+          1.289334999995872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 10",
+        "description": "Tampines Avenue 10 by (Into) TPE",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "38929.7214",
+        "Y_ADDR": "39723.7533",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.93153",
+        "LATITUDE": "1.37552",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Pasir Ris Drive 12",
+        "INC_CRC": "5F7FC14ACA86EE55",
+        "Field_1": "Tampines Avenue 10",
+        "ID": "202"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.931529999782995,
+          1.375519999571846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jalan Boon Lay",
+        "description": "Jalan Boon Lay by Jalan Ahmad Ibrahim",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "14277.5274",
+        "Y_ADDR": "33819.7229",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.710015",
+        "LATITUDE": "1.322125",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jurong Pier Road",
+        "INC_CRC": "77AD98779608DF8E",
+        "Field_1": "Jalan Boon Lay",
+        "ID": "203"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.710015000038695,
+          1.32212499985903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 2",
+        "description": "Tampines Avenue 2 by Tampines Street 22",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "41108.8759",
+        "Y_ADDR": "36883.1765",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.95111",
+        "LATITUDE": "1.34983",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Avenue 5",
+        "INC_CRC": "FC02FA71E5DC92A8",
+        "Field_1": "Tampines Avenue 2",
+        "ID": "204"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.951109999704698,
+          1.349829999826529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yishun Avenue 1",
+        "description": "Yishun Avenue 1 by Sembawang Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26880.8449",
+        "Y_ADDR": "43883.4704",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.823262",
+        "LATITUDE": "1.413141",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Mandai Avenue",
+        "INC_CRC": "DF35C1DFDA59AC6E",
+        "Field_1": "Yishun Avenue 1",
+        "ID": "206"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.823262000030198,
+          1.413140999590086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Woodlands Street 32",
+        "description": "Woodlands Street 32 by Woodlands Avenue 3",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21995.2215",
+        "Y_ADDR": "45993.1984",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.77936",
+        "LATITUDE": "1.43222",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Woodlands Street 12",
+        "INC_CRC": "7A579F93D00EECEF",
+        "Field_1": "Woodlands Street 32",
+        "ID": "207"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.779360000021796,
+          1.432220000056901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Woodlands Avenue 5",
+        "description": "Woodlands Avenue 5 by Woodlands Drive 50",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "23267.4381",
+        "Y_ADDR": "46352.3192",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.790792",
+        "LATITUDE": "1.435468",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Woodlands Avenue 4",
+        "INC_CRC": "A889708714FB60A2",
+        "Field_1": "Woodlands Avenue 5",
+        "ID": "208"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.790791999696907,
+          1.435467999843488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yio Chu Kang Road",
+        "description": "Yio Chu Kang Road by Hougang Avenue 9",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32864.7651",
+        "Y_ADDR": "39630.9112",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.877032",
+        "LATITUDE": "1.374682",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Buangkok Green",
+        "INC_CRC": "00D2C4296F83F87E",
+        "Field_1": "Yio Chu Kang Road",
+        "ID": "209"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.877031999994401,
+          1.374682000345073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jalan Boon Lay",
+        "description": "Jalan Boon Lay by Jurong West Avenue 4",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "13738.468",
+        "Y_ADDR": "36547.0865",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.70517",
+        "LATITUDE": "1.34679",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jalan Bahar",
+        "INC_CRC": "88601F9C1DD7B097",
+        "Field_1": "Jalan Boon Lay",
+        "ID": "211"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.705170000359502,
+          1.346789999568708
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sembawang Drive",
+        "description": "Sembawang Drive by Admiralty Drive",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26261.1226",
+        "Y_ADDR": "48069.9529",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.817693",
+        "LATITUDE": "1.451002",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sembawang Way",
+        "INC_CRC": "FFA114F67D0043AF",
+        "Field_1": "Sembawang Drive",
+        "ID": "212"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.817693000146903,
+          1.451001999576274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Commonwealth Avenue West",
+        "description": "Commonwealth Avenue West by Ghim Moh Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "23094.465",
+        "Y_ADDR": "32290.7279",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.78924",
+        "LATITUDE": "1.3083",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Holland Avenue",
+        "INC_CRC": "4CA450BB76071FBC",
+        "Field_1": "Commonwealth Avenue West",
+        "ID": "236"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.789239999927105,
+          1.308300000004229
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tuas South Avenue 3",
+        "description": "Tuas South Avenue 3 by Tuas Soth Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "4970.8321",
+        "Y_ADDR": "32175.7511",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.626391",
+        "LATITUDE": "1.307252",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tuas South Avenue 6",
+        "INC_CRC": "D8939F1970916E06",
+        "Field_1": "Tuas South Avenue 3",
+        "ID": "237"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.626390999820103,
+          1.307251999914189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong West Street 61",
+        "description": "Jurong West Street 61 by Jurong West Street 63",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "13019.9314",
+        "Y_ADDR": "35582.1356",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.698714",
+        "LATITUDE": "1.338063",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Boon Lay Way",
+        "INC_CRC": "8FD2DDF44CE35F64",
+        "Field_1": "Jurong West Street 61",
+        "ID": "239"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.698713999844202,
+          1.338063000259576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Corporation Road",
+        "description": "Corporation Road by Boon Lay Drive",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "14945.9497",
+        "Y_ADDR": "36421.4123",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.71602",
+        "LATITUDE": "1.345654",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "PIE",
+        "INC_CRC": "3733110B6A33BAB1",
+        "Field_1": "Corporation Road",
+        "ID": "240"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7160200004285,
+          1.345653999883369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong West Street 63",
+        "description": "Jurong West Street 63 by Jurong West Street 64",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "13648.2741",
+        "Y_ADDR": "35606.0965",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.70436",
+        "LATITUDE": "1.33828",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Boon Lay Way",
+        "INC_CRC": "903CD574F7A13A51",
+        "Field_1": "Jurong West Street 63",
+        "ID": "213"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.704360000372006,
+          1.338279999725888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong West Avenue 1",
+        "description": "Jurong West Avenue 1 by Corporation Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "14789.8287",
+        "Y_ADDR": "36786.2072",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.714617",
+        "LATITUDE": "1.348953",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jurong West Avenue 2",
+        "INC_CRC": "7EDB215F222E2BA1",
+        "Field_1": "Jurong West Avenue 1",
+        "ID": "214"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.714616999732797,
+          1.3489529998736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Pasir Ris Drive 1",
+        "description": "Pasir Ris Drive 1 by Pasir Ris Street 11",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "42370.8038",
+        "Y_ADDR": "38569.5121",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.96245",
+        "LATITUDE": "1.36508",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Pasir Ris Street 12",
+        "INC_CRC": "45BF156B388D2B99",
+        "Field_1": "Pasir Ris Drive 1",
+        "ID": "216"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.962449999798594,
+          1.365080000117041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Punggol Way",
+        "description": "Punggol Way by Punggol Central",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "35183.4594",
+        "Y_ADDR": "43164.609",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.897868",
+        "LATITUDE": "1.406639",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Punggol Field",
+        "INC_CRC": "73785BFAB974601E",
+        "Field_1": "Punggol Way",
+        "ID": "217"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.897868000258001,
+          1.406639000083391
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong West Avenue 2",
+        "description": "Jurong West Avenue 2 by Jurong West Street 23",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "14199.2224",
+        "Y_ADDR": "36883.2112",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.70931",
+        "LATITUDE": "1.34983",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "PIE",
+        "INC_CRC": "4BA52ECD09871F1B",
+        "Field_1": "Jurong West Avenue 2",
+        "ID": "218"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.709309999700096,
+          1.349830000225924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Boon Lay Way",
+        "description": "Boon Lay Way by Jurong East Street 11",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "18397.8612",
+        "Y_ADDR": "34826.1132",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.747038",
+        "LATITUDE": "1.331228",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jurong East Central",
+        "INC_CRC": "FEED97F1E403A1D3",
+        "Field_1": "Boon Lay Way",
+        "ID": "219"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.747037999717804,
+          1.331227999896048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Boundary Road",
+        "description": "Boundary Road by Yio Chu Kang Link",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32451.4774",
+        "Y_ADDR": "37535.6195",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.873318",
+        "LATITUDE": "1.355733",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Paya Lebar Road",
+        "INC_CRC": "54CE1ACE5F1CD3DC",
+        "Field_1": "Boundary Road",
+        "ID": "221"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.873317999682399,
+          1.355732999893525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upper Thomson Road",
+        "description": "Upper Thomson Road by Marymount Lane",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28502.071",
+        "Y_ADDR": "36679.4019",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.83783",
+        "LATITUDE": "1.34799",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jalan Pelatina",
+        "INC_CRC": "E23AE2AA4209542D",
+        "Field_1": "Upper Thomson Road",
+        "ID": "222"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837829999619601,
+          1.34798999968858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upper Serangoon Road",
+        "description": "Upper Serangoon Road by Upper Aljunied Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32167.3848",
+        "Y_ADDR": "35770.8394",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.870765",
+        "LATITUDE": "1.339773",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bendemeer Road",
+        "INC_CRC": "33E8D03DF413EA03",
+        "Field_1": "Upper Serangoon Road",
+        "ID": "223"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.870765000432499,
+          1.339772999585952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lornie Road",
+        "description": "Lornie Road by Thomson Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28243.8814",
+        "Y_ADDR": "35987.2028",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.83551",
+        "LATITUDE": "1.34173",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Braddell Road",
+        "INC_CRC": "5304A6C12E1524A4",
+        "Field_1": "Lornie Road",
+        "ID": "224"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.835509999691098,
+          1.341730000137632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Paya Lebar Road",
+        "description": "Paya Lebar Road by Macpherson Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34175.6164",
+        "Y_ADDR": "35051.8087",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.88881",
+        "LATITUDE": "1.33327",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upp Serangoon Road",
+        "INC_CRC": "7C6D9EC1542A30D2",
+        "Field_1": "Paya Lebar Road",
+        "ID": "226"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.888810000054704,
+          1.33326999970372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "West Coast Highway",
+        "description": "West Coast Highway by Pandan Crescent",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "20051.7588",
+        "Y_ADDR": "31663.8379",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.7619",
+        "LATITUDE": "1.30263",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "West Coast Link",
+        "INC_CRC": "23A6CC59513ED0F4",
+        "Field_1": "West Coast Highway",
+        "ID": "227"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.761899999778606,
+          1.302629999675389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Toh Guan Road",
+        "description": "Toh Guan Road by Boon Lay Way",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "18406.989",
+        "Y_ADDR": "34884.9388",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.74712",
+        "LATITUDE": "1.33176",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jurong East Street 11",
+        "INC_CRC": "831D4589124D64B1",
+        "Field_1": "Toh Guan Road",
+        "ID": "228"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.747120000452696,
+          1.33176000006345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong Town Hall Road",
+        "description": "Jurong Town Hall Road by Teban Gardens Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "18179.9124",
+        "Y_ADDR": "33608.9113",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.74508",
+        "LATITUDE": "1.32022",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "AYE",
+        "INC_CRC": "E370307ED8A403AD",
+        "Field_1": "Jurong Town Hall Road",
+        "ID": "229"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.745080000249501,
+          1.320220000002582
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yishun Avenue 2",
+        "description": "Yishun Avenue 2 by Yishun Avenue 7",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27972.1145",
+        "Y_ADDR": "46633.0251",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.833068",
+        "LATITUDE": "1.438007",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sembawang Road",
+        "INC_CRC": "427CB1C011E31DFB",
+        "Field_1": "Yishun Avenue 2",
+        "ID": "231"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.833068000283703,
+          1.438006999552872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rivervale Drive",
+        "description": "Rivervale Drive by Sengkang East Way",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36074.2562",
+        "Y_ADDR": "41164.0012",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.905872",
+        "LATITUDE": "1.388546",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Punggol Road",
+        "INC_CRC": "8850A732C3C24AFE",
+        "Field_1": "Rivervale Drive",
+        "ID": "232"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.905872000091804,
+          1.388545999902851
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upper Thomson Road",
+        "description": "Upper Thomson Road by Tagore Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27202.228",
+        "Y_ADDR": "40475.4392",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.82615",
+        "LATITUDE": "1.38232",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Thomson Road",
+        "INC_CRC": "AF2EECB7C351EFB1",
+        "Field_1": "Upper Thomson Road",
+        "ID": "233"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.826149999609299,
+          1.382319999936496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 6",
+        "description": "Ang Mo Kio Avenue 6 by Ang Mo Kio Avenue 9",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29092.7761",
+        "Y_ADDR": "40695.4843",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.843138",
+        "LATITUDE": "1.38431",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Marymount Road",
+        "INC_CRC": "F9AB7142CDCA86FA",
+        "Field_1": "Ang Mo Kio Avenue 6",
+        "ID": "234"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.843138000089695,
+          1.384309999546424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 6",
+        "description": "Ang Mo Kio Avenue 6 by Ang Mo Kio Avenue 8",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29228.882",
+        "Y_ADDR": "40351.7074",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.844361",
+        "LATITUDE": "1.381201",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 5",
+        "INC_CRC": "CA23AFFF5740065C",
+        "Field_1": "Ang Mo Kio Avenue 6",
+        "ID": "60"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.844361000381298,
+          1.381200999929658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Marine Parade Road",
+        "description": "Marine Parade Road by Still Road South",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36492.761",
+        "Y_ADDR": "31970.0359",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.90963",
+        "LATITUDE": "1.305399",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bedok South Avenue 1",
+        "INC_CRC": "6E3719DFE7CE9E62",
+        "Field_1": "Marine Parade Road",
+        "ID": "61"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.909630000321798,
+          1.305398999697483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lor Ah Soo",
+        "description": "Lor Ah Soo by Hougang Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34210.7348",
+        "Y_ADDR": "37203.1555",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.889126",
+        "LATITUDE": "1.352726",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Hougang Avenue 3",
+        "INC_CRC": "261730A98A0BF740",
+        "Field_1": "Lor Ah Soo",
+        "ID": "62"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.889125999907904,
+          1.352725999723977
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 2",
+        "description": "Tampines Avenue 2 by Tampines Street 31",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "41468.8835",
+        "Y_ADDR": "37135.195",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.954345",
+        "LATITUDE": "1.352109",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Avenue 7",
+        "INC_CRC": "0899305ABFD86E2C",
+        "Field_1": "Tampines Avenue 2",
+        "ID": "63"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.954345000367496,
+          1.35210899965329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bukit Panjang Road",
+        "description": "Bukit Panjang Road by Bangkit Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21355.5096",
+        "Y_ADDR": "39843.6961",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.773613",
+        "LATITUDE": "1.376606",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Woodlands Road",
+        "INC_CRC": "F1BD372DF285C67B",
+        "Field_1": "Bukit Panjang Road",
+        "ID": "65"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.773613000035894,
+          1.376605999812528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 1",
+        "description": "Ang Mo Kio Avenue 1 by Ang Mo Kio Avenue 10",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30271.7769",
+        "Y_ADDR": "37867.3171",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.853732",
+        "LATITUDE": "1.358733",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Lorong Chuan",
+        "INC_CRC": "92337F0197E471DF",
+        "Field_1": "Ang Mo Kio Avenue 1",
+        "ID": "66"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.853731999736695,
+          1.358733000415676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Toa Payoh Lor 6",
+        "description": "Toa Payoh Lor 6 by Kim Keat Link",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30411.0252",
+        "Y_ADDR": "34883.7864",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.854983",
+        "LATITUDE": "1.331751",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Toa Payoh Lorong 4",
+        "INC_CRC": "E854C9723979BE38",
+        "Field_1": "Toa Payoh Lor 6",
+        "ID": "67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.854983000053807,
+          1.331750999745533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Paterson Hill",
+        "description": "Paterson Hill by Grange Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27621.7686",
+        "Y_ADDR": "31336.4241",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.82992",
+        "LATITUDE": "1.29967",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "River Valley Road",
+        "INC_CRC": "8BB69F906EB252E4",
+        "Field_1": "Paterson Hill",
+        "ID": "68"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.829920000284901,
+          1.299670000168967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upper East Coast Road",
+        "description": "Upper East Coast Road by Bedok South Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "39133.5438",
+        "Y_ADDR": "32963.8662",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.933359",
+        "LATITUDE": "1.314386",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bedok Road",
+        "INC_CRC": "F02FB60B50D4F3DC",
+        "Field_1": "Upper East Coast Road",
+        "ID": "70"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.933359000027195,
+          1.314386000367685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hougang Avenue 2",
+        "description": "Hougang Avenue 2 by Hougang Avenue 10",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "33990.3453",
+        "Y_ADDR": "38906.4471",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.887146",
+        "LATITUDE": "1.36813",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Hougang Avenue 3",
+        "INC_CRC": "CDE32962D838A352",
+        "Field_1": "Hougang Avenue 2",
+        "ID": "71"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.887146000427506,
+          1.368130000034998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bedok Reservoir Road",
+        "description": "Bedok Reservoir Road by Bedok North Avenue 3",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "39062.102",
+        "Y_ADDR": "35566.4681",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.932718",
+        "LATITUDE": "1.337923",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Avenue 4",
+        "INC_CRC": "123B013264B9C5A8",
+        "Field_1": "Bedok Reservoir Road",
+        "ID": "72"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.932718000332798,
+          1.337923000199454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Loyang Avenue",
+        "description": "Loyang Avenue by TPE",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "42222.8185",
+        "Y_ADDR": "38038.4116",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.96112",
+        "LATITUDE": "1.360277",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Avenue 7",
+        "INC_CRC": "9F006BDA2FD696CA",
+        "Field_1": "Loyang Avenue",
+        "ID": "73"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.961119999715194,
+          1.360277000083278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hougang Avenue 2",
+        "description": "Hougang Avenue 2 by Hougang Avenue 8",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "33216.8914",
+        "Y_ADDR": "39014.4626",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.880196",
+        "LATITUDE": "1.369107",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 3",
+        "INC_CRC": "F96606FB7737AEBB",
+        "Field_1": "Hougang Avenue 2",
+        "ID": "74"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.880196000373502,
+          1.369107000050156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ulu Pandan Road",
+        "description": "Ulu Pandan Road by Pandan Valley",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21701.2484",
+        "Y_ADDR": "33694.5044",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.776721",
+        "LATITUDE": "1.320995",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Holland Road",
+        "INC_CRC": "BC0703C0E72CF0E9",
+        "Field_1": "Ulu Pandan Road",
+        "ID": "75"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.776720999582295,
+          1.320995000035191
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang East Dr",
+        "description": "Sengkang East Dr by Sengkang East Way",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "36286.5992",
+        "Y_ADDR": "40936.6656",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.90778",
+        "LATITUDE": "1.38649",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upper Serangoon Road",
+        "INC_CRC": "ACC9FB39B2D590F1",
+        "Field_1": "Sengkang East Dr",
+        "ID": "76"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.907780000410398,
+          1.386490000288599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jalan Bahar",
+        "description": "Jalan Bahar by PIE",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "12949.0312",
+        "Y_ADDR": "37429.5193",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.698076",
+        "LATITUDE": "1.35477",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Nanyang Avenue",
+        "INC_CRC": "EF06C29915005930",
+        "Field_1": "Jalan Bahar",
+        "ID": "77"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.698076000048104,
+          1.354769999809352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lower Delta Road",
+        "description": "Lower Delta Road by Bukit Purmei Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26857.5219",
+        "Y_ADDR": "28594.2807",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.823053",
+        "LATITUDE": "1.274871",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Kg Bahru Road",
+        "INC_CRC": "755CA2F492B536C7",
+        "Field_1": "Lower Delta Road",
+        "ID": "78"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.823052999932997,
+          1.274870999592403
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hougang Avenue 3",
+        "description": "Hougang Avenue 3 by Defu Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34410.5163",
+        "Y_ADDR": "36438.7555",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.890921",
+        "LATITUDE": "1.345813",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Hougang Avenue 2",
+        "INC_CRC": "CA2069396B14F8CE",
+        "Field_1": "Hougang Avenue 3",
+        "ID": "80"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.890921000264399,
+          1.345813000148613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Corporation Road",
+        "description": "Corporation Road by Boon Lay Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "14554.459",
+        "Y_ADDR": "36923.2215",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.712502",
+        "LATITUDE": "1.350192",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Boon Lay Way",
+        "INC_CRC": "5883B6153FE131FC",
+        "Field_1": "Corporation Road",
+        "ID": "81"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.712501999931206,
+          1.350192000048475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 6",
+        "description": "Ang Mo Kio Avenue 6 by Ang Mo Kio Avenue 5",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29274.8455",
+        "Y_ADDR": "39951.8687",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.844774",
+        "LATITUDE": "1.377585",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 3",
+        "INC_CRC": "59D4AEA2C46D7DEB",
+        "Field_1": "Ang Mo Kio Avenue 6",
+        "ID": "82"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.844774000345495,
+          1.377584999919034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Holland Road",
+        "description": "Holland Road by Holland Grove Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "22520.3387",
+        "Y_ADDR": "33423.2467",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.784081",
+        "LATITUDE": "1.318542",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ulu Pandan Road",
+        "INC_CRC": "C4F778FB4C9731E6",
+        "Field_1": "Holland Road",
+        "ID": "83"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.784081000104905,
+          1.318541999938715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upper Thomson Road",
+        "description": "Upper Thomson Road by Marymount Lane",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28462.1182",
+        "Y_ADDR": "36753.2659",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.837471",
+        "LATITUDE": "1.348658",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Braddell Road",
+        "INC_CRC": "4FAC3DD65C453799",
+        "Field_1": "Upper Thomson Road",
+        "ID": "85"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837470999953098,
+          1.348658000083804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 8",
+        "description": "Ang Mo Kio Avenue 8 by Ang Mo Kio Avenue 3",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29832.5142",
+        "Y_ADDR": "38953.9333",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.849785",
+        "LATITUDE": "1.36856",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 5",
+        "INC_CRC": "00767CAF39FC4FB0",
+        "Field_1": "Ang Mo Kio Avenue 8",
+        "ID": "86"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.849785000311101,
+          1.368559999659433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Woodlands Avenue 7",
+        "description": "Woodlands Avenue 7 by Woodlands Drive 72",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "24803.6239",
+        "Y_ADDR": "47156.9495",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.804596",
+        "LATITUDE": "1.442745",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Gambas Avenue",
+        "INC_CRC": "39A9DF7F593A394D",
+        "Field_1": "Woodlands Avenue 7",
+        "ID": "87"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.804595999931905,
+          1.442745000150194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Woodlands Avenue 12",
+        "description": "Woodlands Avenue 12 by Woodlands Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "24137.1142",
+        "Y_ADDR": "45375.5957",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.798607",
+        "LATITUDE": "1.426635",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Gambas Avenue",
+        "INC_CRC": "B8867140EFD450E1",
+        "Field_1": "Woodlands Avenue 12",
+        "ID": "88"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.798607000180098,
+          1.426635000442484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sembawang Drive",
+        "description": "Sembawang Drive by Sembawang Vista",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26458.315",
+        "Y_ADDR": "47598.2389",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.819465",
+        "LATITUDE": "1.446736",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Admiralty Road West",
+        "INC_CRC": "70B8D150EA29C994",
+        "Field_1": "Sembawang Drive",
+        "ID": "120"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.819464999887998,
+          1.446736000378538
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 9",
+        "description": "Tampines Avenue 9 by Tampines Street 44",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "41519.4693",
+        "Y_ADDR": "38142.6477",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.9548",
+        "LATITUDE": "1.36122",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Street 43",
+        "INC_CRC": "A6ACC838F1B18F97",
+        "Field_1": "Tampines Avenue 9",
+        "ID": "121"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.954800000307998,
+          1.361219999628323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tampines Avenue 9",
+        "description": "Tampines Avenue 9 by Tampines Street 45",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "41493.8709",
+        "Y_ADDR": "38184.6649",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.95457",
+        "LATITUDE": "1.3616",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Tampines Street 42",
+        "INC_CRC": "95EA6BB9E8197E83",
+        "Field_1": "Tampines Avenue 9",
+        "ID": "122"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.954570000092502,
+          1.361599999902129
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jalan Bukit Merah",
+        "description": "Jalan Bukit Merah by Lower Delta Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26910.0548",
+        "Y_ADDR": "29405.6786",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.823525",
+        "LATITUDE": "1.282209",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Kampong Bahru Road",
+        "INC_CRC": "F6F1B2331738FB5E",
+        "Field_1": "Jalan Bukit Merah",
+        "ID": "123"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.823525000107907,
+          1.282208999596793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Holland Road",
+        "description": "Holland Road  by North Buona Vista Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "23522.9436",
+        "Y_ADDR": "32877.8732",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.79309",
+        "LATITUDE": "1.31361",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ford Avenue",
+        "INC_CRC": "9DFBF52D2018CA9F",
+        "Field_1": "Holland Road",
+        "ID": "156"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.793089999804906,
+          1.313609999675187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jurong West Street 64",
+        "description": "Jurong West Street 64  by Jurong West Street 63",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "13660.851",
+        "Y_ADDR": "35631.1964",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.704473",
+        "LATITUDE": "1.338507",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Boon Lay Way",
+        "INC_CRC": "37BFC538B4416807",
+        "Field_1": "Jurong West Street 64",
+        "ID": "157"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.704472999969695,
+          1.338506999715876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lower Delta Road",
+        "description": "Lower Delta Road by Tiong Bahru Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27134.6431",
+        "Y_ADDR": "29869.9815",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.825543",
+        "LATITUDE": "1.286408",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Jalan Bukit Merah",
+        "INC_CRC": "348891585FCAE0F2",
+        "Field_1": "Lower Delta Road",
+        "ID": "158"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.825543000312393,
+          1.286407999968641
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Woodlands Avenue 7",
+        "description": "Woodlands Avenue 7 by Woodlands Street 83",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "23353.6913",
+        "Y_ADDR": "46757.1327",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.791567",
+        "LATITUDE": "1.439129",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Gambas Avenue",
+        "INC_CRC": "DF87FF5BC372F0E2",
+        "Field_1": "Woodlands Avenue 7",
+        "ID": "159"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.791567000260898,
+          1.439128999844727
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Mo Kio Avenue 3",
+        "description": "Ang Mo Kio Avenue 3 by Ang Mo Kio Industrial Park 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "31379.4144",
+        "Y_ADDR": "39152.6516",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.863685",
+        "LATITUDE": "1.370357",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 12",
+        "INC_CRC": "B20C3EA31CFC8AD5",
+        "Field_1": "Ang Mo Kio Avenue 3",
+        "ID": "161"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.863685000236799,
+          1.370357000280972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Boundary Road",
+        "description": "Boundary Road by Serangoon Avenue 4",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32249.155",
+        "Y_ADDR": "37527.5443",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.8715",
+        "LATITUDE": "1.35566",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Serangoon Avenue 3",
+        "INC_CRC": "0604BEE745A49F82",
+        "Field_1": "Boundary Road",
+        "ID": "162"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.871500000411302,
+          1.35566000020078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Toa Payoh Lorong 6",
+        "description": "Toa Payoh Lorong 6 by Toa Payoh East",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "30542.7898",
+        "Y_ADDR": "35140.2108",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.856167",
+        "LATITUDE": "1.33407",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Toa Payoh Lorong 7",
+        "INC_CRC": "6F7DE8DA32A67F5C",
+        "Field_1": "Toa Payoh Lorong 6",
+        "ID": "163"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.856166999638404,
+          1.33407000021406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Upper Thomson Road",
+        "description": "Upper Thomson Road by (Into) SLE",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26377.597",
+        "Y_ADDR": "41751.4777",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.81874",
+        "LATITUDE": "1.39386",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Sembawang Road",
+        "INC_CRC": "9D0BFCF1AFF3FCC7",
+        "Field_1": "Upper Thomson Road",
+        "ID": "164"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.818739999796193,
+          1.393860000078756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Buyong Road",
+        "description": "Buyong Road by Orchard Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "29083.0197",
+        "Y_ADDR": "31389.5018",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.84305",
+        "LATITUDE": "1.30015",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Handy Road",
+        "INC_CRC": "8930ADA9F0DB2D0D",
+        "Field_1": "Buyong Road",
+        "ID": "166"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.843050000159593,
+          1.300149999711618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Woodlands Avenue 6",
+        "description": "Woodlands Avenue 6 by Woodlands Street 64",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "24672.9665",
+        "Y_ADDR": "46433.7907",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.803422",
+        "LATITUDE": "1.436205",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Woodlands Avenue 5",
+        "INC_CRC": "9068DB698EF835F8",
+        "Field_1": "Woodlands Avenue 6",
+        "ID": "167"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.803422000200896,
+          1.436204999806117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lavender Street",
+        "description": "Lavender Street by Kallang Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "31417.8937",
+        "Y_ADDR": "32358.1564",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.86403",
+        "LATITUDE": "1.30891",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Beach Road",
+        "INC_CRC": "9D742CF88E088DD2",
+        "Field_1": "Lavender Street",
+        "ID": "168"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.864030000028293,
+          1.308910000421841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Farrer Road",
+        "description": "Farrer Road by Holland Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "24708.1837",
+        "Y_ADDR": "32601.4196",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.80374",
+        "LATITUDE": "1.31111",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Queensway",
+        "INC_CRC": "BDFDBBCF05D2E88E",
+        "Field_1": "Farrer Road",
+        "ID": "169"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.803740000324396,
+          1.311110000055879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Dunearn Road",
+        "description": "Dunearn Road by Adam Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "25758.778",
+        "Y_ADDR": "34022.2961",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.81318",
+        "LATITUDE": "1.32396",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "University Road",
+        "INC_CRC": "F5B77F08E112E06B",
+        "Field_1": "Dunearn Road",
+        "ID": "170"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.813180000293798,
+          1.32395999969025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bedok North Avenue 1",
+        "description": "Bedok North Avenue 1 by Chai Chee Street",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "38406.8772",
+        "Y_ADDR": "34307.9879",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.92683",
+        "LATITUDE": "1.326542",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bedok North Road",
+        "INC_CRC": "6E616FDB74EDED89",
+        "Field_1": "Bedok North Avenue 1",
+        "ID": "171"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.926829999916507,
+          1.326542000218393
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "International Road",
+        "description": "International Road by Corporation Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "15480.2899",
+        "Y_ADDR": "34879.4175",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.720822",
+        "LATITUDE": "1.331709",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Yung Kuang Road",
+        "INC_CRC": "92A2EA94E960C950",
+        "Field_1": "International Road",
+        "ID": "172"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.720822000433998,
+          1.331708999770935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mandai Road",
+        "description": "Mandai Road by Mandai Lake Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21935.5169",
+        "Y_ADDR": "43624.0197",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.778824",
+        "LATITUDE": "1.410794",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "BKE",
+        "INC_CRC": "3B5EC248431CC747",
+        "Field_1": "Mandai Road",
+        "ID": "173"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.778823999780599,
+          1.410794000431529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Macpherson Road",
+        "description": "Macpherson Road  by Genting Lane",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32390.5389",
+        "Y_ADDR": "34586.254",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.87277",
+        "LATITUDE": "1.32906",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bendemeer Road",
+        "INC_CRC": "4B2101441B8DDC5D",
+        "Field_1": "Macpherson Road",
+        "ID": "174"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.872770000357406,
+          1.329060000041788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Holland Avenue",
+        "description": "Holland Avenue by Taman Warna",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "23830.5454",
+        "Y_ADDR": "32532.5431",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.795854",
+        "LATITUDE": "1.310487",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Commonwealth Avenue",
+        "INC_CRC": "D8835E01A254C0FD",
+        "Field_1": "Holland Avenue",
+        "ID": "176"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.795854000255204,
+          1.310487000025316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "AYE (exit)",
+        "description": "AYE (exit) by Jurong Town Hall Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "18243.3618",
+        "Y_ADDR": "34005.431",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.74565",
+        "LATITUDE": "1.323806",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Pandan Gardens",
+        "INC_CRC": "18AB7BABC38B0104",
+        "Field_1": "AYE (exit)",
+        "ID": "177"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.745649999764595,
+          1.323806000043387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Orchard Boulevard",
+        "description": "Orchard Boulevard by Tomlinson Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27224.4606",
+        "Y_ADDR": "31752.1863",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.82635",
+        "LATITUDE": "1.30343",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Grange Road",
+        "INC_CRC": "788E2F885AEAAF9E",
+        "Field_1": "Orchard Boulevard",
+        "ID": "178"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.826350000097193,
+          1.303429999700431
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sin Ming  Avenue",
+        "description": "Sin Ming  Avenue  by Marymount Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28927.8574",
+        "Y_ADDR": "38116.2133",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.841656",
+        "LATITUDE": "1.360984",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Bishan Street 22",
+        "INC_CRC": "D1E84A20A19B82BE",
+        "Field_1": "Sin Ming  Avenue",
+        "ID": "179"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.841655999958604,
+          1.360984000253442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Chua Chu Kang Avenue 4",
+        "description": "Chua Chu Kang Avenue 4 by Chua Chu Kang Avenue 1",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "17406.8163",
+        "Y_ADDR": "40250.9617",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.738131",
+        "LATITUDE": "1.380288",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Chua Chu Kang Avenue 3",
+        "INC_CRC": "8DEA37434ADFE12A",
+        "Field_1": "Chua Chu Kang Avenue 4",
+        "ID": "181"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.738131000262499,
+          1.380288000117302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Geylang Lorong 1",
+        "description": "Geylang Lorong 1 by Sims Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32324.797",
+        "Y_ADDR": "32639.2502",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.872179",
+        "LATITUDE": "1.311452",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Upper Boon Keng Road",
+        "INC_CRC": "9F779C30FCFFA961",
+        "Field_1": "Geylang Lorong 1",
+        "ID": "182"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.872178999809705,
+          1.31145200022409
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hougang Avenue 2",
+        "description": "Hougang Avenue 2 by Hougang Avenue 10",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "33956.2921",
+        "Y_ADDR": "38861.1106",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.88684",
+        "LATITUDE": "1.36772",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 3",
+        "INC_CRC": "85EBB13BA4B3DEA8",
+        "Field_1": "Hougang Avenue 2",
+        "ID": "183"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.886839999733397,
+          1.367719999979734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Boundary Road",
+        "description": "Boundary Road by Serangoon Avenue 2",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "31870.7742",
+        "Y_ADDR": "37492.1546",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.8681",
+        "LATITUDE": "1.35534",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Ang Mo Kio Avenue 1",
+        "INC_CRC": "91ADBC9B8E12074F",
+        "Field_1": "Boundary Road",
+        "ID": "184"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.868099999582299,
+          1.355339999940568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hougang Avenue 6",
+        "description": "Hougang Avenue 6 by Hougang Avenue 8",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34607.414",
+        "Y_ADDR": "39843.9163",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.892691",
+        "LATITUDE": "1.376608",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Buangkok Drive",
+        "INC_CRC": "519C11DE4DE60C3A",
+        "Field_1": "Hougang Avenue 6",
+        "ID": "186"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.892691000161804,
+          1.376608000333673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Punggol Field",
+        "description": "Punggol Field by Punggol Walk",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "35378.446",
+        "Y_ADDR": "42702.5216",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.89962",
+        "LATITUDE": "1.40246",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Punggol Way",
+        "INC_CRC": "54A7AF0A180C1D76",
+        "Field_1": "Punggol Field",
+        "ID": "187"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.899620000253606,
+          1.402460000385392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang West Road",
+        "description": "Sengkang West Road  by Sengkang West Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "32003.1474",
+        "Y_ADDR": "41502.7095",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.86929",
+        "LATITUDE": "1.39161",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Yio Chu Kang Road",
+        "INC_CRC": "6470D56CAE306A2B",
+        "Field_1": "Sengkang West Road",
+        "ID": "188"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8692899997762,
+          1.391610000388894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sengkang Central",
+        "description": "Sengkang Central by Sengkang East Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "34752.8381",
+        "Y_ADDR": "40975.102",
+        "FMEL_UPD_D": "12\/30\/2016 8:17:18 PM",
+        "LONGITUDE": "103.893998",
+        "LATITUDE": "1.386838",
+        "SHAPE": "Point",
+        "ADDRESSSTREETNAME": "Compassvale Bow",
+        "INC_CRC": "B683CB02150509D7",
+        "Field_1": "Sengkang Central",
+        "ID": "189"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.893997999596493,
+          1.386837999937213
+        ]
+      }
+    }
+  ]
+}
