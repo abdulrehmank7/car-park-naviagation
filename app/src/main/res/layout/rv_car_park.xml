@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/colorPrimaryCustomDark"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvRates"
+                app:layout_constraintEnd_toStartOf="@+id/cvLots"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="fjkladj jsddfjsdlk j sdjflsajf" />
+
+            <TextView
+                android:id="@+id/tvRates"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:minHeight="78dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvName"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                tools:text="Mon-Thu (excluding PH, Eve of PH School Holiday) $0.024 per min; Max/day: $12.50 (Valid up to 12 midnight and not applicable for multiple entries)." />
+
+            <TextView
+                android:id="@+id/tvEta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/colorPrimaryCustomDark"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/cvLots"
+                app:layout_constraintStart_toStartOf="@+id/cvLots"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="28 M" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvLots"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="49dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEta"
+                app:strokeColor="@color/colorPrimaryCustomDark"
+                app:strokeWidth="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/lots2"
+                    android:textColor="@color/colorPrimaryCustomDark" />
+
+                <TextView
+                    android:id="@+id/tvLots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/colorPrimaryCustomDark"
+                    android:textSize="22sp"
+                    tools:text="100" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btView"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/view_on_map"
+                android:textColor="@color/colorPrimaryCustomDark"
+                app:icon="@drawable/ic_map"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btNavigate"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRates"
+                app:rippleColor="@color/colorSecondaryVariant"
+                app:strokeColor="@color/colorPrimaryCustomDark" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btNavigate"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/start_route"
+                android:textColor="@color/colorPrimaryCustomDark"
+                app:icon="@drawable/ic_navigation"
+                app:layout_constraintBottom_toBottomOf="@+id/btView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btView"
+                app:rippleColor="@color/colorSecondaryVariant"
+                app:strokeColor="@color/colorPrimaryCustomDark" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -2,6 +2,7 @@ package com.arkapp.carparknaviagation.utility;
 
 import android.content.Context;
 import android.content.DialogInterface.OnClickListener;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
@@ -143,5 +144,13 @@ public class ViewUtils {
         if (focusedView != null) {
             inputManager.hideSoftInputFromWindow(focusedView.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
+    }
+
+    public static int dpToPx(int dp) {
+        return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
+    }
+
+    public static int pxToDp(int px) {
+        return (int) (px / Resources.getSystem().getDisplayMetrics().density);
     }
 }

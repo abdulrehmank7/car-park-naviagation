@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.arkapp.carparknaviagation.data.repository.MapRepository;
+import com.arkapp.carparknaviagation.data.repository.PrefRepository;
 import com.arkapp.carparknaviagation.viewModels.HomePageViewModel;
 
 /**
@@ -13,14 +14,16 @@ import com.arkapp.carparknaviagation.viewModels.HomePageViewModel;
  */
 public class HomePageViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     private MapRepository repository;
+    private PrefRepository prefRepository;
 
-    public HomePageViewModelFactory(MapRepository repository) {
+    public HomePageViewModelFactory(MapRepository repository, PrefRepository prefRepository) {
         this.repository = repository;
+        this.prefRepository = prefRepository;
     }
 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new HomePageViewModel(repository);
+        return (T) new HomePageViewModel(repository, prefRepository);
     }
 }

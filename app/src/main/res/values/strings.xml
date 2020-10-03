@@ -7,5 +7,15 @@
     <string name="stop_navi">Stop Navigation</string>
     <string name="engine_init_error">Map engine initialization</string>
     <string name="current_location">Current Location</string>
-    <string name="oops">Oops! something went wrong...</string>
+    <string name="oops">Oops! something went wrong…</string>
+    <string name="nearest_car_park">Nearest Carpark</string>
+    <string name="estimated_time">Est. Time:</string>
+    <string name="estimated_distance">Est. Distance:</string>
+    <string name="lots">Lots:</string>
+    <string name="start">Start</string>
+    <string name="check_rates">Check Rates</string>
+    <string name="lots2">Lots</string>
+    <string name="view_on_map">View On Map</string>
+    <string name="start_route">Start Route</string>
+    <string name="rate">Rate:</string>
 </resources>

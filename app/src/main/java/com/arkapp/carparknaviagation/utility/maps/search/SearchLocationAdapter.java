@@ -48,8 +48,6 @@ public class SearchLocationAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public int getItemCount() {
-        if (mResultList != null)
-            printLog("get item count" + mResultList.size());
         return mResultList != null ? mResultList.size() : 0;
     }
 

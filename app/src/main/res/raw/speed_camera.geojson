@@ -1,0 +1,512 @@
+{
+  "type": "FeatureCollection",
+  "name": "SPF_DSECS",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9104",
+        "description": "Holland Road towards Farrer Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "25425",
+        "Y_ADDR": "32268",
+        "Y_Coordinate": "32268",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:10 PM",
+        "LONGITUDE": "103.810180971797",
+        "LATITUDE": "1.30809473930226",
+        "SHAPE": "Point",
+        "X_Coordinate": "25425",
+        "INC_CRC": "620596BFE25ACECE",
+        "Field_1": "SPF-DSECS-9104"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.810180971797095,
+          1.308094739302259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9105",
+        "description": "Holland Road towards Grange Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "25428",
+        "Y_ADDR": "32265",
+        "Y_Coordinate": "32265",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.81020792848",
+        "LATITUDE": "1.30806760861228",
+        "SHAPE": "Point",
+        "X_Coordinate": "25428",
+        "INC_CRC": "093ECC85EFFA2518",
+        "Field_1": "SPF-DSECS-9105"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.810207928479798,
+          1.308067608612278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9103",
+        "description": "Yishun Avenue 2 towards Lentor Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27885",
+        "Y_ADDR": "44122",
+        "Y_Coordinate": "44122",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.832285202807",
+        "LATITUDE": "1.41529819611881",
+        "SHAPE": "Point",
+        "X_Coordinate": "27885",
+        "INC_CRC": "8D51AD217B2DBECB",
+        "Field_1": "SPF-DSECS-9103"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.832285202806702,
+          1.415298196118805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9102",
+        "description": "Yishun Avenue 2 towards Sembawang Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "27888",
+        "Y_ADDR": "44125",
+        "Y_Coordinate": "44125",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.832312160422",
+        "LATITUDE": "1.41532532704901",
+        "SHAPE": "Point",
+        "X_Coordinate": "27888",
+        "INC_CRC": "42764E6A339EC8DE",
+        "Field_1": "SPF-DSECS-9102"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.832312160422305,
+          1.41532532704901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9117",
+        "description": "Bukit Batok Road towards Chua Chu Kang Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "17784",
+        "Y_ADDR": "38223",
+        "Y_Coordinate": "38223",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.74152096923",
+        "LATITUDE": "1.3619479958435",
+        "SHAPE": "Point",
+        "X_Coordinate": "17784",
+        "INC_CRC": "B270AD2E86DF5799",
+        "Field_1": "SPF-DSECS-9117"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.741520969229498,
+          1.361947995843499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9107",
+        "description": "Boon Lay Way towards Commonwealth Avenue West",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "16000",
+        "Y_ADDR": "36320",
+        "Y_Coordinate": "36320",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.725491310893",
+        "LATITUDE": "1.34473730365346",
+        "SHAPE": "Point",
+        "X_Coordinate": "16000",
+        "INC_CRC": "902880D87E343924",
+        "Field_1": "SPF-DSECS-9107"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.725491310892906,
+          1.344737303653458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9106",
+        "description": "Boon Lay Way towards Jalan Boon Lay",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "16003",
+        "Y_ADDR": "36321",
+        "Y_Coordinate": "36321",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.725518267281",
+        "LATITUDE": "1.34474634848035",
+        "SHAPE": "Point",
+        "X_Coordinate": "16003",
+        "INC_CRC": "91539FC6D1993FA5",
+        "Field_1": "SPF-DSECS-9106"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.725518267281004,
+          1.344746348480353
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9108",
+        "description": "Ayer Rajah Expressway towards City",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "22253",
+        "Y_ADDR": "31178",
+        "Y_Coordinate": "31178",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.78167924014",
+        "LATITUDE": "1.29823673972661",
+        "SHAPE": "Point",
+        "X_Coordinate": "22253",
+        "INC_CRC": "1493E16CE66C6EC4",
+        "Field_1": "SPF-DSECS-9108"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.781679240139894,
+          1.298236739726613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9109",
+        "description": "Ayer Rajah Expressway towards Jurong",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "22258",
+        "Y_ADDR": "31176",
+        "Y_Coordinate": "31176",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.781724167708",
+        "LATITUDE": "1.2982186533609",
+        "SHAPE": "Point",
+        "X_Coordinate": "22258",
+        "INC_CRC": "80559AC4B05B971E",
+        "Field_1": "SPF-DSECS-9109"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.781724167707793,
+          1.2982186533609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9110",
+        "description": "Bukit Timah Expressway towards Woodlands",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21568",
+        "Y_ADDR": "40465",
+        "Y_Coordinate": "40465",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.775522244554",
+        "LATITUDE": "1.382224894418",
+        "SHAPE": "Point",
+        "X_Coordinate": "21568",
+        "INC_CRC": "1471C43B7635EA19",
+        "Field_1": "SPF-DSECS-9110"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.775522244553898,
+          1.382224894418002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9113",
+        "description": "Pan Island Expressway towards East Coast Parkway",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "25487",
+        "Y_ADDR": "35271",
+        "Y_Coordinate": "35271",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.810737825993",
+        "LATITUDE": "1.33525281258995",
+        "SHAPE": "Point",
+        "X_Coordinate": "25487",
+        "INC_CRC": "5D22EC748D41A614",
+        "Field_1": "SPF-DSECS-9113"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.810737825992803,
+          1.335252812589951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9112",
+        "description": "Pan Island Expressway towards Tuas",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "25491",
+        "Y_ADDR": "35267",
+        "Y_Coordinate": "35267",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.810773768625",
+        "LATITUDE": "1.3352166383431",
+        "SHAPE": "Point",
+        "X_Coordinate": "25491",
+        "INC_CRC": "99404FCC734218A0",
+        "Field_1": "SPF-DSECS-9112"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.810773768625495,
+          1.335216638343102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9114",
+        "description": "Seletar Expressway towards Bukit Timah Expressway",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "25195",
+        "Y_ADDR": "43349",
+        "Y_Coordinate": "43349",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.80811327302",
+        "LATITUDE": "1.4083073256175",
+        "SHAPE": "Point",
+        "X_Coordinate": "25195",
+        "INC_CRC": "38976A25C54E2F6F",
+        "Field_1": "SPF-DSECS-9114"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8081132730197,
+          1.408307325617496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9101",
+        "description": "Upper Thomson Road towards Lornie Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26557",
+        "Y_ADDR": "40980",
+        "Y_Coordinate": "40980",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.820352116247",
+        "LATITUDE": "1.38688304216287",
+        "SHAPE": "Point",
+        "X_Coordinate": "26557",
+        "INC_CRC": "B790196DFCD0A7EB",
+        "Field_1": "SPF-DSECS-9101"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.820352116246696,
+          1.386883042162874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9100",
+        "description": "Upper Thomson Road towards Sembawang Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "26562",
+        "Y_ADDR": "40978",
+        "Y_Coordinate": "40978",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.820397045181",
+        "LATITUDE": "1.38686495512772",
+        "SHAPE": "Point",
+        "X_Coordinate": "26562",
+        "INC_CRC": "AC771F76692B4EC3",
+        "Field_1": "SPF-DSECS-9100"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.820397045181494,
+          1.386864955127723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9119",
+        "description": "Yishun Avenue 1 towards Lentor Avenue",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "28890",
+        "Y_ADDR": "43967",
+        "Y_Coordinate": "43967",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.841316003183",
+        "LATITUDE": "1.41389641843669",
+        "SHAPE": "Point",
+        "X_Coordinate": "28890",
+        "INC_CRC": "0508B0FED20EECF1",
+        "Field_1": "SPF-DSECS-9119"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.841316003182499,
+          1.413896418436688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9118",
+        "description": "Loyang Avenue towards Tampines Avenue 7",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "43222",
+        "Y_ADDR": "39026",
+        "Y_Coordinate": "39026",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.970098793517",
+        "LATITUDE": "1.3692078755048",
+        "SHAPE": "Point",
+        "X_Coordinate": "43222",
+        "INC_CRC": "6D1A5EB0A0BDB9F4",
+        "Field_1": "SPF-DSECS-9118"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.970098793517295,
+          1.369207875504802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9116",
+        "description": "Bukit Batok Road towards Jurong Town Hall Road",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "17787",
+        "Y_ADDR": "38226",
+        "Y_Coordinate": "38226",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.741547925191",
+        "LATITUDE": "1.36197512777203",
+        "SHAPE": "Point",
+        "X_Coordinate": "17787",
+        "INC_CRC": "ADF9D2628FFF78A9",
+        "Field_1": "SPF-DSECS-9116"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.741547925191298,
+          1.361975127772033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9111",
+        "description": "Bukit Timah Expressway towards Pan Island Expressway",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "21564",
+        "Y_ADDR": "40476",
+        "Y_Coordinate": "40476",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.775486299165",
+        "LATITUDE": "1.38232437354741",
+        "SHAPE": "Point",
+        "X_Coordinate": "21564",
+        "INC_CRC": "65D68704CFBE106A",
+        "Field_1": "SPF-DSECS-9111"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.775486299164996,
+          1.38232437354741
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "SPF-DSECS-9115",
+        "description": "Seletar Expressway towards Central Expressway",
+        "altitudeMode": "clampToGround",
+        "X_ADDR": "25199",
+        "Y_ADDR": "43337",
+        "Y_Coordinate": "43337",
+        "FMEL_UPD_D": "3\/27\/2015 12:56:16 PM",
+        "LONGITUDE": "103.808149217577",
+        "LATITUDE": "1.40819880234007",
+        "SHAPE": "Point",
+        "X_Coordinate": "25199",
+        "INC_CRC": "1606BD870057CFAF",
+        "Field_1": "SPF-DSECS-9115"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.808149217576897,
+          1.408198802340066
+        ]
+      }
+    }
+  ]
+}

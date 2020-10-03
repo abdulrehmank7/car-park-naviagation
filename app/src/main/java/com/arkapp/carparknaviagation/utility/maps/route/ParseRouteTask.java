@@ -2,7 +2,7 @@ package com.arkapp.carparknaviagation.utility.maps.route;
 
 import android.os.AsyncTask;
 
-import com.google.android.gms.maps.GoogleMap;
+import com.arkapp.carparknaviagation.utility.listeners.HomePageListener;
 import com.google.android.gms.maps.model.JointType;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -14,18 +14,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static com.arkapp.carparknaviagation.viewModels.HomePageViewModel.polylineFinal;
-
 /**
  * Created by Abdul Rehman on 12/24/2018.
  */
 public class ParseRouteTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>> {
-    private GoogleMap mGoogleMap;
     private int colourForPathPlot;
+    private HomePageListener listener;
 
-    public ParseRouteTask(GoogleMap googleMap, int color) {
-        mGoogleMap = googleMap;
+    public ParseRouteTask(int color, HomePageListener listener) {
         colourForPathPlot = color;
+        this.listener = listener;
     }
 
     /**
@@ -73,14 +71,7 @@ public class ParseRouteTask extends AsyncTask<String, Integer, List<List<HashMap
                 polyLineOptions.endCap(new RoundCap());
                 polyLineOptions.jointType(JointType.ROUND);
             }
-            try {
-                if (polylineFinal != null) {
-                    polylineFinal.remove();
-                }
-                polylineFinal = mGoogleMap.addPolyline(polyLineOptions);
-            } catch (Exception e) {
-            }
-
+            listener.setRoute(polyLineOptions);
         }
     }
 }

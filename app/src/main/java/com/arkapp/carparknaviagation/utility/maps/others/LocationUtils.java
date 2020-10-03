@@ -5,7 +5,7 @@ import android.content.Context;
 import android.location.Location;
 import android.os.Looper;
 
-import com.arkapp.carparknaviagation.ui.main.MainActivity;
+import com.arkapp.carparknaviagation.data.repository.PrefRepository;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -14,6 +14,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResponse;
 import com.google.android.gms.location.SettingsClient;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.Task;
 
 /**
@@ -53,7 +54,8 @@ public class LocationUtils {
                 for (Location location : locationResult.getLocations()) {
                     // Update UI with location data
                     // ...
-                    MainActivity.currentLocation = location;
+                    PrefRepository prefRepository = new PrefRepository(context);
+                    prefRepository.setCurrentLocation(new LatLng(location.getLatitude(), location.getLongitude()));
                     stopLocationUpdates(fusedLocationClient, this);
                 }
             }

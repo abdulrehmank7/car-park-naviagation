@@ -78,6 +78,7 @@
                     android:gravity="center_vertical"
                     android:hint="@string/search_destination"
                     android:imeOptions="actionSearch"
+                    android:inputType="textNoSuggestions"
                     android:paddingEnd="8dp"
                     android:singleLine="true"
                     android:textSize="12sp"
@@ -100,8 +101,8 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvSetting"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:clickable="true"
@@ -116,15 +117,15 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="6dp"
+                android:padding="8dp"
                 android:src="@drawable/ic_settings"
                 app:tint="@color/colorPrimaryCustomDark" />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvMyLocation"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:clickable="true"
@@ -139,15 +140,15 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="6dp"
+                android:padding="8dp"
                 android:src="@drawable/ic_my_location"
                 app:tint="@color/colorPrimaryCustomDark" />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvHistory"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:clickable="true"
@@ -155,16 +156,202 @@
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="29dp"
             app:cardElevation="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/cvBottomView"
             app:layout_constraintEnd_toEndOf="parent"
             app:rippleColor="@color/colorPrimary">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="6dp"
+                android:padding="8dp"
                 android:src="@drawable/ic_history"
                 app:tint="@color/colorPrimaryCustomDark" />
         </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvBottomView"
+            android:layout_width="match_parent"
+            android:layout_height="158dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/textView5"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="@{viewmodel.nearestCarParkClicked}"
+                    android:paddingStart="8dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="0dp"
+                    android:text="@string/nearest_car_park"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryCustomDark"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btForward"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btForward"
+                    app:strokeColor="@color/colorPrimaryCustomDark"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btBack"
+                    style="@style/Button.OutlinedButton.IconOnly"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:onClick="@{viewmodel.backwardClicked}"
+                    app:icon="@drawable/ic_arrow_back"
+                    app:iconTint="@color/colorPrimary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/colorSecondary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btForward"
+                    style="@style/Button.OutlinedButton.IconOnly"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:onClick="@{viewmodel.forwardClicked}"
+                    app:icon="@drawable/ic_arrow_forward"
+                    app:iconTint="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/colorSecondary" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:padding="0dp"
+                    android:text="@string/rate"
+                    app:layout_constraintBottom_toTopOf="@+id/tvCarParkName"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvRates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView6"
+                    app:layout_constraintStart_toEndOf="@+id/textView6"
+                    app:layout_constraintTop_toTopOf="@+id/textView6"
+                    tools:text="$2.5/Hr" />
+
+                <TextView
+                    android:id="@+id/tvCarParkName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"
+                    android:singleLine="true"
+                    app:layout_constraintBottom_toTopOf="@+id/textView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="fsdf  fasdf fadf" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/estimated_time"
+                    app:layout_constraintBottom_toTopOf="@+id/textView2"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvEstimatedTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView"
+                    app:layout_constraintStart_toEndOf="@+id/textView"
+                    app:layout_constraintTop_toTopOf="@+id/textView"
+                    tools:text="32 Min" />
+
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/estimated_distance"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvEstimatedDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                    app:layout_constraintStart_toEndOf="@+id/textView2"
+                    app:layout_constraintTop_toTopOf="@+id/textView2"
+                    tools:text="32 KM" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/lots"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvAvailableLots"
+                    app:layout_constraintEnd_toStartOf="@+id/tvAvailableLots"
+                    app:layout_constraintTop_toTopOf="@+id/tvAvailableLots" />
+
+                <TextView
+                    android:id="@+id/tvAvailableLots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btForward"
+                    tools:text="52" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btNavigate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/start"
+                    app:icon="@drawable/ic_navigation"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

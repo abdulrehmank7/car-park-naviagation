@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.VectorDrawable;
+import android.location.Location;
 import android.text.TextUtils;
 
 import androidx.core.content.ContextCompat;
@@ -104,6 +105,7 @@ public class MapUtils {
 
     public static void fitRouteInScreen(final GoogleMap map,
                                         final LatLng pick,
+                                        final LatLng carPark,
                                         final LatLng drop,
                                         final Context mContext) {
 
@@ -115,6 +117,7 @@ public class MapUtils {
             LatLngBounds.Builder builder = new LatLngBounds.Builder();
             builder.include(pick);
             builder.include(drop);
+            builder.include(carPark);
             final LatLngBounds bounds = builder.build();
             final int width = mContext.getResources().getDisplayMetrics().widthPixels;
             final int height = mContext.getResources().getDisplayMetrics().heightPixels;
@@ -146,5 +149,22 @@ public class MapUtils {
         } catch (Exception e) {
             printLog(e.getMessage());
         }
+    }
+
+    public static float calculateDistanceBetweenPoints(double fromLat,
+                                                       double fromLog,
+                                                       double toLat,
+                                                       double toLog) {
+        Location loc1 = new Location("");
+
+        loc1.setLatitude(fromLat);
+        loc1.setLongitude(fromLog);
+
+        Location loc2 = new Location("");
+        loc2.setLatitude(toLat);
+        loc2.setLongitude(toLog);
+
+        //Distance In Meters
+        return loc1.distanceTo(loc2);
     }
 }

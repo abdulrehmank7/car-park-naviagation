@@ -1,7 +1,6 @@
 package com.arkapp.carparknaviagation.ui.main;
 
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -13,8 +12,6 @@ import com.arkapp.carparknaviagation.utility.listeners.GPSListener;
 import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.REQUEST_CHECK_SETTINGS;
 
 public class MainActivity extends AppCompatActivity {
-
-    public static Location currentLocation;
 
     public static GPSListener gpsListener;
 

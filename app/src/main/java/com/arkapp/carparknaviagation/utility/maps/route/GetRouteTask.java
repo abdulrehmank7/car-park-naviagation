@@ -4,18 +4,18 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.arkapp.carparknaviagation.utility.HttpConnection;
-import com.google.android.gms.maps.GoogleMap;
+import com.arkapp.carparknaviagation.utility.listeners.HomePageListener;
 
 /**
  * Created by Abdul Rehman on 12/24/2018.
  */
 public class GetRouteTask extends AsyncTask<String, Void, String> {
-    private GoogleMap mGoogleMap;
     private int colourForPathPlot;
+    private HomePageListener listener;
 
-    public GetRouteTask(GoogleMap googleMap, int color) {
-        mGoogleMap = googleMap;
+    public GetRouteTask(int color, HomePageListener listener) {
         colourForPathPlot = color;
+        this.listener = listener;
     }
     //plotting the line for the tracking
 
@@ -34,6 +34,6 @@ public class GetRouteTask extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        new ParseRouteTask(mGoogleMap, colourForPathPlot).execute(result);
+        new ParseRouteTask(colourForPathPlot, listener).execute(result);
     }
 }

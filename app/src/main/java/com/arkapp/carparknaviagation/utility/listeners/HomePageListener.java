@@ -1,8 +1,13 @@
 package com.arkapp.carparknaviagation.utility.listeners;
 
-import com.google.android.gms.maps.model.MarkerOptions;
+import androidx.lifecycle.MutableLiveData;
 
-import java.util.ArrayList;
+import com.arkapp.carparknaviagation.data.models.eta.Eta;
+import com.arkapp.carparknaviagation.data.models.redLightCamera.Feature;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.util.List;
 
 /**
  * Created by Abdul Rehman on 27-09-2020.
@@ -11,5 +16,16 @@ import java.util.ArrayList;
 public interface HomePageListener {
     void setCurrentLocationMarker(MarkerOptions markerOptions);
 
-    void setRedLightCamera(ArrayList<MarkerOptions> redLightMarkers);
+    void setRouteCameras(List<Feature> redLightMarkers,
+                         List<Feature> routeSpeedCameras);
+
+    void setCarParking();
+
+    void showCarParkList();
+
+    void setCarParkEtaFromDestination(MutableLiveData<Eta> carParkEtaFromDestination);
+
+    void setCarParkEtaFromOrigin(MutableLiveData<Eta> carParkEta);
+
+    void setRoute(PolylineOptions polyLineOptions);
 }
