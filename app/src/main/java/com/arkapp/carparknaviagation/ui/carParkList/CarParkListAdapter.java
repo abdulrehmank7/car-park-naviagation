@@ -8,13 +8,16 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.arkapp.carparknaviagation.R;
-import com.arkapp.carparknaviagation.data.models.carPark.CarParkAvailability;
+import com.arkapp.carparknaviagation.data.models.myTransportCarPark.MyTransportCarParkAvailability;
+import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarParkAvailability;
 import com.arkapp.carparknaviagation.databinding.RvCarParkBinding;
 import com.arkapp.carparknaviagation.viewModels.HomePageViewModel;
 
 import java.util.Locale;
 
-import static com.arkapp.carparknaviagation.ui.carParkList.Utils.getChargeString;
+import static com.arkapp.carparknaviagation.ui.carParkList.Utils.getMyTransportChargeString;
+import static com.arkapp.carparknaviagation.ui.carParkList.Utils.getUraChargeString;
+import static com.arkapp.carparknaviagation.ui.home.Utils.isUraCarPark;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.isDoubleClicked;
 
 public class CarParkListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -43,14 +46,36 @@ public class CarParkListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         RvCarParkBinding binding = ((CarParkListViewHolder) holder).getViewBinding();
-        CarParkAvailability availability = viewModel.allFilteredCarPark.get(position);
-        binding.tvName.setText(availability.getCharges().getPpName());
-        binding.tvLots.setText(String.format(Locale.ENGLISH, "%s", availability.getLotsAvailable()));
-        binding.tvRates.setText(getChargeString(availability.getCharges()));
-        binding.tvEta.setText(availability.getEtaDistanceFromOrigin().getDuration().getText());
+        if (isUraCarPark(viewModel.allFilteredCarPark.get(position))) {
+            UraCarParkAvailability availability = (UraCarParkAvailability) viewModel.allFilteredCarPark.get(position);
+            binding.tvName.setText(availability.getCharges().getPpName());
+            binding.tvLots.setText(String.format(Locale.ENGLISH, "%s", availability.getLotsAvailable()));
+            binding.tvRates.setText(getUraChargeString(availability.getCharges()));
+            binding.tvEta.setText(availability.getEtaDistanceFromOrigin().getDuration().getText());
+
+
+        } else {
+            MyTransportCarParkAvailability availability = (MyTransportCarParkAvailability) viewModel.allFilteredCarPark.get(position);
+            binding.tvName.setText(availability.getDevelopment());
+            binding.tvLots.setText(String.format(Locale.ENGLISH, "%s", availability.getAvailableLots()));
+            binding.tvRates.setText(getMyTransportChargeString(availability));
+            binding.tvEta.setText(availability.getEtaDistanceFromOrigin().getDuration().getText());
+        }
 
         binding.btView.setOnClickListener(view -> {
             if (isDoubleClicked(1500)) return;
+            if (viewModel.currentSelectedCarParkMarker != null)
+                viewModel.currentSelectedCarParkMarker.remove();
+
+            viewModel.currentSelectedCarParkNo = position;
+            viewModel.carParkList.dismiss();
+            viewModel.listener.setCarParking();
+        });
+
+        binding.btNavigate.setOnClickListener(view -> {
+            if (isDoubleClicked(1500)) return;
+
+            viewModel.startNavigation = true;
             if (viewModel.currentSelectedCarParkMarker != null)
                 viewModel.currentSelectedCarParkMarker.remove();
 

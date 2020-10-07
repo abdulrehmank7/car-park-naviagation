@@ -1,6 +1,7 @@
 package com.arkapp.carparknaviagation.ui.home;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
 import android.text.Editable;
@@ -21,11 +22,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.arkapp.carparknaviagation.R;
 import com.arkapp.carparknaviagation.data.models.PlaceAutoComplete;
 import com.arkapp.carparknaviagation.data.models.eta.Eta;
+import com.arkapp.carparknaviagation.data.models.myTransportCarPark.MyTransportCarParkAvailability;
 import com.arkapp.carparknaviagation.data.models.redLightCamera.Feature;
+import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarParkAvailability;
 import com.arkapp.carparknaviagation.data.repository.MapRepository;
 import com.arkapp.carparknaviagation.data.repository.PrefRepository;
 import com.arkapp.carparknaviagation.databinding.FragmentHomeBinding;
 import com.arkapp.carparknaviagation.ui.carParkList.CarParkListAdapter;
+import com.arkapp.carparknaviagation.ui.navigation.NavigationActivity;
 import com.arkapp.carparknaviagation.utility.listeners.HomePageListener;
 import com.arkapp.carparknaviagation.utility.maps.search.SearchLocationAdapter;
 import com.arkapp.carparknaviagation.utility.viewModelFactory.HomePageViewModelFactory;
@@ -62,6 +66,7 @@ import static com.arkapp.carparknaviagation.ui.home.Utils.drawMapRoute;
 import static com.arkapp.carparknaviagation.ui.home.Utils.getRedLightMarker;
 import static com.arkapp.carparknaviagation.ui.home.Utils.getSpeedMarker;
 import static com.arkapp.carparknaviagation.ui.home.Utils.initSearchTextListener;
+import static com.arkapp.carparknaviagation.ui.home.Utils.isUraCarPark;
 import static com.arkapp.carparknaviagation.ui.home.Utils.setLocationMarkerOnMap;
 import static com.arkapp.carparknaviagation.ui.main.MainActivity.gpsListener;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.dpToPx;
@@ -128,18 +133,37 @@ public class HomeFragment extends Fragment implements HomePageListener {
         initClickListeners();
         initSearchField();
 
+        initCarParkAvailabilityData();
 
+    }
+
+    private void initCarParkAvailabilityData() {
         if (viewModel.toUpdateToken())
-            viewModel.getCarParkToken().observe(getViewLifecycleOwner(), token -> {
-                viewModel.prefRepository.setApiToken(token);
+            viewModel.getUraCarParkToken()
+                    .observe(getViewLifecycleOwner(), token -> {
+                        viewModel.prefRepository.setApiToken(token);
 
-                viewModel.getCarParkAvailability().observe(getViewLifecycleOwner(), carParking ->
-                        viewModel.allCarParkAvailability = carParking);
+                        viewModel.getUraCarParkAvailability()
+                                .observe(getViewLifecycleOwner(), carParking -> viewModel.allUraCarParkAvailability = carParking);
 
-            });
-        else viewModel.getCarParkAvailability().observe(getViewLifecycleOwner(), carParking ->
-                viewModel.allCarParkAvailability = carParking);
+                    });
+        else viewModel.getUraCarParkAvailability().observe(getViewLifecycleOwner(), response -> {
 
+            if (response == null || response.getMessage().equals(getString(R.string.token_error))) {
+                viewModel.getUraCarParkToken()
+                        .observe(getViewLifecycleOwner(), token -> {
+                            viewModel.prefRepository.setApiToken(token);
+
+                            viewModel.getUraCarParkAvailability()
+                                    .observe(getViewLifecycleOwner(), newResponse ->
+                                            viewModel.allUraCarParkAvailability = newResponse);
+                        });
+            } else
+                viewModel.allUraCarParkAvailability = response;
+        });
+
+        viewModel.getMyTransportCarParkAvailability()
+                .observe(getViewLifecycleOwner(), response -> viewModel.allMyTransportAvailability = response);
     }
 
     private void initMaps() {
@@ -221,6 +245,8 @@ public class HomeFragment extends Fragment implements HomePageListener {
         viewModel.searchAdapter.setOnItemClickListener((position, view1) -> {
             if (isDoubleClicked(1000)) return;
             clearSearchTextListener(textWatcher, binding.etSearchBar);
+
+            show(binding.progressBar);
             viewModel.currentSelectedCarParkNo = 0;
             try {
                 final PlaceAutoComplete item = viewModel.searchAdapter.getItem(position);
@@ -249,12 +275,18 @@ public class HomeFragment extends Fragment implements HomePageListener {
                             requireContext());
 
                     viewModel.initCarParkMarker();
+
+                    /*for (MarkerOptions markerOption : getCarParkMarkers2(requireContext(), viewModel.allCarParkAvailability.getResult())) {
+                        map.addMarker(markerOption);
+                    }*/
                 }).addOnFailureListener((exception) -> {
+                    hide(binding.progressBar);
                     if (exception instanceof ApiException) {
                         printLog(getString(R.string.oops));
                     }
                 });
             } catch (Exception e) {
+                hide(binding.progressBar);
                 e.printStackTrace();
             }
         });
@@ -330,40 +362,81 @@ public class HomeFragment extends Fragment implements HomePageListener {
 
     @Override
     public void setCarParking() {
+        if (viewModel.startNavigation)
+            showSnack(binding.parent, getString(R.string.starting_navigation));
+
+        printLog("setting car park");
         if (viewModel.allFilteredCarPark.size() == 0) {
             hide(binding.cvBottomView);
             showSnack(binding.parent, "No car park found!");
+            hide(binding.progressBar);
             return;
         }
+        show(binding.progressBar);
         show(binding.cvBottomView);
 
         if (viewModel.currentSelectedCarParkNo == 0) hide(binding.btBack);
         else show(binding.btBack);
 
-        viewModel.currentSelectedCarPark = viewModel.allFilteredCarPark.get(viewModel.currentSelectedCarParkNo);
-        show(binding.cvBottomView);
-        viewModel.currentSelectedCarParkMarker = map.addMarker(getCustomMaker(requireContext(),
-                                                                              viewModel.currentSelectedCarPark.getLat(),
-                                                                              viewModel.currentSelectedCarPark.getLng(),
-                                                                              R.drawable.ic_parking_marker));
-        map.setPadding(0, dpToPx(68), 0, dpToPx(152));
-        drawMapRoute(
-                viewModel.prefRepository.getCurrentLocation().latitude,
-                viewModel.prefRepository.getCurrentLocation().longitude,
-                viewModel.currentSelectedCarPark.getLat(),
-                viewModel.currentSelectedCarPark.getLng(),
-                viewModel.selectedAddress.getLatLng().latitude,
-                viewModel.selectedAddress.getLatLng().longitude,
-                requireContext(),
-                map,
-                this,
-                viewModel.polylineFinal);
+        if (viewModel.currentSelectedCarParkNo == viewModel.allFilteredCarPark.size() - 1)
+            hide(binding.btForward);
+        else show(binding.btForward);
 
-        binding.tvCarParkName.setText(viewModel.currentSelectedCarPark.getCharges().getPpName());
-        binding.tvEstimatedDistance.setText(viewModel.currentSelectedCarPark.getEtaDistanceFromOrigin().getDistance().getText());
-        binding.tvEstimatedTime.setText(viewModel.currentSelectedCarPark.getEtaDistanceFromOrigin().getDuration().getText());
-        binding.tvAvailableLots.setText(String.format("%s", viewModel.currentSelectedCarPark.getLotsAvailable()));
-        binding.tvRates.setText(String.format(Locale.ENGLISH, "$%.2f/Hr", getPerHourCharge(viewModel.currentSelectedCarPark.getCharges())));
+        viewModel.currentSelectedCarParkObj = viewModel.allFilteredCarPark.get(viewModel.currentSelectedCarParkNo);
+        show(binding.cvBottomView);
+
+        if (isUraCarPark(viewModel.currentSelectedCarParkObj)) {
+            viewModel.currentSelectedUraCarPark = (UraCarParkAvailability) viewModel.currentSelectedCarParkObj;
+            viewModel.currentSelectedCarParkMarker = map.addMarker(getCustomMaker(requireContext(),
+                                                                                  viewModel.currentSelectedUraCarPark.getLat(),
+                                                                                  viewModel.currentSelectedUraCarPark.getLng(),
+                                                                                  R.drawable.ic_parking_marker));
+
+            map.setPadding(0, dpToPx(68), 0, dpToPx(152));
+            drawMapRoute(
+                    viewModel.prefRepository.getCurrentLocation().latitude,
+                    viewModel.prefRepository.getCurrentLocation().longitude,
+                    viewModel.currentSelectedUraCarPark.getLat(),
+                    viewModel.currentSelectedUraCarPark.getLng(),
+                    viewModel.selectedAddress.getLatLng().latitude,
+                    viewModel.selectedAddress.getLatLng().longitude,
+                    requireContext(),
+                    map,
+                    this,
+                    viewModel.polylineFinal);
+
+            binding.tvCarParkName.setText(viewModel.currentSelectedUraCarPark.getCharges().getPpName());
+            binding.tvEstimatedDistance.setText(viewModel.currentSelectedUraCarPark.getEtaDistanceFromOrigin().getDistance().getText());
+            binding.tvEstimatedTime.setText(viewModel.currentSelectedUraCarPark.getEtaDistanceFromOrigin().getDuration().getText());
+            binding.tvAvailableLots.setText(String.format("%s", viewModel.currentSelectedUraCarPark.getLotsAvailable()));
+            binding.tvRates.setText(String.format(Locale.ENGLISH, "$%.2f/Hr", getPerHourCharge(viewModel.currentSelectedUraCarPark.getCharges())));
+        } else {
+            viewModel.currentSelectedMyTransportCarPark = (MyTransportCarParkAvailability) viewModel.currentSelectedCarParkObj;
+
+            viewModel.currentSelectedCarParkMarker = map.addMarker(getCustomMaker(requireContext(),
+                                                                                  viewModel.currentSelectedMyTransportCarPark.getCarParkLat(),
+                                                                                  viewModel.currentSelectedMyTransportCarPark.getCarParkLng(),
+                                                                                  R.drawable.ic_parking_marker));
+
+            map.setPadding(0, dpToPx(68), 0, dpToPx(152));
+            drawMapRoute(
+                    viewModel.prefRepository.getCurrentLocation().latitude,
+                    viewModel.prefRepository.getCurrentLocation().longitude,
+                    viewModel.currentSelectedMyTransportCarPark.getCarParkLat(),
+                    viewModel.currentSelectedMyTransportCarPark.getCarParkLng(),
+                    viewModel.selectedAddress.getLatLng().latitude,
+                    viewModel.selectedAddress.getLatLng().longitude,
+                    requireContext(),
+                    map,
+                    this,
+                    viewModel.polylineFinal);
+
+            binding.tvCarParkName.setText(viewModel.currentSelectedMyTransportCarPark.getDevelopment());
+            binding.tvEstimatedDistance.setText(viewModel.currentSelectedMyTransportCarPark.getEtaDistanceFromOrigin().getDistance().getText());
+            binding.tvEstimatedTime.setText(viewModel.currentSelectedMyTransportCarPark.getEtaDistanceFromOrigin().getDuration().getText());
+            binding.tvAvailableLots.setText(String.format("%s", viewModel.currentSelectedMyTransportCarPark.getAvailableLots()));
+            binding.tvRates.setText(viewModel.currentSelectedMyTransportCarPark.getChargeValue());
+        }
     }
 
     @Override
@@ -389,16 +462,6 @@ public class HomeFragment extends Fragment implements HomePageListener {
     }
 
     @Override
-    public void setCarParkEtaFromOrigin(MutableLiveData<Eta> carParkEta) {
-        carParkEta.observe(getViewLifecycleOwner(), eta -> viewModel.addEtaInCarParkFromOrigin(eta));
-    }
-
-    @Override
-    public void setCarParkEtaFromDestination(MutableLiveData<Eta> carParkEtaFromDestination) {
-        carParkEtaFromDestination.observe(getViewLifecycleOwner(), eta -> viewModel.addEtaInCarParkFromDestination(eta));
-    }
-
-    @Override
     public void setRoute(PolylineOptions polyLineOptions) {
         if (viewModel.polylineFinal != null)
             viewModel.polylineFinal.remove();
@@ -408,6 +471,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
 
     @Override
     public void setRouteCameras(List<Feature> redLightMarkers, List<Feature> routeSpeedCameras) {
+        hide(binding.progressBar);
         if (!viewModel.redLightMarkers.isEmpty())
             for (Marker marker : viewModel.redLightMarkers)
                 marker.remove();
@@ -417,11 +481,46 @@ public class HomeFragment extends Fragment implements HomePageListener {
         }
 
         if (!viewModel.speedCameraMarkers.isEmpty())
-            for (Marker marker : viewModel.redLightMarkers)
+            for (Marker marker : viewModel.speedCameraMarkers)
                 marker.remove();
 
         for (MarkerOptions markerOption : getSpeedMarker(routeSpeedCameras, requireContext())) {
             viewModel.speedCameraMarkers.add(map.addMarker(markerOption));
         }
+
+        if (viewModel.startNavigation) {
+            viewModel.startNavigation = false;
+            startNavigation();
+        }
+    }
+
+    @Override
+    public void setUraCarParkEtaFromOrigin(MutableLiveData<Eta> carParkEtaFromOrigin) {
+        carParkEtaFromOrigin.observe(getViewLifecycleOwner(), eta -> viewModel.addEtaInUraCarParkFromOrigin(eta));
+    }
+
+    @Override
+    public void setUraCarParkEtaFromDestination(MutableLiveData<Eta> carParkEtaFromDestination) {
+        carParkEtaFromDestination.observe(getViewLifecycleOwner(), eta -> viewModel.addEtaInUraCarParkFromDestination(eta));
+    }
+
+    @Override
+    public void setMyTransportCarParkEtaFromOrigin(MutableLiveData<Eta> carParkEtaFromOrigin) {
+        carParkEtaFromOrigin.observe(getViewLifecycleOwner(), eta -> viewModel.addEtaInMyTransportCarParkFromOrigin(eta));
+    }
+
+    @Override
+    public void setMyTransportCarParkEtaFromDestination(
+            MutableLiveData<Eta> carParkEtaFromDestination) {
+        carParkEtaFromDestination.observe(getViewLifecycleOwner(), eta -> viewModel.addEtaInMyTransportCarParkFromDestination(eta));
+    }
+
+    @Override
+    public void startNavigation() {
+        if (binding.progressBar.getVisibility() == View.VISIBLE) {
+            showSnack(binding.parent, getString(R.string.wait));
+            return;
+        }
+        startActivity(new Intent(requireContext(), NavigationActivity.class));
     }
 }

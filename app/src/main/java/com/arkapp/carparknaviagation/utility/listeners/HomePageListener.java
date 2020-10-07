@@ -16,16 +16,21 @@ import java.util.List;
 public interface HomePageListener {
     void setCurrentLocationMarker(MarkerOptions markerOptions);
 
-    void setRouteCameras(List<Feature> redLightMarkers,
-                         List<Feature> routeSpeedCameras);
+    void setRouteCameras(List<Feature> redLightMarkers, List<Feature> routeSpeedCameras);
 
     void setCarParking();
 
     void showCarParkList();
 
-    void setCarParkEtaFromDestination(MutableLiveData<Eta> carParkEtaFromDestination);
+    void setUraCarParkEtaFromOrigin(MutableLiveData<Eta> carParkEtaFromOrigin);
 
-    void setCarParkEtaFromOrigin(MutableLiveData<Eta> carParkEta);
+    void setUraCarParkEtaFromDestination(MutableLiveData<Eta> carParkEtaFromDestination);
 
     void setRoute(PolylineOptions polyLineOptions);
+
+    void startNavigation();
+
+    void setMyTransportCarParkEtaFromOrigin(MutableLiveData<Eta> carParkEtaFromOrigin);
+
+    void setMyTransportCarParkEtaFromDestination(MutableLiveData<Eta> carParkEtaFromDestination);
 }

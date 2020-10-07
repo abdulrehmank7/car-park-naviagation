@@ -10,7 +10,6 @@ import android.text.TextUtils;
 
 import androidx.core.content.ContextCompat;
 
-import com.arkapp.carparknaviagation.R;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -45,14 +44,14 @@ public class MapUtils {
         BitmapDescriptor markerIcon = bitmapDescriptorFromVector(context, drawable);
 
         marker.position(new LatLng(lat, log));
-        marker.title(context.getString(R.string.current_location));
+        //marker.title(context.getString(R.string.current_location));
         marker.icon(markerIcon);
         //marker.anchor(bitmap.getWidth() / 2, bitmap.getHeight());
 
         return marker;
     }
 
-    private static Bitmap getBitmap(VectorDrawable vectorDrawable) {
+    public static Bitmap getBitmap(VectorDrawable vectorDrawable) {
         //get the bitmap image from the vector drawable file.
         Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
                                             vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);

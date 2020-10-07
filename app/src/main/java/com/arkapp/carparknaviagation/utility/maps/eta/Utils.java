@@ -1,6 +1,7 @@
 package com.arkapp.carparknaviagation.utility.maps.eta;
 
-import com.arkapp.carparknaviagation.data.models.carPark.CarParkAvailability;
+import com.arkapp.carparknaviagation.data.models.myTransportCarPark.MyTransportCarParkAvailability;
+import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarParkAvailability;
 
 import java.util.ArrayList;
 
@@ -33,11 +34,22 @@ public class Utils {
         return "";
     }
 
-    public static ArrayList<String> getCarParkLatLng(ArrayList<CarParkAvailability> validCarPark) {
+    public static ArrayList<String> getUraCarParkLatLng(
+            ArrayList<UraCarParkAvailability> validCarPark) {
         ArrayList<String> allCarParkLatLng = new ArrayList<>();
 
-        for (CarParkAvailability carParkAvailability : validCarPark) {
-            allCarParkLatLng.add(carParkAvailability.getLat() + "," + carParkAvailability.getLng());
+        for (UraCarParkAvailability uraCarParkAvailability : validCarPark) {
+            allCarParkLatLng.add(uraCarParkAvailability.getLat() + "," + uraCarParkAvailability.getLng());
+        }
+        return allCarParkLatLng;
+    }
+
+    public static ArrayList<String> getMyTransportCarParkLatLng(
+            ArrayList<MyTransportCarParkAvailability> validCarPark) {
+        ArrayList<String> allCarParkLatLng = new ArrayList<>();
+
+        for (MyTransportCarParkAvailability uraCarParkAvailability : validCarPark) {
+            allCarParkLatLng.add(uraCarParkAvailability.getCarParkLat() + "," + uraCarParkAvailability.getCarParkLng());
         }
         return allCarParkLatLng;
     }

@@ -1,7 +1,8 @@
-package com.arkapp.carparknaviagation.data.models.carParking;
+package com.arkapp.carparknaviagation.data.models.myTransportCarPark;
 
 import androidx.annotation.Keep;
 
+import com.arkapp.carparknaviagation.data.models.eta.ElementsForEta;
 import com.arkapp.carparknaviagation.data.models.rates.CarParkCharges;
 import com.arkapp.carparknaviagation.data.models.rates.CarParkInformation;
 import com.google.gson.annotations.SerializedName;
@@ -11,7 +12,7 @@ import com.google.gson.annotations.SerializedName;
  * Contact email - abdulrehman0796@gmail.com
  */
 @Keep
-public class Value {
+public class MyTransportCarParkAvailability {
 
     @SerializedName("CarParkID")
     private String carParkID;
@@ -47,6 +48,12 @@ public class Value {
     private CarParkInformation information;
 
     private CarParkCharges charges;
+
+    private String chargeValue;
+
+    private ElementsForEta etaDistanceFromOrigin;
+
+    private ElementsForEta etaDistanceFromDestination;
 
     public String getCarParkID() {
         return carParkID;
@@ -159,5 +166,31 @@ public class Value {
 
     public void setCharges(CarParkCharges charges) {
         this.charges = charges;
+    }
+
+    public String getChargeValue() {
+        return chargeValue;
+    }
+
+    public void setChargeValue(String chargeValue) {
+        this.chargeValue = chargeValue;
+    }
+
+    public ElementsForEta getEtaDistanceFromOrigin() {
+        return etaDistanceFromOrigin;
+    }
+
+    public void setEtaDistanceFromOrigin(
+            ElementsForEta etaDistanceFromOrigin) {
+        this.etaDistanceFromOrigin = etaDistanceFromOrigin;
+    }
+
+    public ElementsForEta getEtaDistanceFromDestination() {
+        return etaDistanceFromDestination;
+    }
+
+    public void setEtaDistanceFromDestination(
+            ElementsForEta etaDistanceFromDestination) {
+        this.etaDistanceFromDestination = etaDistanceFromDestination;
     }
 }

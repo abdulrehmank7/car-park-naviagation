@@ -2,7 +2,8 @@ package com.arkapp.carparknaviagation.ui.carParkList;
 
 import android.text.TextUtils;
 
-import com.arkapp.carparknaviagation.data.models.carPark.CarPark;
+import com.arkapp.carparknaviagation.data.models.myTransportCarPark.MyTransportCarParkAvailability;
+import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCharges;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -13,62 +14,62 @@ import java.util.Locale;
  */
 public class Utils {
 
-    public static String getChargeString(CarPark carPark) {
+    public static String getUraChargeString(UraCharges uraCharges) {
 
         StringBuilder builder = new StringBuilder();
-        if (carPark != null) {
-            if (!TextUtils.isEmpty(carPark.getWeekdayRate())) {
-                builder.append(String.format(Locale.ENGLISH, "Weekday Rate: $%s/Hr", doubleRate(carPark.getWeekdayRate())));
+        if (uraCharges != null) {
+            if (!TextUtils.isEmpty(uraCharges.getWeekdayRate())) {
+                builder.append(String.format(Locale.ENGLISH, "Weekday Rate: $%s/Hr", doubleRate(uraCharges.getWeekdayRate())));
                 builder.append("\n");
             }
 
-            if (!TextUtils.isEmpty(carPark.getSatdayRate())) {
-                builder.append(String.format(Locale.ENGLISH, "Saturday Rate: $%s/Hr", doubleRate(carPark.getSatdayRate())));
+            if (!TextUtils.isEmpty(uraCharges.getSatdayRate())) {
+                builder.append(String.format(Locale.ENGLISH, "Saturday Rate: $%s/Hr", doubleRate(uraCharges.getSatdayRate())));
                 builder.append("\n");
             }
 
-            if (!TextUtils.isEmpty(carPark.getSunPHRate())) {
-                builder.append(String.format(Locale.ENGLISH, "Sunday and Public Holiday Rate: $%s/Hr", doubleRate(carPark.getSunPHRate())));
+            if (!TextUtils.isEmpty(uraCharges.getSunPHRate())) {
+                builder.append(String.format(Locale.ENGLISH, "Sunday and Public Holiday Rate: $%s/Hr", doubleRate(uraCharges.getSunPHRate())));
                 builder.append("\n");
             }
 
-            if (!TextUtils.isEmpty(carPark.getRemarks())) {
-                builder.append("Remarks: " + carPark.getRemarks());
+            if (!TextUtils.isEmpty(uraCharges.getRemarks())) {
+                builder.append("Remarks: " + uraCharges.getRemarks());
                 builder.append("\n");
             }
         }
 
-        if (carPark == null)
+        if (uraCharges == null)
             return "Rates Unavailable!";
 
         return builder.toString();
     }
 
-    public static double getPerHourCharge(CarPark carPark) {
+    public static double getPerHourCharge(UraCharges uraCharges) {
         Calendar cal = Calendar.getInstance();
         boolean isSaturday = cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY;
         boolean isSunday = cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY;
         double charge = 0;
         if (isSaturday) {
-            if (!TextUtils.isEmpty(carPark.getSatdayRate())) {
+            if (!TextUtils.isEmpty(uraCharges.getSatdayRate())) {
                 charge = Double.parseDouble(
-                        carPark.getSatdayRate()
+                        uraCharges.getSatdayRate()
                                 .replace("$", "")
                                 .replace(" ", "")
                                 .trim());
             }
         } else if (isSunday) {
-            if (!TextUtils.isEmpty(carPark.getSunPHRate())) {
+            if (!TextUtils.isEmpty(uraCharges.getSunPHRate())) {
                 charge = Double.parseDouble(
-                        carPark.getSunPHRate()
+                        uraCharges.getSunPHRate()
                                 .replace("$", "")
                                 .replace(" ", "")
                                 .trim());
             }
         } else {
-            if (!TextUtils.isEmpty(carPark.getWeekdayRate())) {
+            if (!TextUtils.isEmpty(uraCharges.getWeekdayRate())) {
                 charge = Double.parseDouble(
-                        carPark.getWeekdayRate()
+                        uraCharges.getWeekdayRate()
                                 .replace("$", "")
                                 .replace(" ", "")
                                 .trim());
@@ -84,5 +85,42 @@ public class Utils {
                         .replace("$", "")
                         .replace(" ", "")
                         .trim()) * 2;
+    }
+
+    public static String getMyTransportChargeString(MyTransportCarParkAvailability availability) {
+
+        StringBuilder builder = new StringBuilder();
+        if (availability.getCharges() != null) {
+            if (!TextUtils.isEmpty(availability.getCharges().getWeekDaysRate1())) {
+                builder.append(availability.getCharges().getWeekDaysRate1());
+                builder.append("\n\n");
+            }
+        }
+
+        if (availability.getInformation() != null) {
+            if (!TextUtils.isEmpty(availability.getInformation().getCarParkType())) {
+                builder.append(String.format(Locale.ENGLISH, "Car Park Type: %s", availability.getInformation().getCarParkType()));
+                builder.append("\n\n");
+            }
+
+            if (!TextUtils.isEmpty(availability.getInformation().getTypeOfParkingSystem())) {
+                builder.append(String.format(Locale.ENGLISH, "Parking System: %s", availability.getInformation().getTypeOfParkingSystem()));
+                builder.append("\n\n");
+            }
+
+            if (availability.getInformation().getCarParkDecks() != null) {
+                builder.append(String.format(Locale.ENGLISH, "Car Park Decks: %s", availability.getInformation().getCarParkDecks()));
+                builder.append("\n\n");
+            }
+
+            if (!TextUtils.isEmpty(availability.getInformation().getNightParking())) {
+                builder.append(String.format(Locale.ENGLISH, "Night Parking: %s", availability.getInformation().getNightParking()));
+            }
+        }
+
+        if (TextUtils.isEmpty(builder.toString()))
+            return "Rates Unavailable!";
+
+        return builder.toString();
     }
 }

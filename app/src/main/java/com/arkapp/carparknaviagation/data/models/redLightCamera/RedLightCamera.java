@@ -10,7 +10,7 @@ import java.util.List;
  */
 
 @Keep
-public class speedCameras {
+public class RedLightCamera {
 
     private String type;
     private String name;

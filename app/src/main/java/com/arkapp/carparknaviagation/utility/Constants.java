@@ -17,14 +17,14 @@ public class Constants {
     public static final String CAR_PARK_API_KEY = "H0uaowJPSQ+T7/AuiCZnRA==";
     public static final String CAR_PARK_API_ACCESS_KEY = "a7e89bc3-ac45-4311-a61c-6804124e133b";
 
-    public static final int API_TOKEN_REFRESH_HOUR = 6;
+    public static final int API_TOKEN_REFRESH_HOUR = 4;
 
     public static final String CAR_PARK_API_1_BASE_URL = "http://datamall2.mytransport.sg/ltaodataservice/";
     public static final String CAR_PARK_API_2_BASE_URL = "https://www.ura.gov.sg/uraDataService/";
     public static final String GOOGLE_API_BASE_URL = "https://maps.googleapis.com/maps/api/";
 
-    public static final String CHARGES_OUTSIDE_CENTRAL_AREA = "$0.60 per half-hour";
-    public static final String CHARGES_WITHIN_CENTRAL_AREA = "$1.20 per half-hour\n(7:00am to 5:00pm, Monday to Saturday)\n\n$0.60 per half hour\n(Other hours)";
+    public static final String CHARGES_OUTSIDE_CENTRAL_AREA = "$1.20 per hour";
+    public static final String CHARGES_WITHIN_CENTRAL_AREA = "$2.40 per hour\n(7:00am to 5:00pm, Monday to Saturday)\n\n1.20 per hour\n(Other hours)";
 
     public static final ArrayList<String> CENTRAL_AREA = new ArrayList<>(Arrays.asList(
             "Albert Centre",

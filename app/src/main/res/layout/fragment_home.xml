@@ -16,18 +16,6 @@
         android:layout_height="match_parent"
         tools:context=".ui.home.HomeFragment">
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="8dp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -95,6 +83,28 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/etSearchBar" />
+
+                <View
+                    android:id="@+id/guideline2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_margin="0dp"
+                    android:elevation="8dp"
+                    android:indeterminate="true"
+                    android:padding="0dp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -175,6 +185,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{viewmodel.nearestCarParkClicked}"
             android:visibility="gone"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="12dp"
@@ -188,27 +201,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <com.google.android.material.button.MaterialButton
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textView5"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="42dp"
+                    android:layout_height="38dp"
                     android:fontFamily="sans-serif-medium"
-                    android:onClick="@{viewmodel.nearestCarParkClicked}"
-                    android:paddingStart="8dp"
-                    android:paddingTop="0dp"
-                    android:paddingEnd="8dp"
-                    android:paddingBottom="0dp"
+                    android:gravity="center"
                     android:text="@string/nearest_car_park"
                     android:textAllCaps="false"
-                    android:textColor="@color/colorPrimaryCustomDark"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/btForward"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/btForward"
-                    app:strokeColor="@color/colorPrimaryCustomDark"
-                    app:strokeWidth="1dp" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btBack"
@@ -332,11 +337,11 @@
                     android:id="@+id/tvAvailableLots"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:fontFamily="sans-serif-medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvRates"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btForward"
+                    app:layout_constraintTop_toTopOf="@+id/tvRates"
                     tools:text="52" />
 
                 <com.google.android.material.button.MaterialButton
@@ -345,6 +350,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="8dp"
+                    android:onClick="@{viewmodel.navigationClicked}"
                     android:text="@string/start"
                     app:icon="@drawable/ic_navigation"
                     app:layout_constraintBottom_toBottomOf="parent"

@@ -6,12 +6,16 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 
 import com.arkapp.carparknaviagation.R;
-import com.arkapp.carparknaviagation.data.models.carPark.AllCarPark;
-import com.arkapp.carparknaviagation.data.models.carPark.AllCarParkAvailability;
-import com.arkapp.carparknaviagation.data.models.carPark.CarPark;
-import com.arkapp.carparknaviagation.data.models.carPark.CarParkAvailability;
-import com.arkapp.carparknaviagation.data.models.carParking.Value;
+import com.arkapp.carparknaviagation.data.models.CustomCarPark;
+import com.arkapp.carparknaviagation.data.models.myTransportCarPark.MyTransportCarPark;
+import com.arkapp.carparknaviagation.data.models.myTransportCarPark.MyTransportCarParkAvailability;
+import com.arkapp.carparknaviagation.data.models.rates.CarParkCharges;
+import com.arkapp.carparknaviagation.data.models.rates.CarParkInformation;
 import com.arkapp.carparknaviagation.data.models.redLightCamera.Feature;
+import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarPark;
+import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarParkAvailability;
+import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarParkCharges;
+import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCharges;
 import com.arkapp.carparknaviagation.utility.listeners.HomePageListener;
 import com.arkapp.carparknaviagation.utility.maps.route.GetRouteTask;
 import com.arkapp.carparknaviagation.utility.svy21.LatLonCoordinate;
@@ -27,6 +31,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.arkapp.carparknaviagation.utility.Constants.CENTRAL_AREA;
+import static com.arkapp.carparknaviagation.utility.Constants.CHARGES_OUTSIDE_CENTRAL_AREA;
+import static com.arkapp.carparknaviagation.utility.Constants.CHARGES_WITHIN_CENTRAL_AREA;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.printLog;
 import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.calculateDistanceBetweenPoints;
 import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.fitRouteInScreen;
@@ -64,21 +71,21 @@ public class Utils {
         return newMarker;
     }
 
-    public static ArrayList<CarParkAvailability> removeCarParkInvalid(double fromLat,
-                                                                      double fromLng,
-                                                                      double toLat,
-                                                                      double toLng,
-                                                                      AllCarPark carParkCharges,
-                                                                      AllCarParkAvailability carParkAvailability) {
+    public static ArrayList<UraCarParkAvailability> removeInvalidUraCarPark(double fromLat,
+                                                                            double fromLng,
+                                                                            double toLat,
+                                                                            double toLng,
+                                                                            UraCarParkCharges carParkCharges,
+                                                                            UraCarPark carParkAvailability) {
 
         final int MINIMUM_SLOTS = 1;
-        final double MAXIMUM_SEARCH_RADIUS = 4000;
+        final double MAXIMUM_SEARCH_RADIUS = 3000;
 
-        List<CarPark> allCarParkCharges = carParkCharges.getResult();
-        List<CarParkAvailability> allCarParkAvailability = carParkAvailability.getResult();
-        final ArrayList<CarParkAvailability> carParkWithAvailableSlotsAndInRadius = new ArrayList<>();
+        List<UraCharges> allUraChargesCharges = carParkCharges.getResult();
+        List<UraCarParkAvailability> allUraCarParkAvailability = carParkAvailability.getResult();
+        final ArrayList<UraCarParkAvailability> carParkWithAvailableSlotsAndInRadius = new ArrayList<>();
 
-        for (CarParkAvailability carPark : allCarParkAvailability) {
+        for (UraCarParkAvailability carPark : allUraCarParkAvailability) {
 
             if (carPark.getGeometries() == null) continue;
 
@@ -87,7 +94,7 @@ public class Utils {
             //removing car park with less than minimum slots
             if (Integer.parseInt(carPark.getLotsAvailable()) < MINIMUM_SLOTS) continue;
 
-            for (CarPark charges : allCarParkCharges) {
+            for (UraCharges charges : allUraChargesCharges) {
 
                 if (charges.getPpCode().equals(carPark.getCarparkNo()) &&
                         charges.getVehCat().equals("Car") &&
@@ -123,38 +130,123 @@ public class Utils {
         return carParkWithAvailableSlotsAndInRadius;
     }
 
-    public static ArrayList<CarParkAvailability> filterCarPark(
-            ArrayList<CarParkAvailability> validCarParks) {
+    public static ArrayList<MyTransportCarParkAvailability> removeInvalidMyTransportCarPark(
+            double fromLat,
+            double fromLng,
+            double toLat,
+            double toLng,
+            MyTransportCarPark carParkAvailability,
+            ArrayList<CarParkInformation> allHdbCarParkCharges) {
+
+        final int MINIMUM_SLOTS = 1;
+        final double MAXIMUM_SEARCH_RADIUS = 3000;
+
+        List<MyTransportCarParkAvailability> allMyTransportCarParkAvailability = carParkAvailability.getMyTransportCarParkAvailability();
+        final ArrayList<MyTransportCarParkAvailability> carParkWithAvailableSlotsAndInRadius = new ArrayList<>();
+
+        for (MyTransportCarParkAvailability availability : allMyTransportCarParkAvailability) {
+
+            if (TextUtils.isEmpty(availability.getLocation())) continue;
+
+            if (availability.getAvailableLots() == null) continue;
+
+            if (TextUtils.isEmpty(availability.getAgency()) || !availability.getAgency().equals("HDB"))
+                continue;
+
+            //removing car park with less than minimum slots
+            if (availability.getAvailableLots() < MINIMUM_SLOTS) continue;
+
+            String[] location = availability.getLocation().split(" ");
+            double carParkLat = Double.parseDouble(location[0]);
+            double carParkLng = Double.parseDouble(location[1]);
+
+            availability.setCarParkLat(carParkLat);
+            availability.setCarParkLng(carParkLng);
+
+            availability.setDistanceFromDestination(
+                    calculateDistanceBetweenPoints(
+                            carParkLat,
+                            carParkLng,
+                            toLat,
+                            toLng));
+
+            availability.setDistanceFromOrigin(
+                    calculateDistanceBetweenPoints(
+                            carParkLat,
+                            carParkLng,
+                            fromLat,
+                            fromLng));
+
+            if (availability.getDistanceFromDestination() <= MAXIMUM_SEARCH_RADIUS) {
+
+                for (String address : CENTRAL_AREA) {
+                    if (availability.getDevelopment().toLowerCase().contains(address.toLowerCase())) {
+                        CarParkCharges newCharges = new CarParkCharges();
+                        newCharges.setWeekDaysRate1(CHARGES_WITHIN_CENTRAL_AREA);
+                        availability.setCharges(newCharges);
+                        availability.setChargeValue("$2.40/hr");
+                        break;
+                    }
+                }
+                if (availability.getCharges() == null || TextUtils.isEmpty(availability.getCharges().getWeekDaysRate1())) {
+                    CarParkCharges newCharges = new CarParkCharges();
+                    newCharges.setWeekDaysRate1(CHARGES_OUTSIDE_CENTRAL_AREA);
+                    availability.setCharges(newCharges);
+                    availability.setChargeValue("$1.20/hr");
+                }
+
+
+                int counter = 0;
+                for (CarParkInformation info : allHdbCarParkCharges) {
+                    counter++;
+                    if (info.getCarParkNo().equals(availability.getCarParkID()) ||
+                            info.getAddress().trim().equalsIgnoreCase(availability.getDevelopment().trim())) {
+                        availability.setInformation(info);
+                        carParkWithAvailableSlotsAndInRadius.add(availability);
+                        break;
+                    }
+
+                    if (counter == allHdbCarParkCharges.size())
+                        carParkWithAvailableSlotsAndInRadius.add(availability);
+                }
+            }
+        }
+
+        return carParkWithAvailableSlotsAndInRadius;
+    }
+
+    public static ArrayList<UraCarParkAvailability> filterUraCarPark(
+            ArrayList<UraCarParkAvailability> validCarParks) {
 
         final double MAXIMUM_SEARCH_RADIUS = 3000;
 
-        final ArrayList<CarParkAvailability> carParkWithEta = new ArrayList<>();
-        final ArrayList<CarParkAvailability> carParkDistanceChecked = new ArrayList<>();
-        final ArrayList<CarParkAvailability> finalCarParks = new ArrayList<>();
+        final ArrayList<UraCarParkAvailability> carParkWithEta = new ArrayList<>();
+        final ArrayList<UraCarParkAvailability> carParkDistanceChecked = new ArrayList<>();
+        final ArrayList<UraCarParkAvailability> finalCarParks = new ArrayList<>();
 
-        for (CarParkAvailability validCarPark : validCarParks) {
+        for (UraCarParkAvailability validCarPark : validCarParks) {
             validCarPark.setDistanceFromOrigin(Double.parseDouble(validCarPark.getEtaDistanceFromOrigin().getDistance().getValue()));
             validCarPark.setDistanceFromDestination(Double.parseDouble(validCarPark.getEtaDistanceFromDestination().getDistance().getValue()));
             carParkWithEta.add(validCarPark);
         }
 
-        for (CarParkAvailability carpark : carParkWithEta) {
+        for (UraCarParkAvailability carpark : carParkWithEta) {
             if (carpark.getDistanceFromDestination() <= MAXIMUM_SEARCH_RADIUS) {
                 carParkDistanceChecked.add(carpark);
             }
         }
 
-        final ArrayList<CarParkAvailability> distanceCarParkRank = new ArrayList<>(carParkDistanceChecked);
-        final ArrayList<CarParkAvailability> emptyCarParkRank = new ArrayList<>(carParkDistanceChecked);
-        final ArrayList<CarParkAvailability> originDistanceCarParkRank = new ArrayList<>(carParkDistanceChecked);
-        final ArrayList<CarParkAvailability> etaCarParkRank = new ArrayList<>(carParkDistanceChecked);
+        final ArrayList<UraCarParkAvailability> distanceCarParkRank = new ArrayList<>(carParkDistanceChecked);
+        final ArrayList<UraCarParkAvailability> emptyCarParkRank = new ArrayList<>(carParkDistanceChecked);
+        final ArrayList<UraCarParkAvailability> originDistanceCarParkRank = new ArrayList<>(carParkDistanceChecked);
+        final ArrayList<UraCarParkAvailability> etaCarParkRank = new ArrayList<>(carParkDistanceChecked);
 
         Collections.sort(distanceCarParkRank, (c1, c2) -> Double.compare(c1.getDistanceFromDestination(), c2.getDistanceFromDestination()));
         Collections.sort(originDistanceCarParkRank, (c1, c2) -> Double.compare(c1.getDistanceFromOrigin(), c2.getDistanceFromOrigin()));
         Collections.sort(emptyCarParkRank, (c1, c2) -> Integer.compare(Integer.parseInt(c2.getLotsAvailable()), Integer.parseInt(c1.getLotsAvailable())));
         Collections.sort(etaCarParkRank, (c1, c2) -> Double.compare(Double.parseDouble(c1.getEtaDistanceFromOrigin().getDuration().getValue()), Double.parseDouble(c2.getEtaDistanceFromOrigin().getDuration().getValue())));
 
-        for (CarParkAvailability carPark : carParkDistanceChecked) {
+        for (UraCarParkAvailability carPark : carParkDistanceChecked) {
             int sequencePriority = distanceCarParkRank.indexOf(carPark) +
                     emptyCarParkRank.indexOf(carPark) +
                     originDistanceCarParkRank.indexOf(carPark) +
@@ -166,8 +258,8 @@ public class Utils {
 
         Collections.sort(finalCarParks, (c1, c2) -> c1.getSequencePriority().compareTo(c2.getSequencePriority()));
 
-        for (CarParkAvailability carPark : finalCarParks) {
-            printLog("----------------------------------------");
+        for (UraCarParkAvailability carPark : finalCarParks) {
+            printLog("----------------Ura---------------");
             printLog("location: " + carPark.getGeometries().get(0).getCoordinates());
             printLog("name: " + carPark.getCharges().getPpName());
             printLog("slots: " + carPark.getLotsAvailable());
@@ -179,22 +271,227 @@ public class Utils {
         return finalCarParks;
     }
 
-    public static ArrayList<CarParkAvailability> filterCarPark2(double fromLat,
-                                                                double fromLng,
-                                                                double toLat,
-                                                                double toLng,
-                                                                AllCarPark carParkCharges,
-                                                                AllCarParkAvailability carParkAvailability) {
+
+    public static ArrayList<MyTransportCarParkAvailability> filterMyTransportCarPark(
+            ArrayList<MyTransportCarParkAvailability> validCarParks) {
+
+        final double MAXIMUM_SEARCH_RADIUS = 3000;
+
+        final ArrayList<MyTransportCarParkAvailability> carParkWithEta = new ArrayList<>();
+        final ArrayList<MyTransportCarParkAvailability> carParkDistanceChecked = new ArrayList<>();
+        final ArrayList<MyTransportCarParkAvailability> finalCarParks = new ArrayList<>();
+
+        for (MyTransportCarParkAvailability validCarPark : validCarParks) {
+            validCarPark.setDistanceFromOrigin(Double.parseDouble(validCarPark.getEtaDistanceFromOrigin().getDistance().getValue()));
+            validCarPark.setDistanceFromDestination(Double.parseDouble(validCarPark.getEtaDistanceFromDestination().getDistance().getValue()));
+            carParkWithEta.add(validCarPark);
+        }
+
+        for (MyTransportCarParkAvailability carpark : carParkWithEta) {
+            if (carpark.getDistanceFromDestination() <= MAXIMUM_SEARCH_RADIUS) {
+                carParkDistanceChecked.add(carpark);
+            }
+        }
+
+        final ArrayList<MyTransportCarParkAvailability> distanceCarParkRank = new ArrayList<>(carParkDistanceChecked);
+        final ArrayList<MyTransportCarParkAvailability> emptyCarParkRank = new ArrayList<>(carParkDistanceChecked);
+        final ArrayList<MyTransportCarParkAvailability> originDistanceCarParkRank = new ArrayList<>(carParkDistanceChecked);
+        final ArrayList<MyTransportCarParkAvailability> etaCarParkRank = new ArrayList<>(carParkDistanceChecked);
+
+        Collections.sort(distanceCarParkRank, (c1, c2) -> Double.compare(c1.getDistanceFromDestination(), c2.getDistanceFromDestination()));
+        Collections.sort(originDistanceCarParkRank, (c1, c2) -> Double.compare(c1.getDistanceFromOrigin(), c2.getDistanceFromOrigin()));
+        Collections.sort(emptyCarParkRank, (c1, c2) -> Integer.compare(c2.getAvailableLots(), c1.getAvailableLots()));
+        Collections.sort(etaCarParkRank, (c1, c2) -> Double.compare(Double.parseDouble(c1.getEtaDistanceFromOrigin().getDuration().getValue()), Double.parseDouble(c2.getEtaDistanceFromOrigin().getDuration().getValue())));
+
+        for (MyTransportCarParkAvailability carPark : carParkDistanceChecked) {
+            int sequencePriority = distanceCarParkRank.indexOf(carPark) +
+                    emptyCarParkRank.indexOf(carPark) +
+                    originDistanceCarParkRank.indexOf(carPark) +
+                    etaCarParkRank.indexOf(carPark);
+
+            carPark.setSequencePriority(sequencePriority);
+            finalCarParks.add(carPark);
+        }
+
+        Collections.sort(finalCarParks, (c1, c2) -> c1.getSequencePriority().compareTo(c2.getSequencePriority()));
+
+        for (MyTransportCarParkAvailability carPark : finalCarParks) {
+            printLog("------------My Transport----------------");
+            printLog("location: " + carPark.getLocation());
+            printLog("name: " + carPark.getCharges().getWeekDaysRate1());
+            printLog("slots: " + carPark.getAvailableLots());
+            printLog("priority " + carPark.getSequencePriority());
+            printLog("destination distance " + carPark.getDistanceFromDestination());
+            printLog("origin distance " + carPark.getDistanceFromOrigin());
+        }
+
+        return finalCarParks;
+    }
+
+    public static ArrayList<Object> filterAllCarPark(
+            ArrayList<UraCarParkAvailability> validUraCarParks,
+            ArrayList<MyTransportCarParkAvailability> validMyTransportCarParks) {
+
+        final double MAXIMUM_SEARCH_RADIUS = 3000;
+
+        final ArrayList<Object> allCarPark = new ArrayList<>();
+        allCarPark.addAll(validUraCarParks);
+        allCarPark.addAll(validMyTransportCarParks);
+
+        final ArrayList<Object> carParkWithEta = new ArrayList<>();
+        final ArrayList<Object> carParkDistanceChecked = new ArrayList<>();
+        final ArrayList<Object> finalCarParks = new ArrayList<>();
+
+
+        for (Object carPark : allCarPark) {
+            if (isUraCarPark(carPark)) {
+                UraCarParkAvailability data = (UraCarParkAvailability) carPark;
+                data.setDistanceFromOrigin(Double.parseDouble(data.getEtaDistanceFromOrigin().getDistance().getValue()));
+                data.setDistanceFromDestination(Double.parseDouble(data.getEtaDistanceFromDestination().getDistance().getValue()));
+                carParkWithEta.add(data);
+            } else {
+                MyTransportCarParkAvailability data = (MyTransportCarParkAvailability) carPark;
+                data.setDistanceFromOrigin(Double.parseDouble(data.getEtaDistanceFromOrigin().getDistance().getValue()));
+                data.setDistanceFromDestination(Double.parseDouble(data.getEtaDistanceFromDestination().getDistance().getValue()));
+                carParkWithEta.add(data);
+            }
+        }
+
+        for (Object carPark : carParkWithEta) {
+            if (isUraCarPark(carPark)) {
+                UraCarParkAvailability data = (UraCarParkAvailability) carPark;
+                if (data.getDistanceFromDestination() <= MAXIMUM_SEARCH_RADIUS) {
+                    carParkDistanceChecked.add(data);
+                }
+            } else {
+                MyTransportCarParkAvailability data = (MyTransportCarParkAvailability) carPark;
+                if (data.getDistanceFromDestination() <= MAXIMUM_SEARCH_RADIUS) {
+                    carParkDistanceChecked.add(data);
+                }
+            }
+        }
+
+        ArrayList<CustomCarPark> sortingList = new ArrayList<>();
+        for (Object carpark : carParkDistanceChecked) {
+            if (isUraCarPark(carpark)) {
+                UraCarParkAvailability data = (UraCarParkAvailability) carpark;
+                CustomCarPark customData = new CustomCarPark();
+                customData.setId(data.getCarparkNo());
+                customData.setAvailableLots(Integer.parseInt(data.getLotsAvailable()));
+                customData.setDistanceFromDestination(data.getDistanceFromDestination());
+                customData.setDistanceFromOrigin(data.getDistanceFromOrigin());
+                customData.setEtaDistanceFromOrigin(data.getEtaDistanceFromOrigin());
+                sortingList.add(customData);
+            } else {
+                MyTransportCarParkAvailability data = (MyTransportCarParkAvailability) carpark;
+                CustomCarPark customData = new CustomCarPark();
+                customData.setId(data.getCarParkID());
+                customData.setAvailableLots(data.getAvailableLots());
+                customData.setDistanceFromDestination(data.getDistanceFromDestination());
+                customData.setDistanceFromOrigin(data.getDistanceFromOrigin());
+                customData.setEtaDistanceFromOrigin(data.getEtaDistanceFromOrigin());
+                sortingList.add(customData);
+            }
+        }
+
+
+        final ArrayList<CustomCarPark> distanceCarParkRank = new ArrayList<>(sortingList);
+        final ArrayList<CustomCarPark> emptyCarParkRank = new ArrayList<>(sortingList);
+        final ArrayList<CustomCarPark> originDistanceCarParkRank = new ArrayList<>(sortingList);
+        final ArrayList<CustomCarPark> etaCarParkRank = new ArrayList<>(sortingList);
+
+        Collections.sort(distanceCarParkRank, (c1, c2) -> Double.compare(c1.getDistanceFromDestination(), c2.getDistanceFromDestination()));
+        Collections.sort(originDistanceCarParkRank, (c1, c2) -> Double.compare(c1.getDistanceFromOrigin(), c2.getDistanceFromOrigin()));
+        Collections.sort(emptyCarParkRank, (c1, c2) -> Integer.compare(c2.getAvailableLots(), c1.getAvailableLots()));
+        Collections.sort(etaCarParkRank, (c1, c2) -> Double.compare(Double.parseDouble(c1.getEtaDistanceFromOrigin().getDuration().getValue()), Double.parseDouble(c2.getEtaDistanceFromOrigin().getDuration().getValue())));
+
+        final ArrayList<CustomCarPark> finalSortingList = new ArrayList<>();
+
+        for (CustomCarPark carPark : sortingList) {
+            int sequencePriority = distanceCarParkRank.indexOf(carPark) +
+                    emptyCarParkRank.indexOf(carPark) +
+                    originDistanceCarParkRank.indexOf(carPark) +
+                    etaCarParkRank.indexOf(carPark);
+            carPark.setSequencePriority(sequencePriority);
+            finalSortingList.add(carPark);
+        }
+
+        Collections.sort(finalSortingList, (c1, c2) -> c1.getSequencePriority().compareTo(c2.getSequencePriority()));
+
+        for (CustomCarPark customCarPark : finalSortingList) {
+            printLog("-------------------------------");
+            printLog("customCarPark SequencePriority " + customCarPark.getSequencePriority());
+            printLog("customCarPark id " + customCarPark.getId());
+
+            for (Object carPark : carParkDistanceChecked) {
+                if (isUraCarPark(carPark)) {
+                    UraCarParkAvailability data = (UraCarParkAvailability) carPark;
+                    if (customCarPark.getId().equals(data.getCarparkNo())) {
+                        data.setSequencePriority(customCarPark.getSequencePriority());
+                        if (!finalCarParks.contains(data)) {
+                            printLog("setting priority ura " + customCarPark.getSequencePriority());
+                            printLog("ura id " + data.getCarparkNo());
+
+                            finalCarParks.add(data);
+                        }
+                        break;
+                    }
+                } else {
+                    MyTransportCarParkAvailability data = (MyTransportCarParkAvailability) carPark;
+                    if (customCarPark.getId().equals(data.getCarParkID())) {
+                        data.setSequencePriority(customCarPark.getSequencePriority());
+                        if (!finalCarParks.contains(data)) {
+                            printLog("setting priority my transport " + customCarPark.getSequencePriority());
+                            printLog("my transport id " + data.getCarParkID());
+
+                            finalCarParks.add(data);
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        for (Object carPark : finalCarParks) {
+            if (isUraCarPark(carPark)) {
+                UraCarParkAvailability data = (UraCarParkAvailability) carPark;
+                printLog("----------------Ura---------------");
+                printLog("location: " + data.getGeometries().get(0).getCoordinates());
+                printLog("name: " + data.getCharges().getPpName());
+                printLog("slots: " + data.getLotsAvailable());
+                printLog("priority " + data.getSequencePriority());
+                printLog("destination distance " + data.getDistanceFromDestination());
+                printLog("origin distance " + data.getDistanceFromOrigin());
+            } else {
+                MyTransportCarParkAvailability data = (MyTransportCarParkAvailability) carPark;
+                printLog("------------My Transport----------------");
+                printLog("location: " + data.getLocation());
+                printLog("name: " + data.getCharges().getWeekDaysRate1());
+                printLog("slots: " + data.getAvailableLots());
+                printLog("priority " + data.getSequencePriority());
+                printLog("destination distance " + data.getDistanceFromDestination());
+                printLog("origin distance " + data.getDistanceFromOrigin());
+            }
+        }
+        return finalCarParks;
+    }
+
+    public static ArrayList<UraCarParkAvailability> filterCarPark2(double fromLat,
+                                                                   double fromLng,
+                                                                   double toLat,
+                                                                   double toLng,
+                                                                   UraCarParkCharges carParkCharges,
+                                                                   UraCarPark carParkAvailability) {
 
         final int MINIMUM_SLOTS = 1;
         final double MAXIMUM_SEARCH_RADIUS = 3000;
 
-        List<CarPark> allCarParkCharges = carParkCharges.getResult();
-        List<CarParkAvailability> allCarParkAvailability = carParkAvailability.getResult();
-        final ArrayList<CarParkAvailability> carParkWithAvailableSlotsAndInRadius = new ArrayList<>();
-        final ArrayList<CarParkAvailability> finalCarParks = new ArrayList<>();
+        List<UraCharges> allUraChargesCharges = carParkCharges.getResult();
+        List<UraCarParkAvailability> allUraCarParkAvailability = carParkAvailability.getResult();
+        final ArrayList<UraCarParkAvailability> carParkWithAvailableSlotsAndInRadius = new ArrayList<>();
+        final ArrayList<UraCarParkAvailability> finalCarParks = new ArrayList<>();
 
-        for (CarParkAvailability carPark : allCarParkAvailability) {
+        for (UraCarParkAvailability carPark : allUraCarParkAvailability) {
 
             if (carPark.getGeometries() == null) continue;
 
@@ -203,7 +500,7 @@ public class Utils {
             //removing car park with less than minimum slots
             if (Integer.parseInt(carPark.getLotsAvailable()) < MINIMUM_SLOTS) continue;
 
-            for (CarPark charges : allCarParkCharges) {
+            for (UraCharges charges : allUraChargesCharges) {
 
                 if (charges.getPpCode().equals(carPark.getCarparkNo()) &&
                         charges.getVehCat().equals("Car") &&
@@ -237,15 +534,15 @@ public class Utils {
             }
         }
 
-        final ArrayList<CarParkAvailability> distanceCarParkRank = new ArrayList<>(carParkWithAvailableSlotsAndInRadius);
-        final ArrayList<CarParkAvailability> emptyCarParkRank = new ArrayList<>(carParkWithAvailableSlotsAndInRadius);
-        final ArrayList<CarParkAvailability> etaCarParkRank = new ArrayList<>(carParkWithAvailableSlotsAndInRadius);
+        final ArrayList<UraCarParkAvailability> distanceCarParkRank = new ArrayList<>(carParkWithAvailableSlotsAndInRadius);
+        final ArrayList<UraCarParkAvailability> emptyCarParkRank = new ArrayList<>(carParkWithAvailableSlotsAndInRadius);
+        final ArrayList<UraCarParkAvailability> etaCarParkRank = new ArrayList<>(carParkWithAvailableSlotsAndInRadius);
 
         Collections.sort(distanceCarParkRank, (c1, c2) -> Double.compare(c1.getDistanceFromDestination(), c2.getDistanceFromDestination()));
         Collections.sort(emptyCarParkRank, (c1, c2) -> Integer.compare(Integer.parseInt(c2.getLotsAvailable()), Integer.parseInt(c1.getLotsAvailable())));
         Collections.sort(etaCarParkRank, (c1, c2) -> Double.compare(c1.getDistanceFromOrigin(), c2.getDistanceFromOrigin()));
 
-        for (CarParkAvailability carPark : carParkWithAvailableSlotsAndInRadius) {
+        for (UraCarParkAvailability carPark : carParkWithAvailableSlotsAndInRadius) {
             int sequencePriority = distanceCarParkRank.indexOf(carPark) +
                     emptyCarParkRank.indexOf(carPark) +
                     etaCarParkRank.indexOf(carPark);
@@ -256,7 +553,7 @@ public class Utils {
 
         Collections.sort(finalCarParks, (c1, c2) -> c1.getSequencePriority().compareTo(c2.getSequencePriority()));
 
-        for (CarParkAvailability carPark : finalCarParks) {
+        for (UraCarParkAvailability carPark : finalCarParks) {
             printLog("----------------------------------------");
             printLog("location: " + carPark.getGeometries().get(0).getCoordinates());
             printLog("name: " + carPark.getCharges().getPpName());
@@ -270,13 +567,34 @@ public class Utils {
     }
 
     public static ArrayList<MarkerOptions> getCarParkMarkers(Context context,
-                                                             ArrayList<Value> carParkings) {
+                                                             ArrayList<MyTransportCarParkAvailability> carParkings) {
         ArrayList<MarkerOptions> carParkMarkers = new ArrayList<>();
 
-        for (Value carPark : carParkings) {
+        for (MyTransportCarParkAvailability carPark : carParkings) {
             carParkMarkers.add(getCustomMaker(context,
                                               carPark.getCarParkLat(),
                                               carPark.getCarParkLng(),
+                                              R.drawable.ic_parking_marker));
+        }
+
+        return carParkMarkers;
+    }
+
+    public static ArrayList<MarkerOptions> getCarParkMarkers2(Context context,
+                                                              List<UraCarParkAvailability> carParkings) {
+        ArrayList<MarkerOptions> carParkMarkers = new ArrayList<>();
+
+        for (UraCarParkAvailability carPark : carParkings) {
+
+            if (carPark.getGeometries() == null) continue;
+            String[] location = carPark.getGeometries().get(0).getCoordinates().split(",");
+            LatLonCoordinate lanLang = SVY21.computeLatLon(Double.parseDouble(location[1]), Double.parseDouble(location[0]));
+            carPark.setLat(lanLang.getLatitude());
+            carPark.setLng(lanLang.getLongitude());
+
+            carParkMarkers.add(getCustomMaker(context,
+                                              carPark.getLat(),
+                                              carPark.getLng(),
                                               R.drawable.ic_parking_marker));
         }
 
@@ -397,5 +715,9 @@ public class Utils {
         }
 
         return redLightMarkers;
+    }
+
+    public static boolean isUraCarPark(Object carpark) {
+        return carpark instanceof UraCarParkAvailability;
     }
 }

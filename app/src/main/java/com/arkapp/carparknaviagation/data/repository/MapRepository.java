@@ -5,11 +5,11 @@ import android.location.Address;
 import android.location.Geocoder;
 
 import com.arkapp.carparknaviagation.R;
-import com.arkapp.carparknaviagation.data.models.carPark.AllCarPark;
 import com.arkapp.carparknaviagation.data.models.rates.CarParkCharges;
 import com.arkapp.carparknaviagation.data.models.rates.CarParkInformation;
 import com.arkapp.carparknaviagation.data.models.redLightCamera.Feature;
-import com.arkapp.carparknaviagation.data.models.redLightCamera.speedCameras;
+import com.arkapp.carparknaviagation.data.models.redLightCamera.RedLightCamera;
+import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarParkCharges;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import static com.arkapp.carparknaviagation.utility.ViewUtils.printLog;
 import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.getCustomMaker;
 
 /**
@@ -55,9 +56,9 @@ public class MapRepository {
                 is.close();
             }
             String jsonString = writer.toString();
-            speedCameras speedCameras = gson.fromJson(jsonString, speedCameras.class);
+            RedLightCamera RedLightCamera = gson.fromJson(jsonString, RedLightCamera.class);
 
-            return speedCameras.getFeatures();
+            return RedLightCamera.getFeatures();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -80,9 +81,9 @@ public class MapRepository {
                 is.close();
             }
             String jsonString = writer.toString();
-            speedCameras speedCameras = gson.fromJson(jsonString, speedCameras.class);
+            RedLightCamera RedLightCamera = gson.fromJson(jsonString, RedLightCamera.class);
 
-            return speedCameras.getFeatures();
+            return RedLightCamera.getFeatures();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -106,11 +107,11 @@ public class MapRepository {
             }
             String jsonString = writer.toString();
 
-            speedCameras speedCameras = gson.fromJson(jsonString, speedCameras.class);
+            RedLightCamera RedLightCamera = gson.fromJson(jsonString, RedLightCamera.class);
 
             ArrayList<MarkerOptions> redLightMarkers = new ArrayList<>();
 
-            for (Feature feature : speedCameras.getFeatures()) {
+            for (Feature feature : RedLightCamera.getFeatures()) {
                 redLightMarkers.add(getCustomMaker(context,
                                                    feature.getGeometry().getCoordinates().get(1),
                                                    feature.getGeometry().getCoordinates().get(0),
@@ -149,10 +150,10 @@ public class MapRepository {
         return new ArrayList<>();
     }
 
-    public ArrayList<CarParkInformation> getCarParkInformation() {
+    public ArrayList<CarParkInformation> getHdbCarParkInformation() {
         try {
 
-            InputStream is = context.getResources().openRawResource(R.raw.car_park_information);
+            InputStream is = context.getResources().openRawResource(R.raw.hdb_car_park_information);
             Writer writer = new StringWriter();
             char[] buffer = new char[1024];
             try {
@@ -166,18 +167,19 @@ public class MapRepository {
             }
             String jsonString = writer.toString();
 
-            return gson.fromJson(jsonString, new TypeToken<List<CarParkInformation>>() {
+            return gson.fromJson(jsonString, new TypeToken<ArrayList<CarParkInformation>>() {
             }.getType());
         } catch (Exception e) {
+            printLog(e.getLocalizedMessage());
             e.printStackTrace();
         }
         return new ArrayList<>();
     }
 
-    public AllCarPark getAllCarParkCharges() {
+    public UraCarParkCharges getUraCarParkCharges() {
         try {
 
-            InputStream is = context.getResources().openRawResource(R.raw.car_park_charges);
+            InputStream is = context.getResources().openRawResource(R.raw.ura_car_park_charges);
             Writer writer = new StringWriter();
             char[] buffer = new char[1024];
             try {
@@ -191,7 +193,7 @@ public class MapRepository {
             }
             String jsonString = writer.toString();
 
-            return gson.fromJson(jsonString, AllCarPark.class);
+            return gson.fromJson(jsonString, UraCarParkCharges.class);
         } catch (Exception e) {
             e.printStackTrace();
         }

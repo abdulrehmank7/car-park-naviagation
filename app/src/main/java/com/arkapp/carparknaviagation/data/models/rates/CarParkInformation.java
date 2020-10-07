@@ -42,7 +42,7 @@ public class CarParkInformation {
     private Integer carParkDecks;
 
     @SerializedName("gantry_height")
-    private Integer gantryHeight;
+    private Double gantryHeight;
 
     @SerializedName("car_park_basement")
     private String carParkBasement;
@@ -127,11 +127,11 @@ public class CarParkInformation {
         this.carParkDecks = carParkDecks;
     }
 
-    public Integer getGantryHeight() {
+    public Double getGantryHeight() {
         return gantryHeight;
     }
 
-    public void setGantryHeight(Integer gantryHeight) {
+    public void setGantryHeight(Double gantryHeight) {
         this.gantryHeight = gantryHeight;
     }
 

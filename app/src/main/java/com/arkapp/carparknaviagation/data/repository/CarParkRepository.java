@@ -2,11 +2,10 @@ package com.arkapp.carparknaviagation.data.repository;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.arkapp.carparknaviagation.data.models.carPark.AllCarPark;
-import com.arkapp.carparknaviagation.data.models.carPark.AllCarParkAvailability;
-import com.arkapp.carparknaviagation.data.models.carPark.Token;
-import com.arkapp.carparknaviagation.data.models.carParking.CarParking;
 import com.arkapp.carparknaviagation.data.models.eta.Eta;
+import com.arkapp.carparknaviagation.data.models.myTransportCarPark.MyTransportCarPark;
+import com.arkapp.carparknaviagation.data.models.uraCarPark.Token;
+import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarPark;
 import com.arkapp.carparknaviagation.utility.retrofit.Apis;
 import com.arkapp.carparknaviagation.utility.retrofit.RetrofitService;
 
@@ -37,27 +36,27 @@ public class CarParkRepository {
         apiGoogle = RetrofitService.createService(Apis.class, CAR_PARK_API_2_BASE_URL);
     }
 
-    public MutableLiveData<CarParking> getCarParkAvailability() {
+    public MutableLiveData<MyTransportCarPark> getMyTransportCarParkAvailability() {
 
-        MutableLiveData<CarParking> newsData = new MutableLiveData<>();
-        apis.getCarParkData(CAR_PARK_API_KEY).enqueue(new Callback<CarParking>() {
+        MutableLiveData<MyTransportCarPark> newsData = new MutableLiveData<>();
+        apis.getCarParkData(CAR_PARK_API_KEY).enqueue(new Callback<MyTransportCarPark>() {
             @Override
-            public void onResponse(Call<CarParking> call,
-                                   Response<CarParking> response) {
+            public void onResponse(Call<MyTransportCarPark> call,
+                                   Response<MyTransportCarPark> response) {
                 if (response.isSuccessful()) {
                     newsData.setValue(response.body());
                 }
             }
 
             @Override
-            public void onFailure(Call<CarParking> call, Throwable t) {
+            public void onFailure(Call<MyTransportCarPark> call, Throwable t) {
                 newsData.setValue(null);
             }
         });
         return newsData;
     }
 
-    public MutableLiveData<String> getCarParkApiToken() {
+    public MutableLiveData<String> getUraCarParkApiToken() {
 
         MutableLiveData<String> data = new MutableLiveData<>();
 
@@ -78,36 +77,18 @@ public class CarParkRepository {
         return data;
     }
 
-    public MutableLiveData<AllCarParkAvailability> getAllCarParkAvailability(String token) {
+    public MutableLiveData<UraCarPark> getUraCarParkAvailability(String token) {
 
-        MutableLiveData<AllCarParkAvailability> data = new MutableLiveData<>();
-        apiNew.getCarParkAvailability(CAR_PARK_API_ACCESS_KEY, token).enqueue(new Callback<AllCarParkAvailability>() {
+        MutableLiveData<UraCarPark> data = new MutableLiveData<>();
+        apiNew.getCarParkAvailability(CAR_PARK_API_ACCESS_KEY, token).enqueue(new Callback<UraCarPark>() {
             @Override
-            public void onResponse(Call<AllCarParkAvailability> call,
-                                   Response<AllCarParkAvailability> response) {
+            public void onResponse(Call<UraCarPark> call,
+                                   Response<UraCarPark> response) {
                 data.setValue(response.body());
             }
 
             @Override
-            public void onFailure(Call<AllCarParkAvailability> call, Throwable t) {
-                data.setValue(null);
-            }
-        });
-
-        return data;
-    }
-
-    public MutableLiveData<AllCarPark> getAllCarParkCharges(String token) {
-
-        MutableLiveData<AllCarPark> data = new MutableLiveData<>();
-        apiNew.getCarParkCharges(CAR_PARK_API_ACCESS_KEY, token).enqueue(new Callback<AllCarPark>() {
-            @Override
-            public void onResponse(Call<AllCarPark> call, Response<AllCarPark> response) {
-                data.setValue(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<AllCarPark> call, Throwable t) {
+            public void onFailure(Call<UraCarPark> call, Throwable t) {
                 data.setValue(null);
             }
         });

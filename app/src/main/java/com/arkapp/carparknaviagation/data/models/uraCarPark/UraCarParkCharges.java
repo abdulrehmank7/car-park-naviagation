@@ -1,10 +1,9 @@
-package com.arkapp.carparknaviagation.data.models.carPark;
+package com.arkapp.carparknaviagation.data.models.uraCarPark;
 
 import androidx.annotation.Keep;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,7 +11,7 @@ import java.util.List;
  * Contact email - abdulrehman0796@gmail.com
  */
 @Keep
-public class AllCarParkAvailability {
+public class UraCarParkCharges {
     @SerializedName("Status")
     private String status;
 
@@ -20,7 +19,7 @@ public class AllCarParkAvailability {
     private String message;
 
     @SerializedName("Result")
-    private List<CarParkAvailability> result = null;
+    private List<UraCharges> result = null;
 
     public String getStatus() {
         return status;
@@ -38,13 +37,11 @@ public class AllCarParkAvailability {
         this.message = message;
     }
 
-    public List<CarParkAvailability> getResult() {
-        if (result == null)
-            return new ArrayList();
+    public List<UraCharges> getResult() {
         return result;
     }
 
-    public void setResult(List<CarParkAvailability> result) {
+    public void setResult(List<UraCharges> result) {
         this.result = result;
     }
 }

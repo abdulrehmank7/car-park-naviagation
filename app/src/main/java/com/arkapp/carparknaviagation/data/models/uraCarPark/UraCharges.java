@@ -1,4 +1,4 @@
-package com.arkapp.carparknaviagation.data.models.carPark;
+package com.arkapp.carparknaviagation.data.models.uraCarPark;
 
 import androidx.annotation.Keep;
 
@@ -9,7 +9,7 @@ import java.util.List;
  * Contact email - abdulrehman0796@gmail.com
  */
 @Keep
-public class CarPark {
+public class UraCharges {
     private String weekdayMin;
 
     private String weekdayRate;

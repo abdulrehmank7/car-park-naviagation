@@ -1,4 +1,4 @@
-package com.arkapp.carparknaviagation.data.models.carPark;
+package com.arkapp.carparknaviagation.data.models.uraCarPark;
 
 import androidx.annotation.Keep;
 

@@ -1,4 +1,4 @@
-package com.arkapp.carparknaviagation.data.models.carPark;
+package com.arkapp.carparknaviagation.data.models.uraCarPark;
 
 import androidx.annotation.Keep;
 
@@ -11,7 +11,7 @@ import java.util.List;
  * Contact email - abdulrehman0796@gmail.com
  */
 @Keep
-public class CarParkAvailability {
+public class UraCarParkAvailability {
 
     private String carparkNo;
 
@@ -21,7 +21,7 @@ public class CarParkAvailability {
 
     private List<Geometry> geometries = null;
 
-    private CarPark charges;
+    private UraCharges charges;
 
     private double lat;
 
@@ -69,11 +69,11 @@ public class CarParkAvailability {
         this.geometries = geometries;
     }
 
-    public CarPark getCharges() {
+    public UraCharges getCharges() {
         return charges;
     }
 
-    public void setCharges(CarPark charges) {
+    public void setCharges(UraCharges charges) {
         this.charges = charges;
     }
 

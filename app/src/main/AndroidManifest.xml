@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true">
+
         <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.navigation.NavigationActivity" />
 
         <meta-data
             android:name="com.here.android.maps.appid"
@@ -43,8 +46,6 @@
             android:value="@integer/google_play_services_version" />
 
         <service android:name=".utility.maps.navigation.ForegroundService" />
-
-
     </application>
 
 </manifest>
