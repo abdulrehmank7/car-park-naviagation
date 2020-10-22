@@ -23,7 +23,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "25425",
         "INC_CRC": "620596BFE25ACECE",
-        "Field_1": "SPF-DSECS-9104"
+        "Field_1": "SPF-DSECS-9104",
+        "Speed": 60
       },
       "geometry": {
         "type": "Point",
@@ -48,7 +49,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "25428",
         "INC_CRC": "093ECC85EFFA2518",
-        "Field_1": "SPF-DSECS-9105"
+        "Field_1": "SPF-DSECS-9105",
+        "Speed": 60
       },
       "geometry": {
         "type": "Point",
@@ -73,7 +75,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "27885",
         "INC_CRC": "8D51AD217B2DBECB",
-        "Field_1": "SPF-DSECS-9103"
+        "Field_1": "SPF-DSECS-9103",
+        "Speed": 80
       },
       "geometry": {
         "type": "Point",
@@ -98,7 +101,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "27888",
         "INC_CRC": "42764E6A339EC8DE",
-        "Field_1": "SPF-DSECS-9102"
+        "Field_1": "SPF-DSECS-9102",
+        "Speed": 60
       },
       "geometry": {
         "type": "Point",
@@ -123,7 +127,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "17784",
         "INC_CRC": "B270AD2E86DF5799",
-        "Field_1": "SPF-DSECS-9117"
+        "Field_1": "SPF-DSECS-9117",
+        "Speed": 90
       },
       "geometry": {
         "type": "Point",
@@ -148,7 +153,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "16000",
         "INC_CRC": "902880D87E343924",
-        "Field_1": "SPF-DSECS-9107"
+        "Field_1": "SPF-DSECS-9107",
+        "Speed": 80
       },
       "geometry": {
         "type": "Point",
@@ -173,7 +179,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "16003",
         "INC_CRC": "91539FC6D1993FA5",
-        "Field_1": "SPF-DSECS-9106"
+        "Field_1": "SPF-DSECS-9106",
+        "Speed": 60
       },
       "geometry": {
         "type": "Point",
@@ -198,7 +205,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "22253",
         "INC_CRC": "1493E16CE66C6EC4",
-        "Field_1": "SPF-DSECS-9108"
+        "Field_1": "SPF-DSECS-9108",
+        "Speed": 80
       },
       "geometry": {
         "type": "Point",
@@ -223,7 +231,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "22258",
         "INC_CRC": "80559AC4B05B971E",
-        "Field_1": "SPF-DSECS-9109"
+        "Field_1": "SPF-DSECS-9109",
+        "Speed": 70
       },
       "geometry": {
         "type": "Point",
@@ -248,7 +257,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "21568",
         "INC_CRC": "1471C43B7635EA19",
-        "Field_1": "SPF-DSECS-9110"
+        "Field_1": "SPF-DSECS-9110",
+        "Speed": 70
       },
       "geometry": {
         "type": "Point",
@@ -273,7 +283,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "25487",
         "INC_CRC": "5D22EC748D41A614",
-        "Field_1": "SPF-DSECS-9113"
+        "Field_1": "SPF-DSECS-9113",
+        "Speed": 80
       },
       "geometry": {
         "type": "Point",
@@ -298,7 +309,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "25491",
         "INC_CRC": "99404FCC734218A0",
-        "Field_1": "SPF-DSECS-9112"
+        "Field_1": "SPF-DSECS-9112",
+        "Speed": 70
       },
       "geometry": {
         "type": "Point",
@@ -323,7 +335,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "25195",
         "INC_CRC": "38976A25C54E2F6F",
-        "Field_1": "SPF-DSECS-9114"
+        "Field_1": "SPF-DSECS-9114",
+        "Speed": 60
       },
       "geometry": {
         "type": "Point",
@@ -348,7 +361,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "26557",
         "INC_CRC": "B790196DFCD0A7EB",
-        "Field_1": "SPF-DSECS-9101"
+        "Field_1": "SPF-DSECS-9101",
+        "Speed": 90
       },
       "geometry": {
         "type": "Point",
@@ -373,7 +387,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "26562",
         "INC_CRC": "AC771F76692B4EC3",
-        "Field_1": "SPF-DSECS-9100"
+        "Field_1": "SPF-DSECS-9100",
+        "Speed": 80
       },
       "geometry": {
         "type": "Point",
@@ -398,7 +413,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "28890",
         "INC_CRC": "0508B0FED20EECF1",
-        "Field_1": "SPF-DSECS-9119"
+        "Field_1": "SPF-DSECS-9119",
+        "Speed": 80
       },
       "geometry": {
         "type": "Point",
@@ -423,7 +439,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "43222",
         "INC_CRC": "6D1A5EB0A0BDB9F4",
-        "Field_1": "SPF-DSECS-9118"
+        "Field_1": "SPF-DSECS-9118",
+        "Speed": 70
       },
       "geometry": {
         "type": "Point",
@@ -448,7 +465,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "17787",
         "INC_CRC": "ADF9D2628FFF78A9",
-        "Field_1": "SPF-DSECS-9116"
+        "Field_1": "SPF-DSECS-9116",
+        "Speed": 70
       },
       "geometry": {
         "type": "Point",
@@ -473,7 +491,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "21564",
         "INC_CRC": "65D68704CFBE106A",
-        "Field_1": "SPF-DSECS-9111"
+        "Field_1": "SPF-DSECS-9111",
+        "Speed": 90
       },
       "geometry": {
         "type": "Point",
@@ -498,7 +517,8 @@
         "SHAPE": "Point",
         "X_Coordinate": "25199",
         "INC_CRC": "1606BD870057CFAF",
-        "Field_1": "SPF-DSECS-9115"
+        "Field_1": "SPF-DSECS-9115",
+        "Speed": 60
       },
       "geometry": {
         "type": "Point",

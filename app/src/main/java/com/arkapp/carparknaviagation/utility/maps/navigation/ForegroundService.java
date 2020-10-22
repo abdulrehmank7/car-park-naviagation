@@ -61,9 +61,7 @@ public class ForegroundService extends Service {
     }
 
     public void initChannels(Context context) {
-        if (Build.VERSION.SDK_INT < 26) {
-            return;
-        }
+        if (Build.VERSION.SDK_INT < 26) return;
         NotificationManager notificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         NotificationChannel channel = new NotificationChannel(CHANNEL, "Foreground channel",

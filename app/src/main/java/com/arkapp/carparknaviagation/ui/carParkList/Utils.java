@@ -1,6 +1,12 @@
 package com.arkapp.carparknaviagation.ui.carParkList;
 
+import android.graphics.Typeface;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import android.text.style.StyleSpan;
+
+import androidx.annotation.Nullable;
 
 import com.arkapp.carparknaviagation.data.models.myTransportCarPark.MyTransportCarParkAvailability;
 import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCharges;
@@ -14,35 +20,87 @@ import java.util.Locale;
  */
 public class Utils {
 
-    public static String getUraChargeString(UraCharges uraCharges) {
+    public static SpannableStringBuilder getUraChargeString(UraCharges uraCharges) {
 
-        StringBuilder builder = new StringBuilder();
+        SpannableStringBuilder str = new SpannableStringBuilder("");
+
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+
+
         if (uraCharges != null) {
-            if (!TextUtils.isEmpty(uraCharges.getWeekdayRate())) {
-                builder.append(String.format(Locale.ENGLISH, "Weekday Rate: $%s/Hr", doubleRate(uraCharges.getWeekdayRate())));
-                builder.append("\n");
+
+            switch (day) {
+                case Calendar.SUNDAY:
+                    // Current day is Sunday
+                    if (!TextUtils.isEmpty(uraCharges.getSunPHRate())) {
+                        str.append(String.format(Locale.ENGLISH, "Sunday & Public Holiday Rate: $%s/Hr", doubleRate(uraCharges.getSunPHRate())));
+                        str.setSpan(new StyleSpan(Typeface.BOLD), 0, str.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        str.append("\n");
+                    }
+
+                    if (!TextUtils.isEmpty(uraCharges.getWeekdayRate())) {
+                        str.append(String.format(Locale.ENGLISH, "Weekday Rate: $%s/Hr", doubleRate(uraCharges.getWeekdayRate())));
+                        str.append("\n");
+                    }
+
+                    if (!TextUtils.isEmpty(uraCharges.getSatdayRate())) {
+                        str.append(String.format(Locale.ENGLISH, "Saturday Rate: $%s/Hr", doubleRate(uraCharges.getSatdayRate())));
+                        str.append("\n");
+                    }
+
+                    break;
+                case Calendar.SATURDAY:
+                    // Current day is SATURDAY
+
+                    if (!TextUtils.isEmpty(uraCharges.getSatdayRate())) {
+                        str.append(String.format(Locale.ENGLISH, "Saturday Rate: $%s/Hr", doubleRate(uraCharges.getSatdayRate())));
+                        str.setSpan(new StyleSpan(Typeface.BOLD), 0, str.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        str.append("\n");
+                    }
+
+                    if (!TextUtils.isEmpty(uraCharges.getSunPHRate())) {
+                        str.append(String.format(Locale.ENGLISH, "Sunday & Public Holiday Rate: $%s/Hr", doubleRate(uraCharges.getSunPHRate())));
+                        str.append("\n");
+                    }
+
+                    if (!TextUtils.isEmpty(uraCharges.getWeekdayRate())) {
+                        str.append(String.format(Locale.ENGLISH, "Weekday Rate: $%s/Hr", doubleRate(uraCharges.getWeekdayRate())));
+                        str.append("\n");
+                    }
+
+                    break;
+                default:
+                    if (!TextUtils.isEmpty(uraCharges.getWeekdayRate())) {
+                        str.append(String.format(Locale.ENGLISH, "Weekday Rate: $%s/Hr", doubleRate(uraCharges.getWeekdayRate())));
+                        str.setSpan(new StyleSpan(Typeface.BOLD), 0, str.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        str.append("\n");
+                    }
+                    if (!TextUtils.isEmpty(uraCharges.getSatdayRate())) {
+                        str.append(String.format(Locale.ENGLISH, "Saturday Rate: $%s/Hr", doubleRate(uraCharges.getSatdayRate())));
+                        str.append("\n");
+                    }
+
+                    if (!TextUtils.isEmpty(uraCharges.getSunPHRate())) {
+                        str.append(String.format(Locale.ENGLISH, "Sunday & Public Holiday Rate: $%s/Hr", doubleRate(uraCharges.getSunPHRate())));
+                        str.append("\n");
+                    }
+
             }
 
-            if (!TextUtils.isEmpty(uraCharges.getSatdayRate())) {
-                builder.append(String.format(Locale.ENGLISH, "Saturday Rate: $%s/Hr", doubleRate(uraCharges.getSatdayRate())));
-                builder.append("\n");
-            }
-
-            if (!TextUtils.isEmpty(uraCharges.getSunPHRate())) {
-                builder.append(String.format(Locale.ENGLISH, "Sunday and Public Holiday Rate: $%s/Hr", doubleRate(uraCharges.getSunPHRate())));
-                builder.append("\n");
-            }
 
             if (!TextUtils.isEmpty(uraCharges.getRemarks())) {
-                builder.append("Remarks: " + uraCharges.getRemarks());
-                builder.append("\n");
+                str.append("Remarks: " + uraCharges.getRemarks());
+                str.append("\n");
             }
         }
 
-        if (uraCharges == null)
-            return "Rates Unavailable!";
+        if (uraCharges == null) {
+            str.append("Rates Unavailable!");
+            return str;
+        }
 
-        return builder.toString();
+        return str;
     }
 
     public static double getPerHourCharge(UraCharges uraCharges) {
@@ -80,6 +138,7 @@ public class Utils {
     }
 
     public static double doubleRate(String rate) {
+        if (TextUtils.isEmpty(rate)) return 0.0;
         return Double.parseDouble(
                 rate
                         .replace("$", "")
@@ -87,34 +146,34 @@ public class Utils {
                         .trim()) * 2;
     }
 
-    public static String getMyTransportChargeString(MyTransportCarParkAvailability availability) {
+    public static String getMyTransportChargeString(@Nullable MyTransportCarParkAvailability availability) {
 
         StringBuilder builder = new StringBuilder();
         if (availability.getCharges() != null) {
             if (!TextUtils.isEmpty(availability.getCharges().getWeekDaysRate1())) {
                 builder.append(availability.getCharges().getWeekDaysRate1());
-                builder.append("\n\n");
+                builder.append("\n");
             }
         }
 
         if (availability.getInformation() != null) {
             if (!TextUtils.isEmpty(availability.getInformation().getCarParkType())) {
                 builder.append(String.format(Locale.ENGLISH, "Car Park Type: %s", availability.getInformation().getCarParkType()));
-                builder.append("\n\n");
+                builder.append("\n");
             }
 
             if (!TextUtils.isEmpty(availability.getInformation().getTypeOfParkingSystem())) {
                 builder.append(String.format(Locale.ENGLISH, "Parking System: %s", availability.getInformation().getTypeOfParkingSystem()));
-                builder.append("\n\n");
+                builder.append("\n");
             }
 
-            if (availability.getInformation().getCarParkDecks() != null) {
-                builder.append(String.format(Locale.ENGLISH, "Car Park Decks: %s", availability.getInformation().getCarParkDecks()));
-                builder.append("\n\n");
+            if (!TextUtils.isEmpty(availability.getInformation().getFreeParking())) {
+                builder.append(String.format(Locale.ENGLISH, "Free Parking: %s", availability.getInformation().getFreeParking()));
+                builder.append("\n");
             }
 
-            if (!TextUtils.isEmpty(availability.getInformation().getNightParking())) {
-                builder.append(String.format(Locale.ENGLISH, "Night Parking: %s", availability.getInformation().getNightParking()));
+            if (!TextUtils.isEmpty(availability.getInformation().getShortTermParking())) {
+                builder.append(String.format(Locale.ENGLISH, "Short Term Parking: %s", availability.getInformation().getShortTermParking()));
             }
         }
 

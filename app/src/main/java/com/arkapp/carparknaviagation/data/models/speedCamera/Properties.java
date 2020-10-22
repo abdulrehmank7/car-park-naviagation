@@ -34,6 +34,10 @@ public class Properties {
     @SerializedName("Y_Coordinate")
     private String yCoordinate;
 
+    @SerializedName("Speed")
+    private int speed;
+
+
     public String getAltitudeMode() {
         return altitudeMode;
     }
@@ -138,4 +142,11 @@ public class Properties {
         this.yCoordinate = yCoordinate;
     }
 
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
 }

@@ -9,6 +9,8 @@ import com.arkapp.carparknaviagation.data.models.rates.CarParkCharges;
 import com.arkapp.carparknaviagation.data.models.rates.CarParkInformation;
 import com.arkapp.carparknaviagation.data.models.redLightCamera.Feature;
 import com.arkapp.carparknaviagation.data.models.redLightCamera.RedLightCamera;
+import com.arkapp.carparknaviagation.data.models.speedCamera.SpeedCamera;
+import com.arkapp.carparknaviagation.data.models.speedCamera.SpeedFeature;
 import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarParkCharges;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
@@ -65,7 +67,7 @@ public class MapRepository {
         return new ArrayList<>();
     }
 
-    public List<Feature> getSpeedCamera() {
+    public List<SpeedFeature> getSpeedCamera() {
         try {
 
             InputStream is = context.getResources().openRawResource(R.raw.speed_camera);
@@ -81,9 +83,9 @@ public class MapRepository {
                 is.close();
             }
             String jsonString = writer.toString();
-            RedLightCamera RedLightCamera = gson.fromJson(jsonString, RedLightCamera.class);
+            SpeedCamera speedCamera = gson.fromJson(jsonString, SpeedCamera.class);
 
-            return RedLightCamera.getFeatures();
+            return speedCamera.getFeatures();
         } catch (Exception e) {
             e.printStackTrace();
         }

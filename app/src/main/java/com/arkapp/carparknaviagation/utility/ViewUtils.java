@@ -48,6 +48,10 @@ public class ViewUtils {
         Snackbar.make(parent, msg, Snackbar.LENGTH_SHORT).show();
     }
 
+    public static void showSnackIndefinate(@NotNull View parent, @NotNull String msg) {
+        Snackbar.make(parent, msg, Snackbar.LENGTH_INDEFINITE).show();
+    }
+
     public static void show(@NotNull View view) {
         view.setVisibility(View.VISIBLE);
     }

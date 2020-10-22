@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.arkapp.carparknaviagation.data.models.eta.Eta;
 import com.arkapp.carparknaviagation.data.models.redLightCamera.Feature;
+import com.arkapp.carparknaviagation.data.models.speedCamera.SpeedFeature;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -16,7 +17,7 @@ import java.util.List;
 public interface HomePageListener {
     void setCurrentLocationMarker(MarkerOptions markerOptions);
 
-    void setRouteCameras(List<Feature> redLightMarkers, List<Feature> routeSpeedCameras);
+    void setRouteCameras(List<Feature> redLightMarkers, List<SpeedFeature> routeSpeedCameras);
 
     void setCarParking();
 
@@ -33,4 +34,9 @@ public interface HomePageListener {
     void setMyTransportCarParkEtaFromOrigin(MutableLiveData<Eta> carParkEtaFromOrigin);
 
     void setMyTransportCarParkEtaFromDestination(MutableLiveData<Eta> carParkEtaFromDestination);
+
+    void setDestinationMarker();
+
+    void getDestinationEta(MutableLiveData<Eta> destinationEtaFromOrigin);
+
 }

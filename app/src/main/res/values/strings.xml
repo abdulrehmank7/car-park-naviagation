@@ -19,6 +19,23 @@
     <string name="start_route">Start Route</string>
     <string name="rate">Rate:</string>
     <string name="token_error">Token is valid for one day only. Your token exceed that. Please try for new token to access the URA data service</string>
-    <string name="wait">Please wait...</string>
-    <string name="starting_navigation">Starting Navigation...</string>
+    <string name="wait">Please wait…</string>
+    <string name="starting_navigation">Starting Navigation…</string>
+    <string name="setting">Settings</string>
+    <string name="red_light_camera">Red Light Camera</string>
+    <string name="red_light_camera_summary">Toggle red light camera visibility on map</string>
+    <string name="speed_camera">Speed Limit Camera</string>
+    <string name="speed_limit_summary">Toggle speed limit camera visibility on map</string>
+    <string name="car_park">Carpark</string>
+    <string name="car_park_summary">Toggle car park functionality on map</string>
+    <string name="voice_assistant_language">Voice assistant language</string>
+    <string name="voice_assistant_language_summary">Change voice assistant language during navigation</string>
+    <string name="version">Version</string>
+    <string name="carpark_lots">Carpark Lots</string>
+    <string name="carpark_lots_summary">Select minimum count of carpark lots to be shown on map</string>
+    <string name="simulation">Simulation</string>
+    <string name="simulation_summary">Toggle simulation functionality for navigation</string>
+    <string name="simulation_speed">Simulation Speed</string>
+    <string name="simulation_speed_summary">Set the simulation speed in meter/second</string>
+
 </resources>

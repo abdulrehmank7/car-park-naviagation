@@ -1,5 +1,7 @@
 package com.arkapp.carparknaviagation.utility.viewModelFactory;
 
+import android.content.SharedPreferences;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
@@ -15,15 +17,18 @@ import com.arkapp.carparknaviagation.viewModels.HomePageViewModel;
 public class HomePageViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     private MapRepository repository;
     private PrefRepository prefRepository;
+    private SharedPreferences settingPref;
 
-    public HomePageViewModelFactory(MapRepository repository, PrefRepository prefRepository) {
+    public HomePageViewModelFactory(MapRepository repository, PrefRepository prefRepository,
+                                    SharedPreferences settingPref) {
         this.repository = repository;
         this.prefRepository = prefRepository;
+        this.settingPref = settingPref;
     }
 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new HomePageViewModel(repository, prefRepository);
+        return (T) new HomePageViewModel(repository, prefRepository, settingPref);
     }
 }

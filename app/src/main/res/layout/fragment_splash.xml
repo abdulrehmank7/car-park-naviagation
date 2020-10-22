@@ -50,5 +50,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline"
             app:layout_constraintVertical_bias="0.0" />
+
+        <fragment
+            android:id="@+id/mapfragment"
+            class="com.here.android.mpa.mapping.AndroidXMapFragment"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

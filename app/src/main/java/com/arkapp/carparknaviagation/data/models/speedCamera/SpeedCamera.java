@@ -10,7 +10,7 @@ public class SpeedCamera {
 
     private Crs crs;
 
-    private List<Feature> features;
+    private List<SpeedFeature> features;
 
     private String name;
 
@@ -24,11 +24,11 @@ public class SpeedCamera {
         this.crs = crs;
     }
 
-    public List<Feature> getFeatures() {
+    public List<SpeedFeature> getFeatures() {
         return features;
     }
 
-    public void setFeatures(List<Feature> features) {
+    public void setFeatures(List<SpeedFeature> features) {
         this.features = features;
     }
 

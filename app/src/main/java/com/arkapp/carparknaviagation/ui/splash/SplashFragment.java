@@ -1,7 +1,9 @@
 package com.arkapp.carparknaviagation.ui.splash;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.IntentSender;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -11,11 +13,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.preference.PreferenceManager;
 
 import com.arkapp.carparknaviagation.R;
+import com.arkapp.carparknaviagation.data.repository.PrefRepository;
+import com.arkapp.carparknaviagation.databinding.FragmentSplashBinding;
+import com.arkapp.carparknaviagation.ui.main.MainActivity;
+import com.arkapp.carparknaviagation.utility.listeners.SplashListener;
+import com.arkapp.carparknaviagation.utility.viewModelFactory.SplashViewModelFactory;
+import com.arkapp.carparknaviagation.viewModels.SplashViewModel;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.LocationSettingsResponse;
 import com.google.android.gms.tasks.Task;
+import com.here.android.mpa.mapping.AndroidXMapFragment;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -24,20 +35,32 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import java.util.List;
 
-import static androidx.navigation.fragment.NavHostFragment.findNavController;
 import static com.arkapp.carparknaviagation.ui.main.MainActivity.gpsListener;
 import static com.arkapp.carparknaviagation.utility.Constants.SPLASH_TIME;
 import static com.arkapp.carparknaviagation.utility.maps.others.LocationUtils.getGPSSettingTask;
 import static com.arkapp.carparknaviagation.utility.maps.others.LocationUtils.startLocationUpdates;
 import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.REQUEST_CHECK_SETTINGS;
 
-public class SplashFragment extends Fragment {
+public class SplashFragment extends Fragment implements SplashListener {
+
+    private FragmentSplashBinding binding;
+    public SplashViewModel viewModel;
+
+    private ProgressDialog dialog;
+    public AndroidXMapFragment mapFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_splash, container, false);
+        binding = FragmentSplashBinding.inflate(inflater);
+        PrefRepository prefRepository = new PrefRepository(requireContext());
+        SharedPreferences settingPref = PreferenceManager.getDefaultSharedPreferences(requireContext());
+        SplashViewModelFactory factory = new SplashViewModelFactory(prefRepository, settingPref);
+
+        viewModel = new ViewModelProvider(this, factory).get(SplashViewModel.class);
+        viewModel.listener = this;
+        return binding.getRoot();
     }
 
     @Override
@@ -47,20 +70,40 @@ public class SplashFragment extends Fragment {
 
         //Overriding the gpsListener to get the updates
         gpsListener = this::checkGpsSetting;
+        mapFragment = (AndroidXMapFragment) getChildFragmentManager().findFragmentById(R.id.mapfragment);
+
+        if (!viewModel.isFetchLanguagesAvailable()) {
+            viewModel.fetchLanguages(mapFragment);
+        }
     }
 
     private void loadSplash() {
-        Runnable runnable = () -> findNavController(this).navigate(R.id.action_splashFragment_to_homeFragment);
+        Runnable runnable = () -> ((MainActivity) requireActivity()).openHomeScreen();
         new Handler().postDelayed(runnable, SPLASH_TIME);
+    }
+
+    @Override
+    public void showProgress() {
+        dialog = new ProgressDialog(requireContext());
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.setTitle("Please Wait");
+        dialog.setMessage("Downloading voice assistant data...");
+        dialog.setIndeterminate(true);
+        dialog.show();
+    }
+
+    @Override
+    public void hideProgress() {
+        if (dialog == null || !dialog.isShowing()) return;
+        dialog.dismiss();
     }
 
     private void askRuntimePermission() {
         Dexter.withContext(requireContext())
                 .withPermissions(
                         Manifest.permission.ACCESS_COARSE_LOCATION,
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        Manifest.permission.ACCESS_FINE_LOCATION)
                 .withListener(
                         new MultiplePermissionsListener() {
                             @Override

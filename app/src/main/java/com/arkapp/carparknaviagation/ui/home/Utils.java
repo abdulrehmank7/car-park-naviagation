@@ -12,6 +12,7 @@ import com.arkapp.carparknaviagation.data.models.myTransportCarPark.MyTransportC
 import com.arkapp.carparknaviagation.data.models.rates.CarParkCharges;
 import com.arkapp.carparknaviagation.data.models.rates.CarParkInformation;
 import com.arkapp.carparknaviagation.data.models.redLightCamera.Feature;
+import com.arkapp.carparknaviagation.data.models.speedCamera.SpeedFeature;
 import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarPark;
 import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarParkAvailability;
 import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarParkCharges;
@@ -38,7 +39,9 @@ import static com.arkapp.carparknaviagation.utility.ViewUtils.printLog;
 import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.calculateDistanceBetweenPoints;
 import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.fitRouteInScreen;
 import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.getCustomMaker;
+import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.getCustomPngMaker;
 import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.getMapsApiDirectionsFromUrl;
+import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.getSpeedIcon;
 
 /**
  * Created by Abdul Rehman on 27-09-2020.
@@ -71,14 +74,18 @@ public class Utils {
         return newMarker;
     }
 
-    public static ArrayList<UraCarParkAvailability> removeInvalidUraCarPark(double fromLat,
-                                                                            double fromLng,
-                                                                            double toLat,
-                                                                            double toLng,
-                                                                            UraCarParkCharges carParkCharges,
-                                                                            UraCarPark carParkAvailability) {
+    public static ArrayList<UraCarParkAvailability> removeInvalidUraCarPark(
+            double fromLat,
+            double fromLng,
+            double toLat,
+            double toLng,
+            UraCarParkCharges carParkCharges,
+            UraCarPark carParkAvailability,
+            int minimumCarparkSlot) {
 
-        final int MINIMUM_SLOTS = 1;
+        if (carParkCharges == null) return new ArrayList<>();
+        if (carParkAvailability == null) return new ArrayList<>();
+
         final double MAXIMUM_SEARCH_RADIUS = 3000;
 
         List<UraCharges> allUraChargesCharges = carParkCharges.getResult();
@@ -92,7 +99,7 @@ public class Utils {
             if (TextUtils.isEmpty(carPark.getLotsAvailable())) continue;
 
             //removing car park with less than minimum slots
-            if (Integer.parseInt(carPark.getLotsAvailable()) < MINIMUM_SLOTS) continue;
+            if (Integer.parseInt(carPark.getLotsAvailable()) < minimumCarparkSlot) continue;
 
             for (UraCharges charges : allUraChargesCharges) {
 
@@ -136,9 +143,14 @@ public class Utils {
             double toLat,
             double toLng,
             MyTransportCarPark carParkAvailability,
-            ArrayList<CarParkInformation> allHdbCarParkCharges) {
+            ArrayList<CarParkInformation> allHdbCarParkCharges,
+            int minimumCarparkSlot) {
 
-        final int MINIMUM_SLOTS = 1;
+        if (allHdbCarParkCharges == null) return new ArrayList<>();
+        if (carParkAvailability == null) return new ArrayList<>();
+        if (carParkAvailability.getMyTransportCarParkAvailability() == null)
+            return new ArrayList<>();
+
         final double MAXIMUM_SEARCH_RADIUS = 3000;
 
         List<MyTransportCarParkAvailability> allMyTransportCarParkAvailability = carParkAvailability.getMyTransportCarParkAvailability();
@@ -154,7 +166,7 @@ public class Utils {
                 continue;
 
             //removing car park with less than minimum slots
-            if (availability.getAvailableLots() < MINIMUM_SLOTS) continue;
+            if (availability.getAvailableLots() < minimumCarparkSlot) continue;
 
             String[] location = availability.getLocation().split(" ");
             double carParkLat = Double.parseDouble(location[0]);
@@ -218,6 +230,8 @@ public class Utils {
     public static ArrayList<UraCarParkAvailability> filterUraCarPark(
             ArrayList<UraCarParkAvailability> validCarParks) {
 
+        if (validCarParks == null) return new ArrayList<>();
+
         final double MAXIMUM_SEARCH_RADIUS = 3000;
 
         final ArrayList<UraCarParkAvailability> carParkWithEta = new ArrayList<>();
@@ -274,6 +288,8 @@ public class Utils {
 
     public static ArrayList<MyTransportCarParkAvailability> filterMyTransportCarPark(
             ArrayList<MyTransportCarParkAvailability> validCarParks) {
+
+        if (validCarParks == null) return new ArrayList<>();
 
         final double MAXIMUM_SEARCH_RADIUS = 3000;
 
@@ -335,8 +351,8 @@ public class Utils {
         final double MAXIMUM_SEARCH_RADIUS = 3000;
 
         final ArrayList<Object> allCarPark = new ArrayList<>();
-        allCarPark.addAll(validUraCarParks);
-        allCarPark.addAll(validMyTransportCarParks);
+        if (validUraCarParks != null) allCarPark.addAll(validUraCarParks);
+        if (validMyTransportCarParks != null) allCarPark.addAll(validMyTransportCarParks);
 
         final ArrayList<Object> carParkWithEta = new ArrayList<>();
         final ArrayList<Object> carParkDistanceChecked = new ArrayList<>();
@@ -639,6 +655,8 @@ public class Utils {
 
     public static List<Feature> getRouteRedLightCamera(List<Feature> cameras,
                                                        Polyline polylineFinal) {
+        if (cameras == null || polylineFinal == null) return new ArrayList<>();
+
         final int minimumDistance = 100;
         ArrayList<Feature> routeCamera = new ArrayList<>();
 
@@ -664,11 +682,12 @@ public class Utils {
         return routeCamera;
     }
 
-    public static List<Feature> getRouteSpeedCamera(List<Feature> cameras, Polyline polylineFinal) {
+    public static List<SpeedFeature> getRouteSpeedCamera(List<SpeedFeature> cameras,
+                                                         Polyline polylineFinal) {
         final int minimumDistance = 500;
-        ArrayList<Feature> routeCamera = new ArrayList<>();
+        ArrayList<SpeedFeature> routeCamera = new ArrayList<>();
 
-        for (Feature camera : cameras) {
+        for (SpeedFeature camera : cameras) {
             for (LatLng latLng : polylineFinal.getPoints()) {
                 float dist = calculateDistanceBetweenPoints(
                         latLng.latitude,
@@ -704,14 +723,15 @@ public class Utils {
         return redLightMarkers;
     }
 
-    public static ArrayList<MarkerOptions> getSpeedMarker(List<Feature> cameras, Context context) {
+    public static ArrayList<MarkerOptions> getSpeedMarker(List<SpeedFeature> cameras,
+                                                          Context context) {
 
         ArrayList<MarkerOptions> redLightMarkers = new ArrayList<>();
-        for (Feature feature : cameras) {
-            redLightMarkers.add(getCustomMaker(context,
-                                               feature.getGeometry().getCoordinates().get(1),
-                                               feature.getGeometry().getCoordinates().get(0),
-                                               R.drawable.ic_speed_camera));
+        for (SpeedFeature feature : cameras) {
+            redLightMarkers.add(getCustomPngMaker(context,
+                                                  feature.getGeometry().getCoordinates().get(1),
+                                                  feature.getGeometry().getCoordinates().get(0),
+                                                  getSpeedIcon(feature.getProperties().getSpeed())));
         }
 
         return redLightMarkers;

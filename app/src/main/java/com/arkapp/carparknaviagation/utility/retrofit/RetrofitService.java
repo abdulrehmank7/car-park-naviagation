@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitService {
 
-    private static OkHttpClient getClient() {
+    public static OkHttpClient getClient() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.level(HttpLoggingInterceptor.Level.BODY);
 
@@ -25,7 +25,7 @@ public class RetrofitService {
                 .build();
     }
 
-    private static Retrofit getRetrofit(String baseUrl) {
+    public static Retrofit getRetrofit(String baseUrl) {
         return new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())

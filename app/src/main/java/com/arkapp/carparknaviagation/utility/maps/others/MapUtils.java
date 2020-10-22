@@ -10,6 +10,7 @@ import android.text.TextUtils;
 
 import androidx.core.content.ContextCompat;
 
+import com.arkapp.carparknaviagation.R;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,6 +21,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import static com.arkapp.carparknaviagation.utility.Constants.GOOGLE_KEY;
+import static com.arkapp.carparknaviagation.utility.ViewUtils.dpToPx;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.printLog;
 
 /**
@@ -40,8 +42,26 @@ public class MapUtils {
 
         //used to set the custom marker image on current location marker
         MarkerOptions marker = new MarkerOptions();
-
         BitmapDescriptor markerIcon = bitmapDescriptorFromVector(context, drawable);
+
+        marker.position(new LatLng(lat, log));
+        //marker.title(context.getString(R.string.current_location));
+        marker.icon(markerIcon);
+        //marker.anchor(bitmap.getWidth() / 2, bitmap.getHeight());
+
+        return marker;
+    }
+
+    public static MarkerOptions getCustomPngMaker(Context context,
+                                                  double lat,
+                                                  double log,
+                                                  int drawable) {
+
+        //used to set the custom marker image on current location marker
+        MarkerOptions marker = new MarkerOptions();
+
+        Bitmap icon = getResizedBitmap(getBitmap(drawable, context), dpToPx(38));
+        BitmapDescriptor markerIcon = BitmapDescriptorFactory.fromBitmap(icon);
 
         marker.position(new LatLng(lat, log));
         //marker.title(context.getString(R.string.current_location));
@@ -53,12 +73,39 @@ public class MapUtils {
 
     public static Bitmap getBitmap(VectorDrawable vectorDrawable) {
         //get the bitmap image from the vector drawable file.
+        if(vectorDrawable == null) return null;
         Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
                                             vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         vectorDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
         vectorDrawable.draw(canvas);
         return bitmap;
+    }
+
+    public static Bitmap getBitmap(int drawable, Context context) {
+        Drawable drawableRes = ContextCompat.getDrawable(context, drawable);
+
+        Bitmap bitmap = Bitmap.createBitmap(drawableRes.getIntrinsicWidth(),
+                                            drawableRes.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        drawableRes.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawableRes.draw(canvas);
+        return bitmap;
+    }
+
+    public static Bitmap getResizedBitmap(Bitmap image, int maxSize) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        float bitmapRatio = (float) width / (float) height;
+        if (bitmapRatio > 1) {
+            width = maxSize;
+            height = (int) (width / bitmapRatio);
+        } else {
+            height = maxSize;
+            width = (int) (height * bitmapRatio);
+        }
+        return Bitmap.createScaledBitmap(image, width, height, true);
     }
 
     //used for vector drawable in marker
@@ -88,6 +135,7 @@ public class MapUtils {
     public static String getMapsApiDirectionsFromUrl(String originLat, String originLong,
                                                      String destLat, String destLong,
                                                      String isTollSelected) {
+        if (originLat == null || originLong == null || destLat == null || destLong == null || isTollSelected == null) return "";
         String tollsParam;
         if (TextUtils.isEmpty(isTollSelected))
             tollsParam = "";
@@ -165,5 +213,26 @@ public class MapUtils {
 
         //Distance In Meters
         return loc1.distanceTo(loc2);
+    }
+
+    public static int getSpeedIcon(int speed) {
+        switch (speed) {
+            case 30:
+                return R.drawable.ic_speed_30;
+            case 40:
+                return R.drawable.ic_speed_40;
+            case 50:
+                return R.drawable.ic_speed_50;
+            case 60:
+                return R.drawable.ic_speed_60;
+            case 70:
+                return R.drawable.ic_speed_70;
+            case 80:
+                return R.drawable.ic_speed_80;
+            case 90:
+                return R.drawable.ic_speed_90;
+            default:
+                return R.drawable.ic_speed_60;
+        }
     }
 }

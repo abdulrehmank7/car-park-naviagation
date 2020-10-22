@@ -17,27 +17,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".ui.main.MainActivity">
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.navigation.NavigationActivity" />
+        <activity
+            android:name=".ui.navigation.NavigationActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.here.android.maps.appid"
-            android:value="k5BUbwJfqOgUGaseLpSj" />
+            android:value="KvWW1dd9JA0szoB8XVuu" />
         <meta-data
             android:name="com.here.android.maps.apptoken"
-            android:value="_4OYiWM5vBwElFebli8Uuw" />
+            android:value="RyLxOzCI2AEEH78XOk0IKw" />
         <meta-data
             android:name="com.here.android.maps.license.key"
-            android:value="edKABNE2KXHRapqn53HSc0cVxPp2LWlCJ4TocSbHHIp5l5xDPocQUltbXC6blUy7f8ikQQ4APMIeG0C1owp17ITiibNy/abnQXgcvp5nNxwKl/fpa5/80tl96y/E0c9xmGDt8Yg6cCt/3/fIM4Y8vllzn30A75cIkrSRw3QA+eSyrT9kIBsH1uBdDNLPHqR+yVLe8IU9WCylofpFsxNTEyg5BHOmj48sP9cUFXbtwxmUgrIn+ZdfBEpzE91EThnA8JRgAWtXU8STj5TwjfarOiEOa34FXq4YTD8UqgsnCrlQlmA814eDbEBLjmfkHaZauOL+Ly6qdxRGd18CN1vyqxEOZCVaGG+rl4RJtba/qcVN6udEDD/nIeR7FpVCVuMpfu24iVmEzlv2sb2F4I16WDJ092pu7mxzUt49F8+0svIa2Awrt85oDqa3dQxTPZ6Y5yfCEQhuU90l2wVYUgGYyEAvVzlcXQDLG8o1cxCS9eCFY2Chgxvoa7wi13RSzCA/nimso9Z9m3nVh4jfMbitBdAvrpPRnwj8iXsTyxvYO/We7zZnJnbAR39J/v/b03S09aCjS4c/LI/CgC3rQGd/7/Nnjm5aODFWjdxKrh2W6SKToFNAwD2DlWP4Wp5A3AeCpza2jAarIDBR767FSqpGXDVtmnyDYaJ5PuHQnz9xUNM=" />
+            android:value="JrMo/7DeE++rdOWVhamhyrXLA2UHlsgRiNeW9+VJxw4xcAb4OCZtnxgZlblv6njr1CcYVuPE66kagUoVwBjyt2t+KgKBV8hTmzxq5MRQrQVBo5HQTxvJTlJa5lr+g9OyXK9YIhVa/dPRuMgrA3q4b1SD4jOwzext08p9Mn6uY1c9bqo2lZ1K7jf28FU/JFSzRx3byJLvv+SGQib7VQqX36qUAXNfdhC1xjEJ1a9AAQUtR12FkNxhB3m5MkkUrsp0AECuzk4fR5nBeY/jff8Vt210K4M8DB/0D2lZYg9lg/Y4Lvl/KgEd2gjBB7wcoTsaVvYAbmNoY7WGZk0VGux2Q6g4VTefl+fLTshwkFThPfkRqJ0D20etPw3U+0MUqx+ngeR+tPPH/3TbVLXnpo25bTyCuQWI2DcsZ9xkT3oUbRXR8gCIS7yjNxAd9VIcyTDReknG97801VUgZA0ScRKz37PY7NYuODOLBvoyhKMnzoV0+4ajizcrRryIFSaOEmu5RwfyNkIsCHPFKmSGiXZqW0b2x3q+44GzWXoZ6HGDbCkw/l8Xj1Fq4Yg0ht1fiJ+YTKD1jMHA7QkKPDxCd5yjC/sPMdapqs18j2fqF5Im1pA/0LGr0tgy6+tfc1BtGeAqyAYzUIGxq88oI8rLeUWfvtZs3Kn0V38VWcm1RaXGzF4=" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDwCCLaZyQuRFlbDR98m2imUkT3PrkIvp4" />

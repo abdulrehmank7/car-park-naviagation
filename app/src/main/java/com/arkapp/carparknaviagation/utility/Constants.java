@@ -12,8 +12,7 @@ public class Constants {
 
     public static final String GOOGLE_KEY = "AIzaSyDR3RAZWLaeXBIRpzRIq8f9GOuQrauCeXU";
 
-    //    public static final String GOOGLE_KEY = "AIzaSyDwCCLaZyQuRFlbDR98m2imUkT3PrkIvp4";
-    public static final long SPLASH_TIME = 1500;
+    public static final long SPLASH_TIME = 1000;
     public static final String CAR_PARK_API_KEY = "H0uaowJPSQ+T7/AuiCZnRA==";
     public static final String CAR_PARK_API_ACCESS_KEY = "a7e89bc3-ac45-4311-a61c-6804124e133b";
 
@@ -40,4 +39,28 @@ public class Constants {
             "Tanjong Pagar Plaza",
             "Upper Cross Street",
             "Waterloo Centre"));
+
+    public final static String SPLASH_FRAGMENT = "SPLASH_FRAGMENT";
+    public final static String HOME_FRAGMENT = "HOME_FRAGMENT";
+    public final static String SETTING_FRAGMENT = "SETTING_FRAGMENT";
+
+
+    public final static String SETTING_RED_LIGHT_CAMERA_KEY = "SETTING_RED_LIGHT_CAMERA_KEY";
+    public final static String SETTING_SPEED_LIMIT_CAMERA_KEY = "SETTING_SPEED_LIMIT_CAMERA_KEY";
+    public final static String SETTING_CAR_PARK_KEY = "SETTING_CAR_PARK_KEY";
+    public final static String SETTING_LANGUAGE_KEY = "SETTING_LANGUAGE_KEY";
+    public final static String SETTING_CARPARK_LOT_KEY = "SETTING_CARPARK_LOT_KEY";
+    public final static String SETTING_SIMULATION_KEY = "SETTING_SIMULATION_KEY";
+    public final static String SETTING_SIMULATION_SPEED_KEY = "SETTING_SIMULATION_SPEED_KEY";
+
+
+    public final static int MINIMUM_CARPARK_COUNT = 1;
+    public final static int MAXIMUM_CARPARK_COUNT = 50;
+    public final static int DEFAULT_CARPARK_COUNT = 10;
+
+    public final static int MINIMUM_SIMULATION_SPEED = 5;
+    public final static int MAXIMUM_SIMULATION_SPEED = 100;
+    public final static int DEFAULT_SIMULATION_SPEED = 20;
+
+    public final static int MAXIMUM_DESTINATION_HISTORY_SIZE = 5;
 }

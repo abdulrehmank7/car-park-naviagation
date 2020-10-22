@@ -1,5 +1,6 @@
 package com.arkapp.carparknaviagation.viewModels;
 
+import android.content.SharedPreferences;
 import android.view.View;
 
 import androidx.lifecycle.MutableLiveData;
@@ -11,6 +12,7 @@ import com.arkapp.carparknaviagation.data.models.myTransportCarPark.MyTransportC
 import com.arkapp.carparknaviagation.data.models.myTransportCarPark.MyTransportCarParkAvailability;
 import com.arkapp.carparknaviagation.data.models.rates.CarParkInformation;
 import com.arkapp.carparknaviagation.data.models.redLightCamera.Feature;
+import com.arkapp.carparknaviagation.data.models.speedCamera.SpeedFeature;
 import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarPark;
 import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarParkAvailability;
 import com.arkapp.carparknaviagation.data.models.uraCarPark.UraCarParkCharges;
@@ -36,8 +38,14 @@ import static com.arkapp.carparknaviagation.ui.home.Utils.isUraCarPark;
 import static com.arkapp.carparknaviagation.ui.home.Utils.removeInvalidMyTransportCarPark;
 import static com.arkapp.carparknaviagation.ui.home.Utils.removeInvalidUraCarPark;
 import static com.arkapp.carparknaviagation.utility.Constants.API_TOKEN_REFRESH_HOUR;
+import static com.arkapp.carparknaviagation.utility.Constants.DEFAULT_CARPARK_COUNT;
+import static com.arkapp.carparknaviagation.utility.Constants.SETTING_CARPARK_LOT_KEY;
+import static com.arkapp.carparknaviagation.utility.Constants.SETTING_CAR_PARK_KEY;
+import static com.arkapp.carparknaviagation.utility.Constants.SETTING_RED_LIGHT_CAMERA_KEY;
+import static com.arkapp.carparknaviagation.utility.Constants.SETTING_SPEED_LIMIT_CAMERA_KEY;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.isDoubleClicked;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.printLog;
+import static com.arkapp.carparknaviagation.utility.ViewUtils.show;
 import static com.arkapp.carparknaviagation.utility.maps.eta.Utils.getMyTransportCarParkLatLng;
 import static com.arkapp.carparknaviagation.utility.maps.eta.Utils.getUraCarParkLatLng;
 
@@ -48,6 +56,7 @@ import static com.arkapp.carparknaviagation.utility.maps.eta.Utils.getUraCarPark
 public class HomePageViewModel extends ViewModel {
 
     public PrefRepository prefRepository;
+    private SharedPreferences settingPref;
     public HomePageListener listener;
     public UraCarPark allUraCarParkAvailability;
     public UraCarParkCharges allUraCarParkCharges;
@@ -82,9 +91,11 @@ public class HomePageViewModel extends ViewModel {
     private ArrayList<CarParkInformation> allHdbCarParkCharges;
 
     public HomePageViewModel(MapRepository mapRepository,
-                             PrefRepository prefRepository) {
+                             PrefRepository prefRepository,
+                             SharedPreferences settingPref) {
         this.mapRepository = mapRepository;
         this.prefRepository = prefRepository;
+        this.settingPref = settingPref;
 
         initAllCarParkCharges();
     }
@@ -136,22 +147,37 @@ public class HomePageViewModel extends ViewModel {
         if (currentSelectedCarParkMarker != null)
             currentSelectedCarParkMarker.remove();
 
+        if (!settingPref.getBoolean(SETTING_CAR_PARK_KEY, true)) {
+            listener.setDestinationMarker();
+            ArrayList<String> fromLatLng = new ArrayList<String>();
+            fromLatLng.add(String.format("%s,%s", selectedAddress.getLatLng().latitude, selectedAddress.getLatLng().longitude));
+            listener.getDestinationEta(getCarParkEtaFromOrigin(fromLatLng,
+                                                               prefRepository.getCurrentLocation().latitude + "",
+                                                               prefRepository.getCurrentLocation().longitude + ""));
+            return;
+        }
+
         processedUraData = false;
         processedMyTransportData = false;
 
-        validUraCarPark = removeInvalidUraCarPark(prefRepository.getCurrentLocation().latitude,
-                                                  prefRepository.getCurrentLocation().longitude,
-                                                  selectedAddress.getLatLng().latitude,
-                                                  selectedAddress.getLatLng().longitude,
-                                                  allUraCarParkCharges,
-                                                  allUraCarParkAvailability);
+        validUraCarPark = removeInvalidUraCarPark(
+                prefRepository.getCurrentLocation().latitude,
+                prefRepository.getCurrentLocation().longitude,
+                selectedAddress.getLatLng().latitude,
+                selectedAddress.getLatLng().longitude,
+                allUraCarParkCharges,
+                allUraCarParkAvailability,
+                settingPref.getInt(SETTING_CARPARK_LOT_KEY, DEFAULT_CARPARK_COUNT));
 
-        validMyTransportCarPark = removeInvalidMyTransportCarPark(prefRepository.getCurrentLocation().latitude,
-                                                                  prefRepository.getCurrentLocation().longitude,
-                                                                  selectedAddress.getLatLng().latitude,
-                                                                  selectedAddress.getLatLng().longitude,
-                                                                  allMyTransportAvailability,
-                                                                  allHdbCarParkCharges);
+        validMyTransportCarPark = removeInvalidMyTransportCarPark(
+                prefRepository.getCurrentLocation().latitude,
+                prefRepository.getCurrentLocation().longitude,
+                selectedAddress.getLatLng().latitude,
+                selectedAddress.getLatLng().longitude,
+                allMyTransportAvailability,
+                allHdbCarParkCharges,
+                settingPref.getInt(SETTING_CARPARK_LOT_KEY, DEFAULT_CARPARK_COUNT));
+
         if (validUraCarPark.size() > 0) {
             listener.setUraCarParkEtaFromOrigin(
                     getCarParkEtaFromOrigin(getUraCarParkLatLng(validUraCarPark),
@@ -286,11 +312,18 @@ public class HomePageViewModel extends ViewModel {
     }
 
     public void initRouteMarker() {
-        List<Feature> routeRedLightCameras = getRouteRedLightCamera(mapRepository.getRedLightCamera(), polylineFinal);
-        List<Feature> routeSpeedCameras = getRouteSpeedCamera(mapRepository.getSpeedCamera(), polylineFinal);
+        List<Feature> routeRedLightCameras = new ArrayList<>();
+        List<SpeedFeature> routeSpeedCameras = new ArrayList<>();
 
-        prefRepository.setCurrentRouteRedLightCamera(routeRedLightCameras);
-        prefRepository.setCurrentRouteSpeedCamera(routeSpeedCameras);
+        if (settingPref.getBoolean(SETTING_RED_LIGHT_CAMERA_KEY, true)) {
+            routeRedLightCameras = getRouteRedLightCamera(mapRepository.getRedLightCamera(), polylineFinal);
+            prefRepository.setCurrentRouteRedLightCamera(routeRedLightCameras);
+        }
+
+        if (settingPref.getBoolean(SETTING_SPEED_LIMIT_CAMERA_KEY, true)) {
+            routeSpeedCameras = getRouteSpeedCamera(mapRepository.getSpeedCamera(), polylineFinal);
+            prefRepository.setCurrentRouteSpeedCamera(routeSpeedCameras);
+        }
 
         listener.setRouteCameras(routeRedLightCameras, routeSpeedCameras);
     }
@@ -300,14 +333,28 @@ public class HomePageViewModel extends ViewModel {
 
         prefRepository.setNavigationStartLat((float) prefRepository.getCurrentLocation().latitude);
         prefRepository.setNavigationStartLng((float) prefRepository.getCurrentLocation().longitude);
-        if (isUraCarPark(currentSelectedCarParkObj)) {
-            prefRepository.setNavigationEndLat((float) currentSelectedUraCarPark.getLat());
-            prefRepository.setNavigationEndLng((float) currentSelectedUraCarPark.getLng());
+
+        if (!settingPref.getBoolean(SETTING_CAR_PARK_KEY, true)) {
+            prefRepository.setNavigationEndLat((float) selectedAddress.getLatLng().latitude);
+            prefRepository.setNavigationEndLng((float) selectedAddress.getLatLng().longitude);
         } else {
-            prefRepository.setNavigationEndLat((float) currentSelectedMyTransportCarPark.getCarParkLat());
-            prefRepository.setNavigationEndLng((float) currentSelectedMyTransportCarPark.getCarParkLng());
+            if (isUraCarPark(currentSelectedCarParkObj)) {
+                prefRepository.setNavigationEndLat((float) currentSelectedUraCarPark.getLat());
+                prefRepository.setNavigationEndLng((float) currentSelectedUraCarPark.getLng());
+            } else {
+                prefRepository.setNavigationEndLat((float) currentSelectedMyTransportCarPark.getCarParkLat());
+                prefRepository.setNavigationEndLng((float) currentSelectedMyTransportCarPark.getCarParkLng());
+            }
         }
         listener.startNavigation();
     }
 
+    public void showHistoryDestination() {
+        printLog("showHistoryDestination called");
+        searchAdapter.clear();
+        searchAdapter.showHistory = true;
+        show(searchAdapter.searchRecyclerView);
+        searchAdapter.historyList = prefRepository.getDestinationHistory();
+        searchAdapter.notifyDataSetChanged();
+    }
 }

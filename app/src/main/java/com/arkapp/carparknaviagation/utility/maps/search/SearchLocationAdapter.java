@@ -9,11 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.arkapp.carparknaviagation.R;
 import com.arkapp.carparknaviagation.data.models.PlaceAutoComplete;
+import com.arkapp.carparknaviagation.data.models.SearchedHistory;
 import com.arkapp.carparknaviagation.databinding.RvSearchItemBinding;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.libraries.places.api.Places;
@@ -36,11 +38,15 @@ public class SearchLocationAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     public PlacesClient placesClient;
     private Context context;
     private AutocompleteSessionToken token;
-    private ArrayList<PlaceAutoComplete> mResultList;
-    private RecyclerView searchRecyclerView;
+    public ArrayList<PlaceAutoComplete> resultList;
+    public ArrayList<SearchedHistory> historyList = new ArrayList<>();
+
+    public boolean showHistory = false;
+
+    public RecyclerView searchRecyclerView;
 
     public SearchLocationAdapter(ArrayList<PlaceAutoComplete> searchData, Context context) {
-        mResultList = searchData;
+        resultList = searchData;
         this.context = context;
 
         initPlacesClient();
@@ -48,7 +54,9 @@ public class SearchLocationAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public int getItemCount() {
-        return mResultList != null ? mResultList.size() : 0;
+        if (showHistory)
+            return historyList != null ? historyList.size() : 0;
+        return resultList != null ? resultList.size() : 0;
     }
 
     @NonNull
@@ -63,23 +71,25 @@ public class SearchLocationAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     @Override
-    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-
-        searchRecyclerView = recyclerView;
-    }
-
-    @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         RvSearchItemBinding binding = ((SearchLocationViewHolder) holder).getViewBinding();
-        final PlaceAutoComplete placeData = (PlaceAutoComplete) this.mResultList.get(position);
-        binding.parent.setOnClickListener(view -> clickListener.onItemClick(position, binding.parent));
-        binding.tvAddress.setText(placeData.area);
-        binding.tvTitle.setText(placeData.description);
+        if (showHistory) {
+            final SearchedHistory placeData = historyList.get(position);
+            binding.recentIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_history));
+            binding.parent.setOnClickListener(view -> clickListener.onItemClick(position, binding.parent));
+            binding.tvAddress.setText(placeData.area);
+            binding.tvTitle.setText(placeData.description);
+        } else {
+            final PlaceAutoComplete placeData = resultList.get(position);
+            binding.recentIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_marker2));
+            binding.parent.setOnClickListener(view -> clickListener.onItemClick(position, binding.parent));
+            binding.tvAddress.setText(placeData.area);
+            binding.tvTitle.setText(placeData.description);
+        }
     }
 
     public PlaceAutoComplete getItem(int position) {
-        return mResultList.get(position);
+        return resultList.get(position);
     }
 
     @Override
@@ -88,24 +98,21 @@ public class SearchLocationAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     public void clear() {
-        int size = mResultList.size();
-        mResultList.clear();
+        int size = resultList.size();
+        resultList.clear();
+        notifyItemRangeRemoved(0, size);
+    }
+
+    public void clearHistory() {
+        int size = historyList.size();
+        historyList.clear();
         notifyItemRangeRemoved(0, size);
     }
 
     public void selectFirstAddress() {
-        if (mResultList.size() > 0) {
+        if (resultList.size() > 0) {
             clickListener.onItemClick(0, null);
         }
-    }
-
-    public void setOnItemClickListener(ClickListener clickListener) {
-        SearchLocationAdapter.clickListener = clickListener;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        return position;
     }
 
     private void initPlacesClient() {
@@ -131,9 +138,9 @@ public class SearchLocationAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         placesClient.findAutocompletePredictions(request).addOnSuccessListener((response) -> {
             if (!response.getAutocompletePredictions().isEmpty()) {
                 show(searchRecyclerView);
-                mResultList.clear();
+                resultList.clear();
                 for (AutocompletePrediction prediction : response.getAutocompletePredictions()) {
-                    mResultList.add(
+                    resultList.add(
                             new PlaceAutoComplete(prediction.getPlaceId(),
                                                   prediction.getPrimaryText(STYLE_BOLD),
                                                   prediction.getSecondaryText(STYLE_BOLD)));
@@ -153,5 +160,21 @@ public class SearchLocationAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     public interface ClickListener {
         void onItemClick(int position, View v);
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+
+        searchRecyclerView = recyclerView;
+    }
+
+    public void setOnItemClickListener(ClickListener clickListener) {
+        SearchLocationAdapter.clickListener = clickListener;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 }

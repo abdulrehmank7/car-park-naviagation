@@ -4,7 +4,7 @@ package com.arkapp.carparknaviagation.data.models.speedCamera;
 import androidx.annotation.Keep;
 
 @Keep
-public class Feature {
+public class SpeedFeature {
 
     private Geometry geometry;
 

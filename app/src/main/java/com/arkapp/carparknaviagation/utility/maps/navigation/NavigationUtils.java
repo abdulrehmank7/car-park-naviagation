@@ -3,23 +3,28 @@ package com.arkapp.carparknaviagation.utility.maps.navigation;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.PointF;
 import android.graphics.drawable.VectorDrawable;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.os.Environment;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
 
 import com.arkapp.carparknaviagation.R;
 import com.arkapp.carparknaviagation.data.models.redLightCamera.Feature;
+import com.arkapp.carparknaviagation.data.models.speedCamera.SpeedFeature;
 import com.arkapp.carparknaviagation.data.repository.PrefRepository;
+import com.arkapp.carparknaviagation.databinding.ActivityNavigationBinding;
+import com.arkapp.carparknaviagation.utility.Constants;
 import com.here.android.mpa.common.GeoBoundingBox;
 import com.here.android.mpa.common.GeoCoordinate;
 import com.here.android.mpa.common.GeoPosition;
 import com.here.android.mpa.common.Image;
+import com.here.android.mpa.common.MapSettings;
 import com.here.android.mpa.common.OnEngineInitListener;
 import com.here.android.mpa.guidance.NavigationManager;
 import com.here.android.mpa.guidance.VoiceCatalog;
@@ -43,9 +48,19 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Objects;
 
+import static com.arkapp.carparknaviagation.ui.navigation.Utils.getNextManeuverIcon;
+import static com.arkapp.carparknaviagation.ui.navigation.Utils.getTurnName;
+import static com.arkapp.carparknaviagation.utility.Constants.DEFAULT_SIMULATION_SPEED;
+import static com.arkapp.carparknaviagation.utility.Constants.SETTING_SIMULATION_KEY;
+import static com.arkapp.carparknaviagation.utility.Constants.SETTING_SIMULATION_SPEED_KEY;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.hide;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.printLog;
+import static com.arkapp.carparknaviagation.utility.ViewUtils.show;
+import static com.arkapp.carparknaviagation.utility.ViewUtils.showSnack;
+import static com.arkapp.carparknaviagation.utility.ViewUtils.showSnackIndefinate;
 import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.getBitmap;
+import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.getResizedBitmap;
+import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.getSpeedIcon;
 
 /**
  * This class encapsulates the properties and functionality of the Map view.It also triggers a
@@ -60,10 +75,12 @@ public class NavigationUtils {
     private GeoBoundingBox geoBoundingBox;
     private Route route;
     private boolean foregroundServiceStarted;
-    private TextView info;
-    private ProgressBar progressBar;
+    private final ActivityNavigationBinding binding;
+    private final SharedPreferences settingPref;
+    private int currentMoveDistance = 0;
+    private int lastTotalDistance = 0;
 
-    private NavigationManager.PositionListener positionListener = new NavigationManager.PositionListener() {
+    private final NavigationManager.PositionListener positionListener = new NavigationManager.PositionListener() {
         @Override
         public void onPositionUpdated(GeoPosition geoPosition) {
             /* Current position information can be retrieved in this callback */
@@ -75,63 +92,86 @@ public class NavigationUtils {
 
             // also remaining time and distance can be
             // fetched from navigation manager
-            navigationManager.getTta(Route.TrafficPenaltyMode.DISABLED, true);
-            navigationManager.getDestinationDistance();
+            //navigationManager.getTta(Route.TrafficPenaltyMode.DISABLED, true);
+            //navigationManager.getDestinationDistance();
+
+            int distanceToManeuver = (int) (currentMoveDistance - (lastTotalDistance - navigationManager.getDestinationDistance()));
+            if (distanceToManeuver >= 0)
+                binding.tvDistance.setText(distanceToManeuver + " m");
+            else
+                binding.tvDistance.setText("0 m");
         }
     };
 
-    private NavigationManager.NavigationManagerEventListener navigationManagerEventListener = new NavigationManager.NavigationManagerEventListener() {
+    private final NavigationManager.NavigationManagerEventListener navigationManagerEventListener = new NavigationManager.NavigationManagerEventListener() {
         @Override
         public void onRunningStateChanged() {
-            Toast.makeText(activity, "Running state changed", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(activity, "Running state changed", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onNavigationModeChanged() {
-            Toast.makeText(activity, "Navigation mode changed", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(activity, "Navigation mode changed", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onEnded(NavigationManager.NavigationMode navigationMode) {
-            Toast.makeText(activity, navigationMode + " was ended", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(activity, navigationMode + " was ended", Toast.LENGTH_SHORT).show();
             stopForegroundService();
         }
 
         @Override
         public void onMapUpdateModeChanged(NavigationManager.MapUpdateMode mapUpdateMode) {
-            Toast.makeText(activity, "Map update mode is changed to " + mapUpdateMode,
-                           Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(activity, "Map update mode is changed to " + mapUpdateMode,
+                           Toast.LENGTH_SHORT).show();*/
         }
 
         @Override
         public void onRouteUpdated(Route route) {
-            Toast.makeText(activity, "Route updated", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(activity, "Route updated", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onCountryInfo(String s, String s1) {
-            Toast.makeText(activity, "Country info updated from " + s + " to " + s1,
-                           Toast.LENGTH_SHORT).show();
+            //Toast.makeText(activity, "Country info updated from " + s + " to " + s1, Toast.LENGTH_SHORT).show();
         }
     };
 
-    private NavigationManager.NewInstructionEventListener instructListener
+    private final NavigationManager.NewInstructionEventListener instructListener
             = new NavigationManager.NewInstructionEventListener() {
 
         @Override
         public void onNewInstructionEvent() {
             // Interpret and present the Maneuver object as it contains
-            // turn by turn navigation instructions for the user.
-            navigationManager.getNextManeuver();
+            // turn by turn navigation instructions for the user.\
+
+            if (navigationManager.getNextManeuver() == null) return;
+            binding.tvNextMove.setText(getTurnName(navigationManager.getNextManeuver().getTurn()));
+            binding.tvRoadName.setText(navigationManager.getNextManeuver().getRoadName());
+            if (navigationManager.getNextManeuver().getIcon() != null)
+                binding.ivNextMove.setImageResource(getNextManeuverIcon(navigationManager.getNextManeuver().getIcon()));
+            binding.tvDistance.setText(navigationManager.getNextManeuver().getDistanceFromPreviousManeuver() + " m");
+            lastTotalDistance = (int) navigationManager.getDestinationDistance();
+
+            currentMoveDistance = navigationManager.getNextManeuver().getDistanceFromPreviousManeuver();
+
+            show(binding.cvMove);
+
         }
     };
 
 
-    public NavigationUtils(AppCompatActivity activity, PrefRepository prefRepository) {
+    public NavigationUtils(AppCompatActivity activity,
+                           PrefRepository prefRepository,
+                           ActivityNavigationBinding binding) {
         this.activity = activity;
         this.prefRepository = prefRepository;
-        info = activity.findViewById(R.id.info);
-        progressBar = activity.findViewById(R.id.progressBar);
+        this.binding = binding;
+
+        binding.ivClose.setOnClickListener(view -> activity.onBackPressed());
+        settingPref = PreferenceManager.getDefaultSharedPreferences(activity);
+
+        MapSettings.setDiskCacheRootPath(activity.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS).getAbsolutePath());
 
         initMapFragment();
     }
@@ -148,8 +188,8 @@ public class NavigationUtils {
             /* Initialize the AndroidXMapFragment, results will be given via the called back. */
             mapFragment.init(error -> {
 
-                hide(progressBar);
-                hide(info);
+                hide(binding.progressBar);
+                hide(binding.info);
 
                 if (error == OnEngineInitListener.Error.NONE) {
                     map = mapFragment.getMap();
@@ -169,10 +209,10 @@ public class NavigationUtils {
                                        R.drawable.ic_red_camera);
                     }
 
-                    for (Feature camera : prefRepository.getCurrentRouteSpeedCamera()) {
+                    for (SpeedFeature camera : prefRepository.getCurrentRouteSpeedCamera()) {
                         setMarkerOnMap(camera.getGeometry().getCoordinates().get(1),
                                        camera.getGeometry().getCoordinates().get(0),
-                                       R.drawable.ic_speed_camera);
+                                       getSpeedIcon(camera.getProperties().getSpeed()));
                     }
 
                     initNavigation();
@@ -350,10 +390,14 @@ public class NavigationUtils {
          * by calling either simulate() or startTracking()
          */
 
-        navigationManager.simulate(route, 60);//Simualtion speed is set to 30 m/s
-
-        startForegroundService();
-
+        if (settingPref.getBoolean(SETTING_SIMULATION_KEY, true)) {
+            //Default Simulation speed is set to 20 m/s
+            navigationManager.simulate(route, settingPref.getInt(SETTING_SIMULATION_SPEED_KEY, DEFAULT_SIMULATION_SPEED));
+            startForegroundService();
+        } else {
+            navigationManager.startNavigation(route);
+            startForegroundService();
+        }
         /* Choose navigation modes between real time navigation and simulation *//*
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(m_activity);
         alertDialogBuilder.setTitle("Navigation");
@@ -388,10 +432,6 @@ public class NavigationUtils {
     }
 
     private void setVoiceGuidance() {
-        navigationManager.setNaturalGuidanceMode(EnumSet.of(NavigationManager.NaturalGuidanceMode.JUNCTION,
-                                                            NavigationManager.NaturalGuidanceMode.TRAFFIC_LIGHT,
-                                                            NavigationManager.NaturalGuidanceMode.STOP_SIGN));
-
         VoiceCatalog voiceCatalog = VoiceCatalog.getInstance();
         voiceCatalog.downloadCatalog(errorCode -> {
             if (errorCode == VoiceCatalog.Error.NONE) {
@@ -399,34 +439,53 @@ public class NavigationUtils {
 
                 // Get the list of voice packages from the voice catalog list
                 List<VoicePackage> voicePackages = VoiceCatalog.getInstance().getCatalogList();
-                long id = -1;
+                long id;
                 // select
-                for (VoicePackage vPackage : voicePackages) {
-                    printLog("vPackage.getMarcCode() " + vPackage.getMarcCode());
+                String selectedLanguageKey = settingPref.getString(Constants.SETTING_LANGUAGE_KEY, "ENG");
+                printLog("selectedLanguageKey " + selectedLanguageKey);
+                String selectedLanguageId = selectedLanguageKey.split("~")[0];
+                String selectedLanguageGender = selectedLanguageKey.split("~")[1];
 
-                    if (vPackage.getMarcCode().equalsIgnoreCase("ENG")) {
-                        if (vPackage.isTts()) {
-                            id = vPackage.getId();
-                            printLog("id" + id);
-                            printLog("voiceCatalog.isLocalVoiceSkin(id)" + voiceCatalog.isLocalVoiceSkin(id));
-                            if (!voiceCatalog.isLocalVoiceSkin(id)) {
-                                long finalId = id;
-                                voiceCatalog.downloadVoice(id, errorCode1 -> {
-                                    if (errorCode1 == VoiceCatalog.Error.NONE) {
-                                        printLog("download completed");
-                                        //voice skin download successful
-                                        VoiceGuidanceOptions voiceGuidanceOptions = navigationManager.getVoiceGuidanceOptions();
-                                        // set the voice skin for use by navigation manager
-                                        voiceGuidanceOptions.setVoiceSkin(voiceCatalog.getLocalVoiceSkin(finalId));
-                                    } else printLog("download error " + errorCode1.name());
-                                });
-                            } else {
-                                VoiceGuidanceOptions voiceGuidanceOptions = navigationManager.getVoiceGuidanceOptions();
-                                // set the voice skin for use by navigation manager
-                                voiceGuidanceOptions.setVoiceSkin(voiceCatalog.getLocalVoiceSkin(id));
-                            }
-                            break;
+                for (VoicePackage vPackage : voicePackages) {
+
+                    printLog("vPackage.getMarcCode() " + vPackage.getMarcCode());
+                    printLog("vPackage.getLocalizedLanguage() " + vPackage.getLocalizedLanguage());
+
+                    if (vPackage.getMarcCode().equalsIgnoreCase(selectedLanguageId) &&
+                            vPackage.getGender().name().equalsIgnoreCase(selectedLanguageGender)) {
+                        id = vPackage.getId();
+                        printLog("id" + id);
+                        printLog("voiceCatalog.isLocalVoiceSkin(id)" + voiceCatalog.isLocalVoiceSkin(id));
+                        if (!voiceCatalog.isLocalVoiceSkin(id)) {
+                            showSnackIndefinate(binding.parent, "Downloading voice assistant data...");
+                            voiceCatalog.downloadVoice(id, errorCode1 -> {
+                                if (errorCode1 == VoiceCatalog.Error.NONE) {
+                                    printLog("download completed");
+                                    showSnack(binding.parent, "Download Completed");
+
+                                    //voice skin download successful
+                                    VoiceGuidanceOptions voiceGuidanceOptions = navigationManager.getVoiceGuidanceOptions();
+                                    // set the voice skin for use by navigation manager
+                                    voiceGuidanceOptions.setVoiceSkin(voiceCatalog.getLocalVoiceSkin(id));
+                                    navigationManager.setNaturalGuidanceMode(EnumSet.of(NavigationManager.NaturalGuidanceMode.JUNCTION,
+                                                                                        NavigationManager.NaturalGuidanceMode.TRAFFIC_LIGHT,
+                                                                                        NavigationManager.NaturalGuidanceMode.STOP_SIGN));
+                                } else {
+                                    showSnack(binding.parent, "Download Error");
+                                    printLog("download error " + errorCode1.name());
+                                }
+                            });
+                        } else {
+
+                            VoiceGuidanceOptions voiceGuidanceOptions = navigationManager.getVoiceGuidanceOptions();
+                            // set the voice skin for use by navigation manager
+                            voiceGuidanceOptions.setVoiceSkin(voiceCatalog.getLocalVoiceSkin(id));
+                            navigationManager.setNaturalGuidanceMode(EnumSet.of(NavigationManager.NaturalGuidanceMode.JUNCTION,
+                                                                                NavigationManager.NaturalGuidanceMode.TRAFFIC_LIGHT,
+                                                                                NavigationManager.NaturalGuidanceMode.STOP_SIGN));
                         }
+                        break;
+
                     }
                 }
             }
@@ -475,8 +534,13 @@ public class NavigationUtils {
         //used to set the custom marker image on current location marker
         try {
             Image currentMarkerImage = new Image();
-            Bitmap icon = getBitmap((VectorDrawable) Objects.requireNonNull(ContextCompat.getDrawable(context, drawable)));
-            currentMarkerImage.setBitmap(icon);
+            try {
+                Bitmap icon = getBitmap((VectorDrawable) Objects.requireNonNull(ContextCompat.getDrawable(context, drawable)));
+                currentMarkerImage.setBitmap(icon);
+            } catch (Exception e) {
+                Bitmap icon = getResizedBitmap(getBitmap(drawable, context), 78);
+                currentMarkerImage.setBitmap(icon);
+            }
             marker.setAnchorPoint(new PointF(currentMarkerImage.getWidth() / 2, currentMarkerImage.getHeight()));
 
             marker.setIcon(currentMarkerImage);

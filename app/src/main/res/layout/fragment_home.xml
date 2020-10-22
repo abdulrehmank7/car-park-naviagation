@@ -143,7 +143,7 @@
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="29dp"
             app:cardElevation="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/cvHistory"
+            app:layout_constraintBottom_toTopOf="@+id/cvNavigate"
             app:layout_constraintEnd_toEndOf="parent"
             app:rippleColor="@color/colorPrimary">
 
@@ -156,26 +156,89 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cvHistory"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
+            android:id="@+id/cvNavigate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:clickable="true"
             android:focusable="true"
+            android:visibility="gone"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="29dp"
-            app:cardElevation="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="12dp"
             app:layout_constraintBottom_toTopOf="@+id/cvBottomView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:rippleColor="@color/colorPrimary">
+            app:layout_constraintStart_toStartOf="parent"
+            app:rippleColor="@color/colorPrimary"
+            tools:visibility="visible">
 
-            <ImageView
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:src="@drawable/ic_history"
-                app:tint="@color/colorPrimaryCustomDark" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/estimated_time"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvNavigateEstimatedTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView1"
+                    app:layout_constraintStart_toEndOf="@+id/textView1"
+                    app:layout_constraintTop_toTopOf="@+id/textView1"
+                    tools:text="32 Min" />
+
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/estimated_distance"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvNavigateEstimatedDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView21"
+                    app:layout_constraintStart_toEndOf="@+id/textView21"
+                    app:layout_constraintTop_toTopOf="@+id/textView21"
+                    tools:text="32 KM" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btOnlyNavigate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:onClick="@{viewmodel.navigationClicked}"
+                    android:text="@string/start"
+                    app:icon="@drawable/ic_navigation"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView

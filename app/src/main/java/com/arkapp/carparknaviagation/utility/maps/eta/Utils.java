@@ -23,6 +23,7 @@ public class Utils {
     }
 
     public static String getDistanceMatrixLatLngObj(ArrayList<String> allCarParkLatLng) {
+        if (allCarParkLatLng == null) return "";
         StringBuilder request = new StringBuilder();
         for (String latLng : allCarParkLatLng) {
             request.append(latLng + "|");
@@ -34,8 +35,8 @@ public class Utils {
         return "";
     }
 
-    public static ArrayList<String> getUraCarParkLatLng(
-            ArrayList<UraCarParkAvailability> validCarPark) {
+    public static ArrayList<String> getUraCarParkLatLng(ArrayList<UraCarParkAvailability> validCarPark) {
+        if(validCarPark == null) return new ArrayList<>();
         ArrayList<String> allCarParkLatLng = new ArrayList<>();
 
         for (UraCarParkAvailability uraCarParkAvailability : validCarPark) {
@@ -44,8 +45,9 @@ public class Utils {
         return allCarParkLatLng;
     }
 
-    public static ArrayList<String> getMyTransportCarParkLatLng(
-            ArrayList<MyTransportCarParkAvailability> validCarPark) {
+    public static ArrayList<String> getMyTransportCarParkLatLng(ArrayList<MyTransportCarParkAvailability> validCarPark) {
+        if(validCarPark == null) return new ArrayList<>();
+
         ArrayList<String> allCarParkLatLng = new ArrayList<>();
 
         for (MyTransportCarParkAvailability uraCarParkAvailability : validCarPark) {
