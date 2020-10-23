@@ -20,6 +20,11 @@ import java.util.Locale;
  */
 public class Utils {
 
+    /**
+     * This method will generate the custom String which will be shown
+     * in the carpark list. This string will contain the carpark charge and
+     * other details if available. This is used for URA carparks.
+     */
     public static SpannableStringBuilder getUraChargeString(UraCharges uraCharges) {
 
         SpannableStringBuilder str = new SpannableStringBuilder("");
@@ -103,6 +108,7 @@ public class Utils {
         return str;
     }
 
+    //This method will get the per hour charge for the Ura carparks
     public static double getPerHourCharge(UraCharges uraCharges) {
         Calendar cal = Calendar.getInstance();
         boolean isSaturday = cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY;
@@ -137,6 +143,7 @@ public class Utils {
         return charge * 2;
     }
 
+    //This method will double the carpark charge.
     public static double doubleRate(String rate) {
         if (TextUtils.isEmpty(rate)) return 0.0;
         return Double.parseDouble(
@@ -146,6 +153,11 @@ public class Utils {
                         .trim()) * 2;
     }
 
+    /**
+     * This method will generate the custom String which will be shown
+     * in the carpark list. This string will contain the carpark charge and
+     * other details if available. This is used for MyTransport carparks.
+     */
     public static String getMyTransportChargeString(@Nullable MyTransportCarParkAvailability availability) {
 
         StringBuilder builder = new StringBuilder();

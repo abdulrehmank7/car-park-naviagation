@@ -5,6 +5,10 @@ import androidx.annotation.Keep;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * This is the model class used for Red Speed Camera data from Speed Camera api.
+ */
+
 @Keep
 public class Properties {
 

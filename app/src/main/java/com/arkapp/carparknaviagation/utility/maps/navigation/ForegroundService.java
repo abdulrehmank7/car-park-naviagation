@@ -16,7 +16,8 @@ import androidx.core.app.NotificationCompat;
 import com.arkapp.carparknaviagation.R;
 import com.arkapp.carparknaviagation.ui.main.MainActivity;
 
-
+//This is the foreground service. This service will run in
+//background when navigation is running. This will help to get the location of the device.
 public class ForegroundService extends Service {
 
     public static int FOREGROUND_SERVICE_ID = 101;
@@ -46,7 +47,7 @@ public class ForegroundService extends Service {
                     new NotificationCompat.Builder(this.getApplicationContext(), CHANNEL)
                             .setContentTitle("Navigation")
                             .setContentText("Navigation in progress ...")
-                            .setSmallIcon(R.mipmap.ic_launcher)
+                            .setSmallIcon(R.drawable.ic_navigation)
                             .setContentIntent(pendingIntent)
                             .setLocalOnly(true)
                             .build();

@@ -39,6 +39,7 @@ public class SplashViewModel extends ViewModel {
         return prefRepository.getVoicePackages() != null && !prefRepository.getVoicePackages().isEmpty();
     }
 
+    //This method will fetch the laguage list to show in the settings screen.
     public void fetchLanguages(AndroidXMapFragment mapFragment) {
         mapFragment.init(error -> {
             if (error == OnEngineInitListener.Error.NONE) {
@@ -74,6 +75,8 @@ public class SplashViewModel extends ViewModel {
         });
     }
 
+    //This method is used to download the language in background in the setting screen.
+    //With the help of this method we can predownload the voice assistant data.
     public void downloadLanguage(AndroidXMapFragment mapFragment) {
         listener.showProgress();
 

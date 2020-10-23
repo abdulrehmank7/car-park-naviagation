@@ -35,6 +35,7 @@ public class MapUtils {
     private static boolean isLastLoop;
     private static float zoomLevel;
 
+    //This method will generate custome maker on map from svg image.
     public static MarkerOptions getCustomMaker(Context context,
                                                double lat,
                                                double log,
@@ -52,6 +53,7 @@ public class MapUtils {
         return marker;
     }
 
+    //This method will generate custom maker on map from png image.
     public static MarkerOptions getCustomPngMaker(Context context,
                                                   double lat,
                                                   double log,
@@ -93,6 +95,7 @@ public class MapUtils {
         return bitmap;
     }
 
+    //Used to resize the marker on map.
     public static Bitmap getResizedBitmap(Bitmap image, int maxSize) {
         int width = image.getWidth();
         int height = image.getHeight();

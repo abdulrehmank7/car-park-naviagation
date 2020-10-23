@@ -14,6 +14,8 @@ import java.util.List;
  * Created by Abdul Rehman on 27-09-2020.
  * Contact email - abdulrehman0796@gmail.com
  */
+
+//This interface is used to communicate between home viewmodel and home screen.
 public interface HomePageListener {
     void setCurrentLocationMarker(MarkerOptions markerOptions);
 

@@ -8,6 +8,11 @@ import com.arkapp.carparknaviagation.data.models.eta.ElementsForEta;
  * Created by Abdul Rehman on 27-09-2020.
  * Contact email - abdulrehman0796@gmail.com
  */
+
+/**
+ * This is the model class used for Sorting carpark data in the sorting algo.
+ */
+
 @Keep
 public class CustomCarPark {
 

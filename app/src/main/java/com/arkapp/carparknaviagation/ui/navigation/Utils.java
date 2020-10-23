@@ -9,6 +9,9 @@ import com.here.android.mpa.routing.Maneuver;
  */
 public class Utils {
 
+    /**
+     * This method will get the custom icon for each turn on the navigation screen.
+     */
     public static int getNextManeuverIcon(Maneuver.Icon icon) {
         if (icon == null)
             return R.drawable.ic_nav_011_up_arrow;
@@ -113,6 +116,9 @@ public class Utils {
         }
     }
 
+    /**
+     * This method will get the custom text for each turn on the navigation screen.
+     */
     public static String getTurnName(Maneuver.Turn turn) {
         String newValue = "";
         if (turn == null) {return newValue;}

@@ -8,6 +8,10 @@ import com.google.gson.annotations.SerializedName;
  * Created by Abdul Rehman on 01-10-2020.
  * Contact email - abdulrehman0796@gmail.com
  */
+
+/**
+ * This is the model class used for Car park charges data.
+ */
 @Keep
 public class CarParkInformation {
 

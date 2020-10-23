@@ -8,6 +8,11 @@ import com.google.gson.annotations.SerializedName;
  * Created by Abdul Rehman on 02-10-2020.
  * Contact email - abdulrehman0796@gmail.com
  */
+
+/**
+ * This is the model class used for token for calling Ura carpark api which we get from Ura carpark token API.
+ */
+
 @Keep
 public class Token {
     @SerializedName("Status")

@@ -3,6 +3,9 @@ package com.arkapp.carparknaviagation.data.models;
 import androidx.annotation.Keep;
 
 
+/**
+ * This is the model class used for History address data which we get from Google places API.
+ */
 @Keep
 public class SearchedHistory {
 

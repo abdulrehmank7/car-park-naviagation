@@ -17,6 +17,8 @@ import retrofit2.http.Url;
  * Created by Abdul Rehman on 28-09-2020.
  * Contact email - abdulrehman0796@gmail.com
  */
+
+//Retrofit callback created with api urls.
 public interface Apis {
 
     @Headers({"Accept: application/json"})

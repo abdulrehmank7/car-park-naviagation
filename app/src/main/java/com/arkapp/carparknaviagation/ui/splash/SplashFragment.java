@@ -41,6 +41,9 @@ import static com.arkapp.carparknaviagation.utility.maps.others.LocationUtils.ge
 import static com.arkapp.carparknaviagation.utility.maps.others.LocationUtils.startLocationUpdates;
 import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.REQUEST_CHECK_SETTINGS;
 
+/**
+ * This fragemt is used to show the splash screen UI when app is opened.
+ */
 public class SplashFragment extends Fragment implements SplashListener {
 
     private FragmentSplashBinding binding;
@@ -56,6 +59,8 @@ public class SplashFragment extends Fragment implements SplashListener {
         binding = FragmentSplashBinding.inflate(inflater);
         PrefRepository prefRepository = new PrefRepository(requireContext());
         SharedPreferences settingPref = PreferenceManager.getDefaultSharedPreferences(requireContext());
+
+        //Initializing the splash viewmodel
         SplashViewModelFactory factory = new SplashViewModelFactory(prefRepository, settingPref);
 
         viewModel = new ViewModelProvider(this, factory).get(SplashViewModel.class);
@@ -72,6 +77,7 @@ public class SplashFragment extends Fragment implements SplashListener {
         gpsListener = this::checkGpsSetting;
         mapFragment = (AndroidXMapFragment) getChildFragmentManager().findFragmentById(R.id.mapfragment);
 
+        //Checking if the language list is downloaded or not
         if (!viewModel.isFetchLanguagesAvailable()) {
             viewModel.fetchLanguages(mapFragment);
         }

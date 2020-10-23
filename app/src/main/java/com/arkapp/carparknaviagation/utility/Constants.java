@@ -7,6 +7,8 @@ import java.util.Arrays;
  * Created by Abdul Rehman on 19-09-2020.
  * Contact email - abdulrehman0796@gmail.com
  */
+
+//This file contains all the constant values used in app.
 public class Constants {
 
 

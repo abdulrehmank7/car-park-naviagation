@@ -95,6 +95,8 @@ public class HomeFragment extends Fragment implements HomePageListener {
     private SupportMapFragment mapView = null;
 
     private HomePageViewModel viewModel;
+
+    //Text change listener for the search field in the home screen.
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
@@ -104,6 +106,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
 
         @Override
         public void afterTextChanged(Editable editable) {
+            //Showing the past history or suggestion according to the text length
             if (editable != null && editable.toString().length() > 0) {
                 viewModel.searchAdapter.showHistory = false;
                 viewModel.searchAdapter.getSearchResult(editable.toString());
@@ -121,6 +124,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
         PrefRepository prefRepository = new PrefRepository(requireContext());
         SharedPreferences settingPref = PreferenceManager.getDefaultSharedPreferences(requireContext());
 
+        //Initializing the view model of the home screen.
         HomePageViewModelFactory factory = new HomePageViewModelFactory(repository, prefRepository, settingPref);
 
         viewModel = new ViewModelProvider(this, factory).get(HomePageViewModel.class);
@@ -138,6 +142,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
         //Overriding the gpsListener to get the updates
         gpsListener = this::checkGpsSetting;
 
+        //Initializing the home screen components.
         initMaps();
         initSearchUI();
         initClickListeners();
@@ -146,7 +151,9 @@ public class HomeFragment extends Fragment implements HomePageListener {
 
     }
 
+    //Getting the carpark data from the apis.
     private void initCarParkAvailabilityData() {
+        //Checking the URA token if its refreshed or not
         if (viewModel.toUpdateToken())
             viewModel.getUraCarParkToken()
                     .observe(getViewLifecycleOwner(), token -> {
@@ -175,6 +182,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
                 .observe(getViewLifecycleOwner(), response -> viewModel.allMyTransportAvailability = response);
     }
 
+    //Initializing the google map and showing current location marker on map
     private void initMaps() {
 
         mapView = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
@@ -190,6 +198,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
         });
     }
 
+    //Initializing the search field with the recycler view.
     private void initSearchUI() {
         viewModel.searchAdapter = new SearchLocationAdapter(new ArrayList(), requireContext());
         initVerticalAdapter(
@@ -198,6 +207,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
                 false);
     }
 
+    //Adding the click listener for the setting and gps icon in the home screen
     private void initClickListeners() {
         binding.cvMyLocation.setOnClickListener(view12 -> {
             showSnack(binding.parent, "Fetching Current Location...");
@@ -208,8 +218,10 @@ public class HomeFragment extends Fragment implements HomePageListener {
         });
     }
 
+    //Initializing the search field listeners with custom logic to behave as expected.
     private void initSearchField() {
 
+        //Enter button click listener from softkeyboard
         binding.etSearchBar.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 // Your piece of code on keyboard search click
@@ -220,6 +232,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
             return false;
         });
 
+        //Search icon listener in the search field.
         binding.ivSearchIcon.setOnClickListener(view13 -> {
             if (viewModel.isEditMode)
                 binding.etSearchBar.clearFocus();
@@ -227,6 +240,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
                 binding.etSearchBar.requestFocus();
         });
 
+        //Focus change listener for the search bar in the home screen.
         binding.etSearchBar.setOnFocusChangeListener((view12, hasFocus) -> {
             clearSearchTextListener(textWatcher, binding.etSearchBar);
             hide(binding.cvBottomView);
@@ -253,6 +267,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
             }
         });
 
+        //When suggestion address is clicked on Home screen. We will get the lat lang of the address.
         viewModel.searchAdapter.setOnItemClickListener((position, view1) -> {
             if (isDoubleClicked(1000)) return;
             clearSearchTextListener(textWatcher, binding.etSearchBar);
@@ -278,6 +293,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
                 List<Place.Field> placeFields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS, Place.Field.LAT_LNG);
                 FetchPlaceRequest request = FetchPlaceRequest.builder(placeId, placeFields).build();
 
+                //Fetching the selected address latitude, longitude and name
                 viewModel.searchAdapter.placesClient.fetchPlace(request).addOnSuccessListener((response) -> {
                     binding.etSearchBar.clearFocus();
                     hideKeyboard(requireContext(), binding.etSearchBar);
@@ -286,7 +302,6 @@ public class HomeFragment extends Fragment implements HomePageListener {
 
                     Place place = response.getPlace();
 
-                    //Do the things here on Click.....
                     viewModel.selectedAddress = place;
                     binding.etSearchBar.setText(viewModel.selectedAddress.getAddress());
                     //binding.etSearchBar.setText(destination.description);
@@ -314,6 +329,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
         });
     }
 
+    //Showing the current location marker on map and animating the google map
     @Override
     public void setCurrentLocationMarker(MarkerOptions markerOptions) {
         if (viewModel.currentLocationMarker != null)
@@ -326,6 +342,8 @@ public class HomeFragment extends Fragment implements HomePageListener {
 
     }
 
+    //Showing the destination maker on the home screen when carpark functionality
+    //is disabled from setting screen.
     @Override
     public void setDestinationMarker() {
         show(binding.progressBar);
@@ -348,14 +366,17 @@ public class HomeFragment extends Fragment implements HomePageListener {
         show(binding.cvNavigate);
     }
 
+    //Showing the carpark marker on the home screen
     @Override
     public void setCarParking() {
         hide(binding.cvNavigate);
 
+        //If navigation is clicked from carpark list open naviagtion
         if (viewModel.startNavigation) {
             showSnack(binding.parent, getString(R.string.starting_navigation));
         }
 
+        //If no carpark are available then show msg.
         printLog("setting car park");
         if (viewModel.allFilteredCarPark.size() == 0) {
             hide(binding.cvBottomView);
@@ -376,6 +397,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
         viewModel.currentSelectedCarParkObj = viewModel.allFilteredCarPark.get(viewModel.currentSelectedCarParkNo);
         show(binding.cvBottomView);
 
+        //Checking if URA or MyTransport carpark and showing their details on home screen.
         if (isUraCarPark(viewModel.currentSelectedCarParkObj)) {
             viewModel.currentSelectedUraCarPark = (UraCarParkAvailability) viewModel.currentSelectedCarParkObj;
             viewModel.currentSelectedCarParkMarker = map.addMarker(getCustomMaker(requireContext(),
@@ -430,10 +452,12 @@ public class HomeFragment extends Fragment implements HomePageListener {
         }
     }
 
+    //Showing the carpark list if the Bottom view is clicked in home screen.
     @Override
     public void showCarParkList() {
         CarParkListAdapter carParkListAdapter = new CarParkListAdapter(viewModel);
 
+        //Creating bottom sheet dialog to show the carpark list.
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_car_park_list, null);
         viewModel.carParkList = new BottomSheetDialog(requireContext());
         viewModel.carParkList.setContentView(bottomSheetView);
@@ -445,6 +469,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
             BottomSheetBehavior.from(bottomSheetInternal).setState(BottomSheetBehavior.STATE_EXPANDED);
         });
 
+        //Setting carpark recycler view adapter to show car park list.
         RecyclerView rvCarParkList = bottomSheetView.findViewById(R.id.rvCarParks);
         initVerticalAdapter(rvCarParkList, carParkListAdapter, true);
         bottomSheetView.findViewById(R.id.btBack).setOnClickListener(view -> viewModel.carParkList.dismiss());
@@ -452,6 +477,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
         viewModel.carParkList.show();
     }
 
+    //Setting the route on the map from origin to the carpark
     @Override
     public void setRoute(PolylineOptions polyLineOptions) {
         if (viewModel.polylineFinal != null)
@@ -460,21 +486,27 @@ public class HomeFragment extends Fragment implements HomePageListener {
         viewModel.initRouteMarker();
     }
 
+    //Shwoing the route camera like red light and speed camera.
     @Override
     public void setRouteCameras(List<Feature> redLightMarkers, List<SpeedFeature> routeSpeedCameras) {
         hide(binding.progressBar);
+        //removing old markers
         if (!viewModel.redLightMarkers.isEmpty())
             for (Marker marker : viewModel.redLightMarkers)
                 marker.remove();
 
+
+        //Checking route latitude longitude and showing the red light marker.
         for (MarkerOptions markerOption : getRedLightMarker(redLightMarkers, requireContext())) {
             viewModel.redLightMarkers.add(map.addMarker(markerOption));
         }
 
+        //removing old markers
         if (!viewModel.speedCameraMarkers.isEmpty())
             for (Marker marker : viewModel.speedCameraMarkers)
                 marker.remove();
 
+        //Checking route latitude longitude and showing the speed camera marker.
         for (MarkerOptions markerOption : getSpeedMarker(routeSpeedCameras, requireContext())) {
             viewModel.speedCameraMarkers.add(map.addMarker(markerOption));
         }
@@ -517,6 +549,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
                 });
     }
 
+    //On navigation clicked starting the navigation
     @Override
     public void startNavigation() {
         if (binding.progressBar.getVisibility() == View.VISIBLE) {
@@ -526,6 +559,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
         startActivity(new Intent(requireContext(), NavigationActivity.class));
     }
 
+    //Getting the location permission and gps permission of the device.
     private void askRuntimePermission() {
         Dexter.withContext(requireContext())
                 .withPermissions(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -551,6 +585,7 @@ public class HomeFragment extends Fragment implements HomePageListener {
                 .check();
     }
 
+    //Check if gps is enable or not.
     public void checkGpsSetting() {
         Task<LocationSettingsResponse> task = getGPSSettingTask(requireContext());
         task.addOnSuccessListener(requireActivity(), locationSettingsResponse -> {

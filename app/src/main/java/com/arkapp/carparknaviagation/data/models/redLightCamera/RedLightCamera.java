@@ -9,6 +9,10 @@ import java.util.List;
  * Contact email - abdulrehman0796@gmail.com
  */
 
+/**
+ * This is the model class used for Red light camera data from Red light api.
+ */
+
 @Keep
 public class RedLightCamera {
 

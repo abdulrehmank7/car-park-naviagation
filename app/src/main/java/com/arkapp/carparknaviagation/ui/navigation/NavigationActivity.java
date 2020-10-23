@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.arkapp.carparknaviagation.data.repository.PrefRepository;
 import com.arkapp.carparknaviagation.databinding.ActivityNavigationBinding;
 import com.arkapp.carparknaviagation.utility.maps.navigation.NavigationUtils;
-
+/**
+ * This activity is used to show the navigation UI.
+ */
 public class NavigationActivity extends AppCompatActivity {
 
     private NavigationUtils mapFragmentView;
@@ -22,6 +24,7 @@ public class NavigationActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         prefRepository = new PrefRepository(this);
+        //Initializig the navigation map UI
         setupMapFragmentView();
     }
 

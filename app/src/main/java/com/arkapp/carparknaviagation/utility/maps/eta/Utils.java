@@ -14,6 +14,8 @@ import static com.arkapp.carparknaviagation.utility.Constants.GOOGLE_KEY;
 
 public class Utils {
 
+    //This method will generate the url to get the Eta from two points.
+    //This url will be used to call distance matrix api.
     public static String getEtaUrl(ArrayList<String> allCarParkLatLng, String fromLat,
                                    String fromLng) {
         return "https://maps.googleapis.com/maps/api/distancematrix/json?destinations=" +
@@ -35,6 +37,7 @@ public class Utils {
         return "";
     }
 
+    //Getting the lat lang of car park to fetch their eta and distance.
     public static ArrayList<String> getUraCarParkLatLng(ArrayList<UraCarParkAvailability> validCarPark) {
         if(validCarPark == null) return new ArrayList<>();
         ArrayList<String> allCarParkLatLng = new ArrayList<>();
@@ -45,6 +48,7 @@ public class Utils {
         return allCarParkLatLng;
     }
 
+    //Getting the lat lang of car park to fetch their eta and distance.
     public static ArrayList<String> getMyTransportCarParkLatLng(ArrayList<MyTransportCarParkAvailability> validCarPark) {
         if(validCarPark == null) return new ArrayList<>();
 

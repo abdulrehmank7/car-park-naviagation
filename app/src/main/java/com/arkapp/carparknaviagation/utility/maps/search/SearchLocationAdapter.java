@@ -31,6 +31,7 @@ import static com.arkapp.carparknaviagation.utility.ViewUtils.hide;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.printLog;
 import static com.arkapp.carparknaviagation.utility.ViewUtils.show;
 
+//This the search recycler adapter used in the search suggestion list
 public class SearchLocationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public static final CharacterStyle STYLE_BOLD = new StyleSpan(Typeface.BOLD);
@@ -73,6 +74,7 @@ public class SearchLocationAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         RvSearchItemBinding binding = ((SearchLocationViewHolder) holder).getViewBinding();
+        //Checking if the address is suggestion or the history
         if (showHistory) {
             final SearchedHistory placeData = historyList.get(position);
             binding.recentIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_history));

@@ -6,19 +6,22 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * @author Akbar on 26/11/16.
+ * This is the model class used for ETA data which we get from google distance matrix api.
  */
 @Keep
 public class Eta implements Serializable {
-    /*    "destination_addresses":[],
-    "origin_addresses":[],
-    ""rows":[
-
-    {
-        "elements":[]
-    }
-    ],,
-    "status":"OK"*/
+    /**
+     * Sample data
+     *
+     * "destination_addresses":[],
+     * "origin_addresses":[],
+     * ""rows":[
+     * {
+     * "elements":[]
+     * }
+     * ],,
+     * "status":"OK"
+     */
     private String status;
     private ArrayList<ElementsClassForEta> rows;
 

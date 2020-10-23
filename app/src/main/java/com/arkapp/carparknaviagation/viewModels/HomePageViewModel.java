@@ -100,6 +100,7 @@ public class HomePageViewModel extends ViewModel {
         initAllCarParkCharges();
     }
 
+    //This method will set the current location marker on map
     public void initCurrentMarker() {
         if (prefRepository.getCurrentLocation() != null) {
 
@@ -141,12 +142,14 @@ public class HomePageViewModel extends ViewModel {
 
     }
 
+    //This method will initiate the process of filtering the carparks and showing on map.
     public void initCarParkMarker() {
 
         //removing old markers
         if (currentSelectedCarParkMarker != null)
             currentSelectedCarParkMarker.remove();
 
+        //Checking if the carpark functionality is enanled in settings.
         if (!settingPref.getBoolean(SETTING_CAR_PARK_KEY, true)) {
             listener.setDestinationMarker();
             ArrayList<String> fromLatLng = new ArrayList<String>();
@@ -160,6 +163,7 @@ public class HomePageViewModel extends ViewModel {
         processedUraData = false;
         processedMyTransportData = false;
 
+        //Generating the list of valid URA car parks.
         validUraCarPark = removeInvalidUraCarPark(
                 prefRepository.getCurrentLocation().latitude,
                 prefRepository.getCurrentLocation().longitude,
@@ -169,6 +173,7 @@ public class HomePageViewModel extends ViewModel {
                 allUraCarParkAvailability,
                 settingPref.getInt(SETTING_CARPARK_LOT_KEY, DEFAULT_CARPARK_COUNT));
 
+        //Generating the list of valid MyTransport car parks.
         validMyTransportCarPark = removeInvalidMyTransportCarPark(
                 prefRepository.getCurrentLocation().latitude,
                 prefRepository.getCurrentLocation().longitude,
@@ -178,6 +183,7 @@ public class HomePageViewModel extends ViewModel {
                 allHdbCarParkCharges,
                 settingPref.getInt(SETTING_CARPARK_LOT_KEY, DEFAULT_CARPARK_COUNT));
 
+        //If the carpark are available then getting the ETA and distance for the car park.
         if (validUraCarPark.size() > 0) {
             listener.setUraCarParkEtaFromOrigin(
                     getCarParkEtaFromOrigin(getUraCarParkLatLng(validUraCarPark),
@@ -186,6 +192,8 @@ public class HomePageViewModel extends ViewModel {
         } else
             processedUraData = true;
 
+
+        //If the carpark are available then getting the ETA and distance for the car park.
         if (validMyTransportCarPark.size() > 0) {
             listener.setMyTransportCarParkEtaFromOrigin(
                     getCarParkEtaFromOrigin(getMyTransportCarParkLatLng(validMyTransportCarPark),
@@ -201,6 +209,7 @@ public class HomePageViewModel extends ViewModel {
 
     }
 
+    //Adding the carpark eta and distance in the carpark data.
     public void addEtaInUraCarParkFromOrigin(Eta data) {
         int count = 0;
         ArrayList<UraCarParkAvailability> carParkWithEta = new ArrayList<>();
@@ -217,6 +226,7 @@ public class HomePageViewModel extends ViewModel {
                                              selectedAddress.getLatLng().longitude + ""));
     }
 
+    //Adding the carpark eta and distance in the carpark data.
     public void addEtaInUraCarParkFromDestination(Eta data) {
 
         int count = 0;
@@ -235,6 +245,7 @@ public class HomePageViewModel extends ViewModel {
         }
     }
 
+    //Adding the carpark eta and distance in the carpark data.
     public void addEtaInMyTransportCarParkFromOrigin(Eta data) {
         int count = 0;
         ArrayList<MyTransportCarParkAvailability> carParkWithEta = new ArrayList<>();
@@ -251,6 +262,7 @@ public class HomePageViewModel extends ViewModel {
                                              selectedAddress.getLatLng().longitude + ""));
     }
 
+    //Adding the carpark eta and distance in the carpark data.
     public void addEtaInMyTransportCarParkFromDestination(Eta data) {
 
         int count = 0;
@@ -270,6 +282,7 @@ public class HomePageViewModel extends ViewModel {
         }
     }
 
+    //Handling the forward arrow click on home screen.
     public void forwardClicked(View view) {
         if (isDoubleClicked(1500))
             return;
@@ -281,6 +294,7 @@ public class HomePageViewModel extends ViewModel {
         }
     }
 
+    //Handling the backward arrow click on home screen.
     public void backwardClicked(View view) {
         if (isDoubleClicked(1500)) return;
 
@@ -292,10 +306,12 @@ public class HomePageViewModel extends ViewModel {
         }
     }
 
+    //Handling the carpark click on home screen.
     public void nearestCarParkClicked(View view) {
         listener.showCarParkList();
     }
 
+    //Checking if the URA token is valid or not.
     public boolean toUpdateToken() {
         Date currentTime = new Date();
 
@@ -311,6 +327,7 @@ public class HomePageViewModel extends ViewModel {
         return currentTime.after(refreshTime);
     }
 
+    //Initializing the route markers
     public void initRouteMarker() {
         List<Feature> routeRedLightCameras = new ArrayList<>();
         List<SpeedFeature> routeSpeedCameras = new ArrayList<>();
@@ -328,6 +345,7 @@ public class HomePageViewModel extends ViewModel {
         listener.setRouteCameras(routeRedLightCameras, routeSpeedCameras);
     }
 
+    //Handling the navigation click on home screen.
     public void navigationClicked(View view) {
         if (isDoubleClicked(1500)) return;
 

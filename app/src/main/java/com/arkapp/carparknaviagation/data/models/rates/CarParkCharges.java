@@ -5,6 +5,10 @@ package com.arkapp.carparknaviagation.data.models.rates;
  * Contact email - abdulrehman0796@gmail.com
  */
 
+/**
+ * This is the model class used for Car park charges data.
+ */
+
 import androidx.annotation.Keep;
 
 import com.google.gson.annotations.SerializedName;

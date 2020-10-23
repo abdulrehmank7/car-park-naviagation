@@ -5,12 +5,16 @@ import androidx.annotation.Keep;
 import java.io.Serializable;
 
 /**
- * @author Akbar on 26/11/16.
+ * This is the model class used for ETA data which we get from google distance matrix api.
  */
 @Keep
 public class DurationForEta implements Serializable {
-    /*    "text":"48 m",
-    "value":48*/
+    /**
+     * Sample data
+     *
+     * "text":"48 m",
+     * "value":48
+     */
     private String value;
     private String text;
 

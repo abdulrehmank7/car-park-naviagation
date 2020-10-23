@@ -28,6 +28,8 @@ import static com.arkapp.carparknaviagation.utility.Constants.MAXIMUM_DESTINATIO
  */
 
 public class PrefRepository {
+
+    // All the constant name of shared preferences
     private final String PREF_CURRENT_LOCATION = "PREF_CURRENT_LOCATION";
     private final String PREF_API_TOKEN = "PREF_API_TOKEN";
     private final String PREF_API_TOKEN_UPDATE_TIME = "PREF_API_TOKEN_UPDATE_TIME";
@@ -57,6 +59,7 @@ public class PrefRepository {
         editor.commit();
     }
 
+    //Retrieving current location latitude and longitude from shared preferences.
     public LatLng getCurrentLocation() {
         String data = pref.getString(PREF_CURRENT_LOCATION, "");
         if (!TextUtils.isEmpty(data)) {
@@ -65,21 +68,26 @@ public class PrefRepository {
         return null;
     }
 
+    //Storing current location latitude and longitude in shared preferences.
     public void setCurrentLocation(LatLng location) {
         editor.putString(PREF_CURRENT_LOCATION, gson.toJson(location));
         editor.commit();
     }
 
+    //Retrieving URA token to call URA apis.
     public String getApiToken() {
         return pref.getString(PREF_API_TOKEN, "");
     }
 
+    //Storing URA token to use later.
     public void setApiToken(String token) {
         editor.putString(PREF_API_TOKEN, token);
         editor.commit();
         setApiTokenUpdateTime(new Date());
     }
 
+    //Retrieving URA token refresh time from shared preferences. URA Token will work
+    // only 6 hours after that we need to refresh the token.
     public Date getApiTokenUpdateTime() {
         String data = pref.getString(PREF_API_TOKEN_UPDATE_TIME, "");
         if (!TextUtils.isEmpty(data)) {
@@ -88,47 +96,61 @@ public class PrefRepository {
         return null;
     }
 
+    //Storing URA token refresh time when we fetch URA token.
     public void setApiTokenUpdateTime(Date date) {
         editor.putString(PREF_API_TOKEN_UPDATE_TIME, gson.toJson(date));
         editor.commit();
     }
 
+    //Retrieving origin location latitude from shared preferences.
+    //For starting navigation.
     public float getNavigationStartLat() {
         return pref.getFloat(PREF_NAVIGATION_START_LAT, 0f);
     }
 
+    //Storing origin location latitude.
     public void setNavigationStartLat(float value) {
         editor.putFloat(PREF_NAVIGATION_START_LAT, value);
         editor.commit();
     }
 
+    //Retrieving origin location longitude from shared preferences.
+    //For starting navigation.
     public float getNavigationStartLng() {
         return pref.getFloat(PREF_NAVIGATION_START_LNG, 0f);
     }
 
+    //Storing origin location longitude.
     public void setNavigationStartLng(float value) {
         editor.putFloat(PREF_NAVIGATION_START_LNG, value);
         editor.commit();
     }
 
+    //Retrieving destination location latitude from shared preferences.
+    //For starting navigation.
     public float getNavigationEndLat() {
         return pref.getFloat(PREF_NAVIGATION_END_LAT, 0f);
     }
 
+    //Storing destination location latitude.
     public void setNavigationEndLat(float value) {
         editor.putFloat(PREF_NAVIGATION_END_LAT, value);
         editor.commit();
     }
 
+    //Retrieving destination location longitude from shared preferences.
+    //For starting navigation.
     public float getNavigationEndLng() {
         return pref.getFloat(PREF_NAVIGATION_END_LNG, 0f);
     }
 
+    //Storing destination location longitude.
     public void setNavigationEndLng(float value) {
         editor.putFloat(PREF_NAVIGATION_END_LNG, value);
         editor.commit();
     }
 
+    //Retrieving route red light camera details to show in the navigation screen.
     public List<Feature> getCurrentRouteRedLightCamera() {
 
         String data = pref.getString(PREF_CURRENT_ROUTE_RED_LIGHT_CAMERA, "");
@@ -141,11 +163,13 @@ public class PrefRepository {
         return null;
     }
 
+    //Storing route red light camera details to show in the navigation screen.
     public void setCurrentRouteRedLightCamera(List<Feature> redLightMarkers) {
         editor.putString(PREF_CURRENT_ROUTE_RED_LIGHT_CAMERA, gson.toJson(redLightMarkers));
         editor.commit();
     }
 
+    //Retrieving route speed camera details to show in the navigation screen.
     public List<SpeedFeature> getCurrentRouteSpeedCamera() {
         String data = pref.getString(PREF_CURRENT_ROUTE_SPEED_CAMERA, "");
 
@@ -157,11 +181,14 @@ public class PrefRepository {
         return null;
     }
 
+    //Storing route speed camera details to show in the navigation screen.
     public void setCurrentRouteSpeedCamera(List<SpeedFeature> speedCamera) {
         editor.putString(PREF_CURRENT_ROUTE_SPEED_CAMERA, gson.toJson(speedCamera));
         editor.commit();
     }
 
+    //Retrieving destination history list. This is the address
+    //which used has searched in past.
     public ArrayList<SearchedHistory> getDestinationHistory() {
         String data = pref.getString(PREF_DESTINATION_HISTORY, "");
 
@@ -173,6 +200,8 @@ public class PrefRepository {
         return new ArrayList<>();
     }
 
+    //Storing destination history list. This is the address
+    //will be saved when user search the address in the home screen.
     public void setDestinationHistory(SearchedHistory destination) {
         ArrayList<SearchedHistory> currentHistory = getDestinationHistory();
 
@@ -192,6 +221,8 @@ public class PrefRepository {
         editor.commit();
     }
 
+    //Retrieving voice packages list of the device.
+    //This will be used to show the list in the setting screen.
     public List<VoicePackageDetails> getVoicePackages() {
         String data = pref.getString(PREF_VOICE_PACKAGES, "");
 
@@ -202,7 +233,8 @@ public class PrefRepository {
         }
         return null;
     }
-
+    //Storing voice packages list of the device.
+    //This will be stored when the app is opened for the first time.
     public void setVoicePackages(List<VoicePackageDetails> voicePackageDetails) {
         editor.putString(PREF_VOICE_PACKAGES, gson.toJson(voicePackageDetails));
         editor.commit();

@@ -25,17 +25,30 @@ import static com.arkapp.carparknaviagation.utility.maps.eta.Utils.getEtaUrl;
  * Created by Abdul Rehman on 28-09-2020.
  * Contact email - abdulrehman0796@gmail.com
  */
+
+/**
+ * This is the Carpark repository used to get the data from server related to the carpark
+ * availability, location, eta etc.
+ */
 public class CarParkRepository {
     private final Apis apis;
     private final Apis apiNew;
     private final Apis apiGoogle;
 
     public CarParkRepository() {
+        /**
+         * Creating the retrofit services for the api to get the data
+         * From the Apis like MyTransport, URA, Google etc.
+         */
         apis = RetrofitService.createService(Apis.class, CAR_PARK_API_1_BASE_URL);
         apiNew = RetrofitService.createService(Apis.class, CAR_PARK_API_2_BASE_URL);
         apiGoogle = RetrofitService.createService(Apis.class, CAR_PARK_API_2_BASE_URL);
     }
 
+    /**
+     * This method will get the carpark data from MyTransport website. It will contain all the
+     * details of the carpark.
+     */
     public MutableLiveData<MyTransportCarPark> getMyTransportCarParkAvailability() {
 
         MutableLiveData<MyTransportCarPark> newsData = new MutableLiveData<>();
@@ -56,6 +69,10 @@ public class CarParkRepository {
         return newsData;
     }
 
+    /**
+     * This method will get the token for calling Ura Api. We will need this token before
+     * calling the Ura carpark api.
+     */
     public MutableLiveData<String> getUraCarParkApiToken() {
 
         MutableLiveData<String> data = new MutableLiveData<>();
@@ -77,6 +94,10 @@ public class CarParkRepository {
         return data;
     }
 
+    /**
+     * This method will get the carpark data from Ura website. It will contain all the
+     * details of the carpark.
+     */
     public MutableLiveData<UraCarPark> getUraCarParkAvailability(String token) {
 
         MutableLiveData<UraCarPark> data = new MutableLiveData<>();
@@ -96,6 +117,10 @@ public class CarParkRepository {
         return data;
     }
 
+    /**
+     * This method will get the ETA and distance of carpark from current location.
+     * This data will be used to show the ETA and Distance on home screen.
+     */
     public MutableLiveData<Eta> getCarParkEta(ArrayList<String> allCarParkLatLng,
                                               String fromLat,
                                               String fromLng) {

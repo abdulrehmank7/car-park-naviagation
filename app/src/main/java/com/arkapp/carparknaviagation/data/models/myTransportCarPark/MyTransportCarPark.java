@@ -10,6 +10,10 @@ import java.util.List;
  * Created by Abdul Rehman on 28-09-2020.
  * Contact email - abdulrehman0796@gmail.com
  */
+
+/**
+ * This is the model class used for Car park data which we get from MyTransport API.
+ */
 @Keep
 public class MyTransportCarPark {
 

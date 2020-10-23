@@ -41,6 +41,11 @@ import static com.arkapp.carparknaviagation.utility.ViewUtils.printLog;
  * Created by Abdul Rehman on 09-10-2020.
  * Contact email - abdulrehman0796@gmail.com
  */
+
+/**
+ * This fragment is used to show setting screen. It will contain all the
+ * setting option of the app.
+ */
 public class SettingFragment extends PreferenceFragmentCompat {
 
     private Context context;
@@ -62,7 +67,9 @@ public class SettingFragment extends PreferenceFragmentCompat {
 
         printLog("On Resume called");
 
+        //Refresing the language the setting option. When the screen is opened
         PrefRepository prefRepository = new PrefRepository(requireContext());
+        //11 is the total no. of setting options. IF the setting options are less it will refresh and add the voice setting option.
         if (prefRepository.getVoicePackages() != null && screen.getPreferenceCount() != 11) {
             List<VoicePackageDetails> packages = prefRepository.getVoicePackages();
             Collections.sort(packages, (v1, v2) -> v1.getLocalizedLanguage().compareTo(v2.getLocalizedLanguage()));
@@ -70,6 +77,8 @@ public class SettingFragment extends PreferenceFragmentCompat {
             List<String> languages = new ArrayList<>();
             List<String> languagesValue = new ArrayList<>();
             String defaultLanguage = "";
+
+            //Creating the list for the language selection.
             for (VoicePackageDetails vPackage : packages) {
 
                 languages.add(vPackage.getLocalizedLanguage() + " (" + vPackage.getGender().toLowerCase() + ")");
@@ -96,6 +105,7 @@ public class SettingFragment extends PreferenceFragmentCompat {
                 return true;
             });
 
+            //Adding all the setting options in the screen UI.
             screen.addPreference(emptyTitleSpace);
             screen.addPreference(languagePref);
             screen.addPreference(divider);
@@ -104,8 +114,8 @@ public class SettingFragment extends PreferenceFragmentCompat {
             screen.addPreference(carPark);
             screen.addPreference(carLotsCount);
             screen.addPreference(divider2);
-            screen.addPreference(simulation);
-            screen.addPreference(simulationSpeed);
+            screen.addPreference(simulation);//this
+            screen.addPreference(simulationSpeed);//this
             screen.addPreference(appVersion);
 
             setPreferenceScreen(screen);
@@ -161,6 +171,19 @@ public class SettingFragment extends PreferenceFragmentCompat {
         carLotsCount.setMax(MAXIMUM_CARPARK_COUNT);
         carLotsCount.setDefaultValue(DEFAULT_CARPARK_COUNT);
 
+        /**
+         *
+         * The below are the setting option for simulation.
+         * Remove the below option to hide the simulation option from the settings.
+         *
+         * To remove the simulation setting option follow this steps.
+         * 1. Make the Default Value of simulation setting to false in line no. 193
+         * 2. Remove or comment "simulation" , "simulationSpeed" setting option from the line no. '117' and '118' of this file.
+         * 3. Make the total setting count from '11' to '9' in line no. '73' as we have removed 2 setting options.
+         *
+         *
+         *  This will remove the simulation functionality from the app.
+         * */
         divider2 = new PreferenceCategory(context);
         divider2.setTitle("Others");
 

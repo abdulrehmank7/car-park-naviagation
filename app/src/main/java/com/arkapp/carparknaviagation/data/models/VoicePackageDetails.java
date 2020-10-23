@@ -2,6 +2,9 @@ package com.arkapp.carparknaviagation.data.models;
 
 import androidx.annotation.Keep;
 
+/**
+ * This is the model class used for voice data which we get from Here maps API.
+ */
 
 @Keep
 public class VoicePackageDetails {

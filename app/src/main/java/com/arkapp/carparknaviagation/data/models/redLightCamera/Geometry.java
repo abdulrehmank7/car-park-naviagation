@@ -8,6 +8,11 @@ import java.util.List;
  * Created by Abdul Rehman on 27-09-2020.
  * Contact email - abdulrehman0796@gmail.com
  */
+
+/**
+ * This is the model class used for Red light camera data from Red light api.
+ */
+
 @Keep
 public class Geometry {
 

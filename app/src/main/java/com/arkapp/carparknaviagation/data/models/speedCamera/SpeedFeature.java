@@ -3,6 +3,10 @@ package com.arkapp.carparknaviagation.data.models.speedCamera;
 
 import androidx.annotation.Keep;
 
+/**
+ * This is the model class used for Red Speed Camera data from Speed Camera api.
+ */
+
 @Keep
 public class SpeedFeature {
 

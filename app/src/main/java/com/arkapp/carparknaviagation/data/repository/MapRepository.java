@@ -34,6 +34,11 @@ import static com.arkapp.carparknaviagation.utility.maps.others.MapUtils.getCust
  * Created by Abdul Rehman on 27-09-2020.
  * Contact email - abdulrehman0796@gmail.com
  */
+
+/**
+ * This is the Map repository used to get the data from Raw json file in the app.
+ * This repository will communicate with app internal resources to get the data.
+ */
 public class MapRepository {
     private Context context;
     private Gson gson = new Gson();
@@ -42,6 +47,11 @@ public class MapRepository {
         this.context = context;
     }
 
+
+    /**
+     * This method will get all the Red light camera details of city. This red light
+     * camera will be shown on the map in between the route.
+     */
     public List<Feature> getRedLightCamera() {
         try {
 
@@ -67,6 +77,11 @@ public class MapRepository {
         return new ArrayList<>();
     }
 
+
+    /**
+     * This method will get all the Speed camera details of city. This speed
+     * camera will be shown on the map in between the route.
+     */
     public List<SpeedFeature> getSpeedCamera() {
         try {
 
@@ -92,6 +107,7 @@ public class MapRepository {
         return new ArrayList<>();
     }
 
+    // Not used
     public ArrayList<MarkerOptions> getRedLightMarkers() {
         try {
 
@@ -127,6 +143,8 @@ public class MapRepository {
         return new ArrayList<>();
     }
 
+
+    //Not used
     public ArrayList<CarParkCharges> getCarParkCharges() {
         try {
 
@@ -152,6 +170,10 @@ public class MapRepository {
         return new ArrayList<>();
     }
 
+    /**
+     * This method will get all the HDB carpark information which will be used to
+     * show on map. This will also be shown in the carpark list in the home screen.
+     */
     public ArrayList<CarParkInformation> getHdbCarParkInformation() {
         try {
 
@@ -178,6 +200,10 @@ public class MapRepository {
         return new ArrayList<>();
     }
 
+    /**
+     * This method will get all the URA carpark charges which will be used to
+     * show on map. This will also be shown in the carpark list in the home screen.
+     */
     public UraCarParkCharges getUraCarParkCharges() {
         try {
 
@@ -202,6 +228,11 @@ public class MapRepository {
         return null;
     }
 
+    /**
+     * This method will convert latitude and longitude into full address.
+     * We will use this address to show in the home screen in the search bar
+     * for current location.
+     */
     public String getLocationAddress(double lat, double log) {
         try {
             Geocoder geocoder;
@@ -223,6 +254,10 @@ public class MapRepository {
         return "";
     }
 
+    /**
+     * This method will get markerOption for the map. We will use this
+     * to show custom marker on the map at different latitude and longitude.
+     */
     public MarkerOptions getLocationMarkerOption(double lat,
                                                  double log,
                                                  int iconDrawable) {
