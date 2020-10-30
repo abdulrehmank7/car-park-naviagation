@@ -79,6 +79,7 @@ public class NavigationUtils {
     private final SharedPreferences settingPref;
     private int currentMoveDistance = 0;
     private int lastTotalDistance = 0;
+    private MapRoute mapRoute;
 
     private final NavigationManager.PositionListener positionListener = new NavigationManager.PositionListener() {
         @Override
@@ -129,6 +130,11 @@ public class NavigationUtils {
         @Override
         public void onRouteUpdated(Route route) {
             //Toast.makeText(activity, "Route updated", Toast.LENGTH_SHORT).show();
+            map.removeMapObject(mapRoute);
+            // create a new MapRoute object
+            mapRoute = new MapRoute(route);
+            // display new route on the map
+            map.addMapObject(mapRoute);
         }
 
         @Override
@@ -197,6 +203,8 @@ public class NavigationUtils {
                     //Put this call in Map.onTransformListener if the animation(Linear/Bow)
                     //is used in setCenter()
                     map.setZoomLevel(13.2);
+                    map.getPositionIndicator().setVisible(true);
+                    map.getPositionIndicator().setMarker(getCurrentLocationMarker());
                     /*
                      * Get the NavigationManager instance.It is responsible for providing voice
                      * and visual instructions while driving and walking
@@ -278,7 +286,7 @@ public class NavigationUtils {
 
                         route = routeResults.get(0).getRoute();
                         /* Create a MapRoute so that it can be placed on the map */
-                        MapRoute mapRoute = new MapRoute(routeResults.get(0).getRoute());
+                        mapRoute = new MapRoute(routeResults.get(0).getRoute());
 
                         /* Show the maneuver number on top of the route */
                         mapRoute.setManeuverNumberVisible(true);
@@ -547,5 +555,14 @@ public class NavigationUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private Image getCurrentLocationMarker() {
+        Image image = new Image();
+        Bitmap icon = getResizedBitmap(
+                getBitmap((VectorDrawable) Objects.requireNonNull(
+                        ContextCompat.getDrawable(activity, R.drawable.ic_marker1))), 78);
+        image.setBitmap(icon);
+        return image;
     }
 }
